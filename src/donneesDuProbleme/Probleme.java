@@ -26,12 +26,14 @@ public class Probleme {
                 System.out.print("-> Activite "+k+"-"+(++l).toString()+" { ");
 
                 for (Tuple t : act.getDurees()) {
-                    System.out.print("( "+t.getMachine()+" | "+t.getDuree()+" ) ");
+                    System.out.print("(Machine "+t.getMachine()+", durée "+t.getDuree()+") ");
                 }
 
                 System.out.print("}\n");
 
             }
+
+            System.out.print("\n");
 
         }
     }
