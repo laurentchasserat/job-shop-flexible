@@ -2,16 +2,20 @@ package donneesDuProbleme;
 
 import java.util.ArrayList;
 
-public class Jobs {
+public class Job {
 
     private ArrayList<Activite> activites;
 
-    public Jobs(ArrayList<Activite> mesActivites) {
+    public Job(ArrayList<Activite> mesActivites) {
         this.activites = mesActivites;
     }
 
     public Activite getActiviteNumero(int index) {
         return activites.get(index);
+    }
+
+    public ArrayList<Activite> getActivites() {
+        return activites;
     }
 
 }

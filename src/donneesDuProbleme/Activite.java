@@ -10,6 +10,7 @@ public class Activite {
         this.durees = mesDurees;
     }
 
-
-
+    public ArrayList<Tuple> getDurees() {
+        return durees;
+    }
 }
