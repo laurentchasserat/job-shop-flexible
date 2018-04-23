@@ -28,45 +28,56 @@ public class Parser {
             //Pour chaque job
             while ((ligne=buff.readLine())!=null){
 
-                String delims = "[ ]+";
-                String[] tokens = ligne.split(delims);
+                if (!ligne.isEmpty()) {
 
-                ArrayList<Tuple> tuples;
-                ArrayList<Activite> activites = new ArrayList<>();
+                    String delims = "[ ]+";
+                    String[] tokens = ligne.split(delims);
 
-                // Pour chaque activité
-                for (int i = 0; i < tokens.length; ) {
+                    ArrayList<Tuple> tuples;
+                    ArrayList<Activite> activites = new ArrayList<>();
 
-                    // Reset des tuples
-                    tuples = new ArrayList<>();
 
-                    if (i == 0) {
-                        // Premier chiffre inutile
-                        i++;
-                    } else {
+                    // Pour chaque activité
+                    for (int i = 0; i < tokens.length; ) {
 
-                        //Le premier nombre représente le nombre de machine pour cette activité
-                        int nbMachinesPossibles = Integer.parseInt(tokens[i]);
-                        i++;
 
-                        // Pour chaque paire machine-temps
-                        for (int k = 0; k<nbMachinesPossibles; k++) {
-                            Tuple t = new Tuple(Integer.parseInt(tokens[i]),Integer.parseInt(tokens[i+1]));
-                            i++; i++;
-                            tuples.add(t);
+                        // Reset des tuples
+                        tuples = new ArrayList<>();
+
+                        if (i == 0) {
+                            // Premier chiffre inutile
+                            //Si la ligne commence par un espace alors on saute un caractère de plus
+                            if (tokens[0].isEmpty()) i++;
+                            i++;
+
+                        } else {
+
+                            //Le premier nombre représente le nombre de machine pour cette activité
+                            int nbMachinesPossibles = Integer.parseInt(tokens[i]);
+                            i++;
+
+                            // Pour chaque paire machine-temps
+                            for (int k = 0; k < nbMachinesPossibles; k++) {
+                                Tuple t = new Tuple(Integer.parseInt(tokens[i]), Integer.parseInt(tokens[i + 1]));
+                                i++;
+                                i++;
+                                tuples.add(t);
+                            }
                         }
+
+                        // On ajoute l'activité (sauf au premier passage qui est inutile);
+                        if (tokens[0].isEmpty()) { // Si les lignes commencent par un espace
+                            if (i > 2) activites.add(new Activite(tuples));
+                        } else { // Si les lignes commencent par un chiffre
+                            if (i > 1) activites.add(new Activite(tuples));
+                        }
+
                     }
 
-                    // On ajoute l'activité (sauf au premier passage qui est inutile);
-                    if (i!=1) activites.add(new Activite(tuples));
+                    // Fini de créer les activités : on les ajoute au job
+                    jobs.add(new Job(activites));
 
                 }
-
-                // Fini de créer les activités : on les ajoute au job
-                jobs.add(new Job(activites));
-
-
-                // System.out.println(ligne);
             }
 
             // Fini de lire : on peut générer le problème
