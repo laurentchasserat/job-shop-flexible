@@ -14,7 +14,7 @@ public class Parser {
 
         // Liste des jobs à venir
         ArrayList<Job> jobs = new ArrayList<>();
-        Probleme problemToReturn = new Probleme(new ArrayList<>());
+        Probleme problemToReturn = new Probleme(new ArrayList<>(), 0, 0);
 
         try{
 
@@ -22,16 +22,20 @@ public class Parser {
             InputStreamReader lecture=new InputStreamReader(flux);
             BufferedReader buff=new BufferedReader(lecture);
             String ligne;
+            // Toute forme d'espace
+            String delims = "\\s+";
 
-            buff.readLine();
+            ligne = buff.readLine();
+
+            String[] tokens = ligne.split(delims);
+            int nbMachines = Integer.parseInt(tokens[1]);
+            int nbJobs = Integer.parseInt(tokens[0]);
 
             //Pour chaque job
             while ((ligne=buff.readLine())!=null){
 
                 if (!ligne.isEmpty()) {
-
-                    String delims = "[ ]+";
-                    String[] tokens = ligne.split(delims);
+                    tokens = ligne.split(delims);
 
                     ArrayList<Tuple> tuples;
                     ArrayList<Activite> activites = new ArrayList<>();
@@ -82,7 +86,7 @@ public class Parser {
 
             // Fini de lire : on peut générer le problème
             buff.close();
-            problemToReturn = new Probleme(jobs);
+            problemToReturn = new Probleme(jobs, nbMachines, nbJobs);
 
 
 
