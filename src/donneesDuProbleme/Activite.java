@@ -1,7 +1,6 @@
 package donneesDuProbleme;
 
-import Exceptions.MachineNotFoundException;
-import org.omg.CosNaming.NamingContextPackage.NotFound;
+import exceptions.MachineNotFoundException;
 
 import java.util.ArrayList;
 
