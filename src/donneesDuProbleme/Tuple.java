@@ -2,10 +2,10 @@ package donneesDuProbleme;
 
 public class Tuple {
 
-    private int indexMachine;
-    private int duree;
+    private Integer indexMachine;
+    private Integer duree;
 
-    public Tuple(int maMachine, int maDuree) {
+    public Tuple(Integer maMachine, Integer maDuree) {
         this.indexMachine = maMachine;
         this.duree = maDuree;
     }

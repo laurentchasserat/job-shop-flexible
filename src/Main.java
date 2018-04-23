@@ -1,7 +1,4 @@
 import donneesDuProbleme.*;
-import tests.TestDonnees;
-
-import java.util.ArrayList;
 
 public class Main {
 
