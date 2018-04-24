@@ -1,9 +1,9 @@
 package donneesDuProbleme;
 
+import outils.Gantt;
 import outils.PlanningDesActivites;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 
@@ -11,6 +11,8 @@ public class Solution {
 
     // Le problème dont ceci est la solution
     private Probleme probleme;
+
+    private Gantt gantt;
 
     // Les machines retenues pour chaque activité de chaque job (ex : ( (1,2,2), (2,1,3), (3,2) ) )
     // /!\ Vérifier dans le problème qu'elles appartiennent bien au pull de machines pour cette activité !!!
@@ -43,9 +45,11 @@ public class Solution {
         for (Integer job : operationSequence) {
 
             int machineCourante = machineAssignment.get(job-1).get(indicesDesActivites.get(job-1)) -1;
+
             if (verbose) System.out.println("Job courant : "+job);
             if (verbose) System.out.println("Machine courante : "+(machineCourante+1));
             if (verbose) System.out.println("Activité courante : "+(indicesDesActivites.get(job-1)+1));
+
             int ancienneDuree = -1;
             int dureeAAjouter = probleme.getJobs().get(job-1).getActivites().get(indicesDesActivites.get(job-1))
                     .getDureeDeLaMachine(machineCourante+1);
@@ -56,14 +60,17 @@ public class Solution {
             // Si c'est la première activité du job on prend directement la fin de l'activité précédente sur cette machine
 
             if (indicesDesActivites.get(job-1).equals(0)) {
-                if (verbose) System.out.println("Premiere activite du job");
                 ancienneDuree = dispoAuPlusTotDesMachines.get(machineCourante);
+
+                if (verbose) System.out.println("Premiere activite du job");
                 if (verbose) System.out.println("Ancienne durée : "+ancienneDuree);
+
             } else {
-                if (verbose) System.out.println("Pas premiere activite du job");
                 Integer maxMachines = dispoAuPlusTotDesMachines.get(machineCourante);
                 Integer maxJob = planning.getPlanning().get(job-1).get(indicesDesActivites.get(job-1)-1).getFin() ;
                 ancienneDuree = Integer.max(maxJob,maxMachines);
+
+                if (verbose) System.out.println("Pas premiere activite du job");
                 if (verbose) System.out.println("Max machines : "+maxMachines+", Max jobs : "+maxJob+", Ancienne durée : "+ancienneDuree);
             }
 
@@ -76,10 +83,11 @@ public class Solution {
             dispoAuPlusTotDesMachines.set(machineCourante, ancienneDuree + dureeAAjouter);
             planning.getPlanning().get(job-1).get(indicesDesActivites.get(job-1)).setFin(ancienneDuree+dureeAAjouter);
             indicesDesActivites.set((job-1), indicesDesActivites.get(job-1)+1);
+
             if (verbose) System.out.println("Incrémentation ! Nouvelle durée : "+dispoAuPlusTotDesMachines.get(machineCourante));
             if (verbose) System.out.println();
             if (verbose) System.out.println("Dates de fin d'utilisation des machines :");
-            if (verbose) for (Integer i : dispoAuPlusTotDesMachines) {
+            for (Integer i : dispoAuPlusTotDesMachines) {
                 if (verbose) System.out.println(i);
             }
             if (verbose) System.out.println();
@@ -90,6 +98,7 @@ public class Solution {
 
         }
 
+        this.gantt = new Gantt(this.probleme, this, planning);
         int resultat = Collections.max(dispoAuPlusTotDesMachines);
 
 
@@ -122,5 +131,13 @@ public class Solution {
 
 
         System.out.println();
+    }
+
+    public ArrayList<ArrayList<Integer>> getMachineAssignment() {
+        return machineAssignment;
+    }
+
+    public Gantt getGantt() {
+        return gantt;
     }
 }

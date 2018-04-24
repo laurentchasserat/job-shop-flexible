@@ -1,6 +1,6 @@
 package outils;
 
-public class DatesDebutFin {
+public class DatesDebutFin implements Comparable<DatesDebutFin>{
     private Integer debut;
     private Integer fin;
 
@@ -23,5 +23,12 @@ public class DatesDebutFin {
 
     public void setFin(Integer fin) {
         this.fin = fin;
+    }
+
+    @Override
+    public int compareTo(DatesDebutFin datesDebutFin) {
+        int resultat = 0;
+        if (this.getDebut()<datesDebutFin.getDebut()) resultat = -1;
+        return resultat;
     }
 }
