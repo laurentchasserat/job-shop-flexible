@@ -30,7 +30,7 @@ public class Tests {
         Probleme pb1 = TestDonnees.exemple1();
         pb1.afficherProbleme();
 
-        /* TEMPORAIREMENT COMMENTE PARCE QUE PLUS LISIBLE POUR DEBUGER
+        // TEMPORAIREMENT COMMENTE PARCE QUE PLUS LISIBLE POUR DEBUGER
 
         System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("Test de la création d'un problème à l'aide du parser sur le jeu de données \"TextData/Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk01.fjs\" : ");
@@ -53,7 +53,7 @@ public class Tests {
         Probleme pb4 = Parser.parse("./TextData/Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk08.fjs");
         pb4.afficherProbleme();
 
-        */
+
 
         System.out.println("####################### TESTS SUR L'EVALUATION ET L'AFFICHAGE DE SOLUTIONS #######################");
         System.out.println();
@@ -85,11 +85,21 @@ public class Tests {
         sol2.getGantt().afficherGantt();
 
         System.out.println();
-        System.out.println("-----------------------------------------------------------------------------------------");
-        System.out.println("Test de la génération d'une solution par heuristique gloutonne pour le problème du cours ");
-        System.out.println("-----------------------------------------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("Test de la génération d'une solution par heuristique gloutonne");
+        System.out.println("--------------------------------------------------------------");
+
+        System.out.println();
+        System.out.println("Pour le problème du cours...");
         Solution solGloutonne = CalculSolutions.heuristiqueGloutonne(pb1);
         solGloutonne.afficherSolution();
         solGloutonne.getGantt().afficherGantt();
+
+        System.out.println();
+        System.out.println("...et pour un problème un peu plus gros !");
+        System.out.println();
+        Solution solGloutonne2 = CalculSolutions.heuristiqueGloutonne(pb4);
+        solGloutonne2.afficherSolution();
+        solGloutonne2.getGantt().afficherGantt();
     }
 }

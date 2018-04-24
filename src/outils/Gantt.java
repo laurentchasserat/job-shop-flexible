@@ -46,7 +46,7 @@ public class Gantt {
         ArrayList<Character> jobSymbols = new ArrayList<>();
         for (int i = 0; i<nbJobs; i++) {
             jobSymbols.add((char)(i+49));
-            System.out.println("Job "+(i+1)+" : "+((char)(i+65)));
+            System.out.println("Job "+(i+1)+" : "+((char)(i+49)));
         }
         int machine = 0;
         System.out.println("----------");
