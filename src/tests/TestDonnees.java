@@ -125,5 +125,37 @@ public class TestDonnees {
         return sol;
     }
 
+    @SuppressWarnings("Duplicates")
+    public static Solution solution2() {
+        ArrayList<ArrayList<Integer>> ma = new ArrayList<>();
+        ma.add(new ArrayList<>());
+        ma.add(new ArrayList<>());
+        ma.add(new ArrayList<>());
+        ma.get(0).add(1);
+        ma.get(0).add(2);
+        ma.get(0).add(1);
+        ma.get(1).add(2);
+        ma.get(1).add(1);
+        ma.get(1).add(3);
+        ma.get(2).add(3);
+        ma.get(2).add(2);
+
+        ArrayList<Integer> os = new ArrayList<>();
+        os.add(1);
+        os.add(2);
+        os.add(3);
+        os.add(1);
+        os.add(2);
+        os.add(3);
+        os.add(1);
+        os.add(2);
+
+        Solution sol = new Solution(exemple1(), ma, os);
+
+        return sol;
+    }
+
+
+
 
 }

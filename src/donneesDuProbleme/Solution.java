@@ -26,7 +26,7 @@ public class Solution {
     }
 
     // Cette fonction renvoie le coût en unité de temps de la solution en question
-    public Integer calculerCout() {
+    public Integer calculerCout(boolean verbose) {
 
         // Initialisation des dispos des machines
         ArrayList<Integer> dispoAuPlusTotDesMachines = new ArrayList<>();
@@ -43,9 +43,9 @@ public class Solution {
         for (Integer job : operationSequence) {
 
             int machineCourante = machineAssignment.get(job-1).get(indicesDesActivites.get(job-1)) -1;
-            System.out.println("Job courant : "+job);
-            System.out.println("Machine courante : "+(machineCourante+1));
-            System.out.println("Activité courante : "+(indicesDesActivites.get(job-1)+1));
+            if (verbose) System.out.println("Job courant : "+job);
+            if (verbose) System.out.println("Machine courante : "+(machineCourante+1));
+            if (verbose) System.out.println("Activité courante : "+(indicesDesActivites.get(job-1)+1));
             int ancienneDuree = -1;
             int dureeAAjouter = probleme.getJobs().get(job-1).getActivites().get(indicesDesActivites.get(job-1))
                     .getDureeDeLaMachine(machineCourante+1);
@@ -56,45 +56,39 @@ public class Solution {
             // Si c'est la première activité du job on prend directement la fin de l'activité précédente sur cette machine
 
             if (indicesDesActivites.get(job-1).equals(0)) {
-                System.out.println("Premiere activite du job");
+                if (verbose) System.out.println("Premiere activite du job");
                 ancienneDuree = dispoAuPlusTotDesMachines.get(machineCourante);
-                System.out.println("Ancienne durée : "+ancienneDuree);
+                if (verbose) System.out.println("Ancienne durée : "+ancienneDuree);
             } else {
-                System.out.println("Pas premiere activite du job");
+                if (verbose) System.out.println("Pas premiere activite du job");
                 Integer maxMachines = dispoAuPlusTotDesMachines.get(machineCourante);
                 Integer maxJob = planning.getPlanning().get(job-1).get(indicesDesActivites.get(job-1)-1).getFin() ;
                 ancienneDuree = Integer.max(maxJob,maxMachines);
-                System.out.println("Max machines : "+maxMachines+", Max jobs : "+maxJob+", Ancienne durée : "+ancienneDuree);
+                if (verbose) System.out.println("Max machines : "+maxMachines+", Max jobs : "+maxJob+", Ancienne durée : "+ancienneDuree);
             }
 
             // Mise à jour des dispos des machines, des dates des activités et des indices
 
-            System.out.println("Incrementation sur le job "+job+" machine "+(machineCourante+1)+" ancienne durée "+ancienneDuree+" a ajouter "+ dureeAAjouter);
+            if (verbose) System.out.println("Incrementation sur le job "+job+" machine "+(machineCourante+1)+" ancienne durée "+ancienneDuree+" a ajouter "+ dureeAAjouter);
 
             // On ajoute la durée à la bonne machine
             planning.getPlanning().get(job-1).get(indicesDesActivites.get(job-1)).setDebut(ancienneDuree);
             dispoAuPlusTotDesMachines.set(machineCourante, ancienneDuree + dureeAAjouter);
             planning.getPlanning().get(job-1).get(indicesDesActivites.get(job-1)).setFin(ancienneDuree+dureeAAjouter);
             indicesDesActivites.set((job-1), indicesDesActivites.get(job-1)+1);
-            System.out.println("Incrémentation ! Nouvelle durée : "+dispoAuPlusTotDesMachines.get(machineCourante));
-            System.out.println();
-            System.out.println("Dates de fin d'utilisation des machines :");
-            for (Integer i : dispoAuPlusTotDesMachines) {
-                System.out.println(i);
+            if (verbose) System.out.println("Incrémentation ! Nouvelle durée : "+dispoAuPlusTotDesMachines.get(machineCourante));
+            if (verbose) System.out.println();
+            if (verbose) System.out.println("Dates de fin d'utilisation des machines :");
+            if (verbose) for (Integer i : dispoAuPlusTotDesMachines) {
+                if (verbose) System.out.println(i);
             }
-            System.out.println();
-            planning.afficherPlanning();
-            System.out.println();
-            System.out.println("----------------------");
-            System.out.println();
+            if (verbose) System.out.println();
+            if (verbose) planning.afficherPlanning();
+            if (verbose) System.out.println();
+            if (verbose) System.out.println("----------------------");
+            if (verbose) System.out.println();
 
         }
-
-        System.out.println("Dates de fin d'utilisation des machines :");
-        for (Integer i : dispoAuPlusTotDesMachines) {
-            System.out.println(i);
-        }
-        System.out.println();
 
         int resultat = Collections.max(dispoAuPlusTotDesMachines);
 

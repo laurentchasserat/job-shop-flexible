@@ -62,12 +62,14 @@ public class Tests {
         System.out.println("----------------------------------------------------------------------------------------------------");
         System.out.println();
         Solution sol1 = TestDonnees.solution1();
+        Solution sol2 = TestDonnees.solution2();
         sol1.afficherSolution();
 
         System.out.println("--------------------------------------");
         System.out.println("Test du calcul du coût d'une solution ");
         System.out.println("--------------------------------------");
         System.out.println();
-        System.out.println("Coût calculé pour la solution du cours : "+sol1.calculerCout()+" unités de temps.");
+        System.out.println("Coût calculé pour MA = ( ( 1 2 1 ) ( 2 1 3 ) ( 3 2 ) ), OS = ( 1 1 1 2 2 2 3 3 ) : "+sol1.calculerCout(true)+" unités de temps.");
+        System.out.println("Coût calculé pour MA = ( ( 1 2 1 ) ( 2 1 3 ) ( 3 2 ) ), OS = ( 1 2 3 1 2 3 1 2 ) : "+sol2.calculerCout(false)+" unités de temps.");
     }
 }
