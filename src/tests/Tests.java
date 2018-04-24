@@ -29,6 +29,8 @@ public class Tests {
         Probleme pb1 = TestDonnees.exemple1();
         pb1.afficherProbleme();
 
+        /* TEMPORAIREMENT COMMENTE PARCE QUE PLUS LISIBLE POUR DEBUGER
+
         System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("Test de la création d'un problème à l'aide du parser sur le jeu de données \"TextData/Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk01.fjs\" : ");
         System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------");
@@ -49,6 +51,8 @@ public class Tests {
         System.out.println();
         Probleme pb4 = Parser.parse("./TextData/Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk08.fjs");
         pb4.afficherProbleme();
+
+        */
 
         System.out.println("####################### TESTS SUR L'EVALUATION ET L'AFFICHAGE DE SOLUTIONS #######################");
         System.out.println();
