@@ -11,8 +11,11 @@ public class Gantt {
     private List<ArrayList<DatesDebutFinPlusJob>> gantt;
     private int nbJobs;
 
-    public Gantt(Probleme pb, Solution sol, PlanningDesActivites acts) {
+    private Integer tempsTotal;
+
+    public Gantt(Probleme pb, Solution sol, PlanningDesActivites acts, Integer t) {
         this.nbJobs = pb.getNbJobs();
+        this.tempsTotal = t;
         gantt = new ArrayList<>();
         for (int i=0; i<pb.getNbMachines(); i++) {
             gantt.add(new ArrayList<>());
@@ -27,6 +30,7 @@ public class Gantt {
                 act++;
                 gantt.get(machineCourante).sort(DatesDebutFin::compareTo);
             }
+
             job++;
         }
 
@@ -34,6 +38,7 @@ public class Gantt {
     }
 
     public void afficherGantt() {
+
         System.out.println();
         System.out.println("Gantt :");
         System.out.println("----------");
@@ -43,37 +48,48 @@ public class Gantt {
             jobSymbols.add((char)(i+49));
             System.out.println("Job "+(i+1)+" : "+((char)(i+65)));
         }
+        int machine = 0;
         System.out.println("----------");
 
-        System.out.println("Temps :     0   1   2   ");
-        System.out.println("            |   |   |   ");
-        System.out.println("            V   V   V   ");
-        int machine = 0;
-
         for (ArrayList<DatesDebutFinPlusJob> j : gantt) {
-            System.out.format("Machine %3d | ", machine+1);
+
+            System.out.format("Machine %3d : | ", machine+1);
+
             boolean initialized = false;
             DatesDebutFinPlusJob dateprec = new DatesDebutFinPlusJob(0,0,0);
+
+            int compteur = 0;
             for (DatesDebutFinPlusJob dates : j) {
 
-                if (initialized) {
-                    for (int l = 0; l<(dates.getDebut()-dateprec.getFin()); l++){
-                        System.out.print("  | ");
-                    }
+                for (int l = 0; l<(dates.getDebut()-dateprec.getFin()); l++){
+                    System.out.print("  | ");
+                    compteur++;
                 }
 
                 for (int l = 0; l<(dates.getFin()-dates.getDebut()); l++){
                     initialized = true;
                     System.out.print(jobSymbols.get(dates.getJob())+" | ");
+                    compteur++;
                 }
+
                 dateprec = dates;
 
+
             }
-            System.out.print("--> "+dateprec.getFin());
+            while (compteur<tempsTotal) {
+                System.out.print("  | ");
+                compteur++;
+            }
             machine++;
             System.out.println();
 
         }
+
+        System.out.println("----------");
+        System.out.println("Temps total : "+tempsTotal);
     }
 
+    public Integer getTempsTotal() {
+        return tempsTotal;
+    }
 }

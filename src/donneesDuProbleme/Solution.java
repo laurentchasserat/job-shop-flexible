@@ -21,6 +21,8 @@ public class Solution {
     // L'ordre dans lequel chaque tache sera exécutée classée selon le numéro du job (ex : (1,1,1,2,2,2,3,3) )
     private ArrayList<Integer> operationSequence;
 
+    private Integer cout;
+
     public Solution(Probleme pb, ArrayList<ArrayList<Integer>> ma, ArrayList<Integer> os ){
         this.probleme = pb;
         this.machineAssignment = ma;
@@ -98,9 +100,12 @@ public class Solution {
 
         }
 
-        this.gantt = new Gantt(this.probleme, this, planning);
+
         int resultat = Collections.max(dispoAuPlusTotDesMachines);
 
+        this.cout = resultat;
+
+        this.gantt = new Gantt(this.probleme, this, planning, cout);
 
         return resultat;
     }
