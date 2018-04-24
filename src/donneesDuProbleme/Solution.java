@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
-import static java.lang.Math.max;
 
 public class Solution {
 
@@ -14,6 +13,7 @@ public class Solution {
     private Probleme probleme;
 
     // Les machines retenues pour chaque activité de chaque job (ex : ( (1,2,2), (2,1,3), (3,2) ) )
+    // /!\ Vérifier dans le problème qu'elles appartiennent bien au pull de machines pour cette activité !!!
     private ArrayList<ArrayList<Integer>> machineAssignment;
 
     // L'ordre dans lequel chaque tache sera exécutée classée selon le numéro du job (ex : (1,1,1,2,2,2,3,3) )
@@ -42,15 +42,10 @@ public class Solution {
         // Pour tous les jobs de la séquence d'opérations
         for (Integer job : operationSequence) {
 
-            try {
-                System.out.println("Pause.");
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
             int machineCourante = machineAssignment.get(job-1).get(indicesDesActivites.get(job-1)) -1;
-            System.out.println("Machine courante : "+machineCourante);
+            System.out.println("Job courant : "+job);
+            System.out.println("Machine courante : "+(machineCourante+1));
+            System.out.println("Activité courante : "+(indicesDesActivites.get(job-1)+1));
             int ancienneDuree = -1;
             int dureeAAjouter = probleme.getJobs().get(job-1).getActivites().get(indicesDesActivites.get(job-1))
                     .getDureeDeLaMachine(machineCourante+1);
@@ -63,21 +58,34 @@ public class Solution {
             if (indicesDesActivites.get(job-1).equals(0)) {
                 System.out.println("Premiere activite du job");
                 ancienneDuree = dispoAuPlusTotDesMachines.get(machineCourante);
+                System.out.println("Ancienne durée : "+ancienneDuree);
             } else {
                 System.out.println("Pas premiere activite du job");
-                ancienneDuree = max(
-                        dispoAuPlusTotDesMachines.get(machineCourante),
-                        planning.getPlanning().get(job-1).get(indicesDesActivites.get(job - 2)).getFin() );
+                Integer maxMachines = dispoAuPlusTotDesMachines.get(machineCourante);
+                Integer maxJob = planning.getPlanning().get(job-1).get(indicesDesActivites.get(job-1)-1).getFin() ;
+                ancienneDuree = Integer.max(maxJob,maxMachines);
+                System.out.println("Max machines : "+maxMachines+", Max jobs : "+maxJob+", Ancienne durée : "+ancienneDuree);
             }
 
-            // Mise à jour des dispos des machines et des dates des activités
+            // Mise à jour des dispos des machines, des dates des activités et des indices
 
-            System.out.println("Incrementation sur le job "+job+" machine "+machineCourante+" ancienne durée "+ancienneDuree+" a ajouter "+ dureeAAjouter);
+            System.out.println("Incrementation sur le job "+job+" machine "+(machineCourante+1)+" ancienne durée "+ancienneDuree+" a ajouter "+ dureeAAjouter);
+
             // On ajoute la durée à la bonne machine
             planning.getPlanning().get(job-1).get(indicesDesActivites.get(job-1)).setDebut(ancienneDuree);
             dispoAuPlusTotDesMachines.set(machineCourante, ancienneDuree + dureeAAjouter);
-            planning.getPlanning().get(job-1).get(indicesDesActivites.get(job-1)).setDebut(ancienneDuree+dureeAAjouter);
+            planning.getPlanning().get(job-1).get(indicesDesActivites.get(job-1)).setFin(ancienneDuree+dureeAAjouter);
+            indicesDesActivites.set((job-1), indicesDesActivites.get(job-1)+1);
             System.out.println("Incrémentation ! Nouvelle durée : "+dispoAuPlusTotDesMachines.get(machineCourante));
+            System.out.println();
+            System.out.println("Dates de fin d'utilisation des machines :");
+            for (Integer i : dispoAuPlusTotDesMachines) {
+                System.out.println(i);
+            }
+            System.out.println();
+            planning.afficherPlanning();
+            System.out.println();
+            System.out.println("----------------------");
             System.out.println();
 
         }

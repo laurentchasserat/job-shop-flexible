@@ -103,7 +103,7 @@ public class TestDonnees {
         ma.add(new ArrayList<>());
         ma.get(0).add(1);
         ma.get(0).add(2);
-        ma.get(0).add(2);
+        ma.get(0).add(1);
         ma.get(1).add(2);
         ma.get(1).add(1);
         ma.get(1).add(3);

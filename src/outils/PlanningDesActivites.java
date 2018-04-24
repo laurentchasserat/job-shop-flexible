@@ -4,6 +4,7 @@ import donneesDuProbleme.Activite;
 import donneesDuProbleme.Job;
 import donneesDuProbleme.Probleme;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class PlanningDesActivites {
@@ -36,5 +37,18 @@ public class PlanningDesActivites {
 
     public ArrayList<ArrayList<DatesDebutFin>> getPlanning() {
         return planning;
+    }
+
+    public void afficherPlanning() {
+        System.out.println("Planning :");
+        int k = 1;
+        for (ArrayList<DatesDebutFin> j : planning) {
+            System.out.print("Job "+k+++" : ");
+            int l = 1;
+            for (DatesDebutFin dates : j) {
+                System.out.print("( Act"+l+++" "+dates.getDebut()+" "+dates.getFin()+" ) ");
+            }
+            System.out.println();
+        }
     }
 }

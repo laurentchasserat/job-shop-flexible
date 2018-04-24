@@ -1,27 +1,27 @@
 package outils;
 
 public class DatesDebutFin {
-    private int debut;
-    private int fin;
+    private Integer debut;
+    private Integer fin;
 
-    public DatesDebutFin(int d, int f) {
+    public DatesDebutFin(Integer d, Integer f) {
         this.debut = d;
         this.fin = f;
     }
 
-    public int getDebut() {
+    public Integer getDebut() {
         return debut;
     }
 
-    public int getFin() {
+    public Integer getFin() {
         return fin;
     }
 
-    public void setDebut(int debut) {
+    public void setDebut(Integer debut) {
         this.debut = debut;
     }
 
-    public void setFin(int fin) {
+    public void setFin(Integer fin) {
         this.fin = fin;
     }
 }
