@@ -1,4 +1,4 @@
-package classes;
+package outils;
 
 public class Graphe {
 

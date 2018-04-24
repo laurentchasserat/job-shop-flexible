@@ -59,6 +59,10 @@ public class Solution {
 
         */
 
+        /** 2e essai **/
+
+        // Générer le graphe !
+
         return 0;
     }
 
@@ -68,24 +72,25 @@ public class Solution {
     public void afficherSolution() {
         System.out.println("Solution :");
 
-        System.out.print("OS = ( ");
-        for (Integer job : operationSequence) {
-            System.out.print(job+" ");
-        }
-        System.out.print(")");
-
-        System.out.println();
-
         System.out.print("MA = (");
         for (ArrayList<Integer> ar : machineAssignment) {
             System.out.print(" ( ");
             for (Integer val : ar) {
                 System.out.print(val+" ");
             }
-            System.out.print(") ");
+            System.out.print(")");
+        }
+        System.out.print(" )");
+        System.out.println();
+
+        System.out.print("OS = ( ");
+        for (Integer job : operationSequence) {
+            System.out.print(job+" ");
         }
         System.out.print(")");
         System.out.println();
+
+
         System.out.println();
     }
 }
