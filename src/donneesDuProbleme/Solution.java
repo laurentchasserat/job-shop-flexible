@@ -27,6 +27,7 @@ public class Solution {
         this.probleme = pb;
         this.machineAssignment = ma;
         this.operationSequence = os;
+        this.calculerCout(false);
     }
 
     // Cette fonction renvoie le coût en unité de temps de la solution en question

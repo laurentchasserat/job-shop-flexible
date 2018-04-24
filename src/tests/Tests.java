@@ -1,5 +1,6 @@
 package tests;
 
+import algos.CalculSolutions;
 import donneesDuProbleme.Parser;
 import donneesDuProbleme.Probleme;
 import donneesDuProbleme.Solution;
@@ -82,5 +83,13 @@ public class Tests {
         System.out.println();
         System.out.println("Pour la solution MA = ( ( 1 2 1 ) ( 2 1 3 ) ( 3 2 ) ), OS = ( 1 2 3 1 2 3 1 2 )");
         sol2.getGantt().afficherGantt();
+
+        System.out.println();
+        System.out.println("-----------------------------------------------------------------------------------------");
+        System.out.println("Test de la génération d'une solution par heuristique gloutonne pour le problème du cours ");
+        System.out.println("-----------------------------------------------------------------------------------------");
+        Solution solGloutonne = CalculSolutions.heuristiqueGloutonne(pb1);
+        solGloutonne.afficherSolution();
+        solGloutonne.getGantt().afficherGantt();
     }
 }

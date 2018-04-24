@@ -38,4 +38,16 @@ public class Activite {
         return solution;
     }
 
+    public Tuple getTupleDeDureeMin() {
+        Integer dureeMin = Integer.MAX_VALUE;
+        Tuple resultat = new Tuple(-1,-1);
+        for (Tuple t : durees) {
+            if (t.getDuree()<dureeMin) {
+                dureeMin = t.getDuree();
+                resultat = t;
+            }
+        }
+        return resultat;
+    }
+
 }
