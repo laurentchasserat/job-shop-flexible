@@ -3,6 +3,7 @@ package outils;
 import donneesDuProbleme.Probleme;
 import donneesDuProbleme.Solution;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,21 +40,34 @@ public class Gantt {
 
     public void afficherGantt() {
 
+        String ANSI_RESET = "\u001B[0m";
+        ArrayList<String> colors = new ArrayList<>();
+        colors.add("\u001B[34m");
+        colors.add("\u001B[31m");
+        colors.add("\u001B[33m");
+        colors.add("\u001B[32m");
+        colors.add("\u001B[35m");
+        colors.add("\u001B[36m");
+        colors.add("\u001B[37m");
+
         System.out.println();
         System.out.println("Gantt :");
-        System.out.println("----------");
+        System.out.println("-------");
+        System.out.println();
         System.out.println("Légende :");
         ArrayList<Character> jobSymbols = new ArrayList<>();
         for (int i = 0; i<nbJobs; i++) {
             jobSymbols.add((char)(i+49));
             System.out.println("Job "+(i+1)+" : "+((char)(i+49)));
         }
+        System.out.println();
+
         int machine = 0;
-        System.out.println("----------");
+        System.out.print("-----------------"); for (int n=0; n<tempsTotal; n++) System.out.print("----"); System.out.println();
 
         for (ArrayList<DatesDebutFinPlusJob> j : gantt) {
 
-            System.out.format("Machine %3d : | ", machine+1);
+            System.out.format("| Machine %3d : | ", machine+1);
 
             boolean initialized = false;
             DatesDebutFinPlusJob dateprec = new DatesDebutFinPlusJob(0,0,0);
@@ -68,9 +82,11 @@ public class Gantt {
 
                 for (int l = 0; l<(dates.getFin()-dates.getDebut()); l++){
                     initialized = true;
-                    System.out.print(jobSymbols.get(dates.getJob())+" | ");
+                    System.out.print(colors.get((int)jobSymbols.get(dates.getJob())%7)+jobSymbols.get(dates.getJob())+ANSI_RESET+" | ");
                     compteur++;
                 }
+
+
 
                 dateprec = dates;
 
@@ -82,10 +98,13 @@ public class Gantt {
             }
             machine++;
             System.out.println();
+            System.out.print("-----------------"); for (int n=0; n<tempsTotal; n++) System.out.print("----"); System.out.println();
 
         }
-
-        System.out.println("----------");
+        System.out.println();
+        System.out.print("| Temps    : "); for (int n=0; n<=tempsTotal; n++) System.out.format("---|", n); System.out.println("-->");
+        System.out.print("             "); for (int n=0; n<=tempsTotal; n++) System.out.format("%4d", n); System.out.println();
+        System.out.println();
         System.out.println("Temps total : "+tempsTotal);
     }
 
