@@ -1,6 +1,8 @@
 package tests;
 
+import algos.AlgoRechercheLocale;
 import algos.CalculSolutions;
+import algos.GenererVoisinnages;
 import donneesDuProbleme.Parser;
 import donneesDuProbleme.Probleme;
 import donneesDuProbleme.Solution;
@@ -101,5 +103,47 @@ public class Tests {
         Solution solGloutonne2 = CalculSolutions.heuristiqueGloutonne(pb4);
         solGloutonne2.afficherSolution();
         solGloutonne2.getGantt().afficherGantt();
+
+        System.out.println();
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("Test de la recherche de voisinnage par permutation            ");
+        System.out.println("--------------------------------------------------------------");
+        System.out.println();
+
+        System.out.println("Solution initiale :");
+        sol2.afficherSolution();
+        Solution solVoisine1 = GenererVoisinnages.OSPermutation(sol2, 2, 4);
+        System.out.println();
+        System.out.println("Permutation des indices 2 et 4 de OS :");
+        System.out.println();
+        solVoisine1.afficherSolution();
+
+        System.out.println();
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("Test de l'algo de hill climbing                               ");
+        System.out.println("--------------------------------------------------------------");
+        System.out.println();
+
+        /*
+        AlgoRechercheLocale algo = new AlgoRechercheLocale(TestDonnees.exemple1());
+        Solution sol = algo.rechercheLocaleParPermutationsSimples(CalculSolutions.heuristiqueGloutonne(TestDonnees.exemple1()));
+        System.out.println("Solution initiale : ");
+        CalculSolutions.heuristiqueGloutonne(TestDonnees.exemple1());
+        System.out.println("Solution trouvée par l'algo :");
+        sol.afficherSolution();
+        System.out.println("Cout : "+sol.getCout());
+        sol.getGantt().afficherGantt();
+        */
+
+
+        AlgoRechercheLocale algo = new AlgoRechercheLocale(pb4);
+        Solution sol = algo.rechercheLocaleParPermutationsSimples(CalculSolutions.heuristiqueGloutonne(pb4));
+        System.out.println("Solution initiale : ");
+        CalculSolutions.heuristiqueGloutonne(pb4);
+        System.out.println("Solution trouvée par l'algo :");
+        sol.afficherSolution();
+        System.out.println("Cout : "+sol.getCout());
+        sol.getGantt().afficherGantt();
+
     }
 }

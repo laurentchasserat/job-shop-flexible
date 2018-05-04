@@ -143,4 +143,16 @@ public class Solution {
     public Gantt getGantt() {
         return gantt;
     }
+
+    public ArrayList<Integer> getOperationSequence() {
+        return operationSequence;
+    }
+
+    public Integer getCout() {
+        return cout;
+    }
+
+    public Probleme getProbleme() {
+        return probleme;
+    }
 }
