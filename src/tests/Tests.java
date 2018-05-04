@@ -134,8 +134,15 @@ public class Tests {
         System.out.println("Cout : "+sol.getCout());
         sol.getGantt().afficherGantt();
         */
-
-
+        AlgoRechercheLocale algo = new AlgoRechercheLocale(pb2);
+        Solution sol = algo.rechercheLocaleParPermutationsSimples(CalculSolutions.heuristiqueGloutonne(pb2));
+        System.out.println("Solution initiale : ");
+        CalculSolutions.heuristiqueGloutonne(pb2);
+        System.out.println("Solution trouvée par l'algo :");
+        sol.afficherSolution();
+        System.out.println("Cout : "+sol.getCout());
+        sol.getGantt().afficherGantt();
+        /*
         AlgoRechercheLocale algo = new AlgoRechercheLocale(pb4);
         Solution sol = algo.rechercheLocaleParPermutationsSimples(CalculSolutions.heuristiqueGloutonne(pb4));
         System.out.println("Solution initiale : ");
@@ -144,6 +151,7 @@ public class Tests {
         sol.afficherSolution();
         System.out.println("Cout : "+sol.getCout());
         sol.getGantt().afficherGantt();
+        */
 
     }
 }
