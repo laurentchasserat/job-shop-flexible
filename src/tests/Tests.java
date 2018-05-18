@@ -1,6 +1,7 @@
 package tests;
 
 import algos.AlgoRechercheLocale;
+import algos.CalculMutations;
 import algos.CalculSolutions;
 import algos.GenererVoisinnages;
 import donneesDuProbleme.Parser;
@@ -178,15 +179,29 @@ public class Tests {
         ArrayList<Solution> sols = CalculSolutions.genererNSolutionsAleatoiresTriees(pb2,15);
         int v = 1;
         for (Solution s : sols) {
-            System.out.println("Solution "+v+++" :");
-            s.afficherSolution();
-            System.out.println("Cout : "+s.getCout());
+            System.out.print("[Solution "+v+++"]");
+            System.out.print(" Cout : "+s.getCout());
             //s.getGantt().afficherGantt();
             System.out.println();
         }
-        for (Solution s : sols) {
-            System.out.println("Cout : "+s.getCout());
-        }
+        System.out.println("Lancement d'un hill climbing sur la meilleure solution générée...");
+        Solution superSol = algo.rechercheLocaleParPermutationsSimples(sols.get(0));
+        superSol.getGantt().afficherGantt();
+
+        System.out.println();
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("Tests sur les mutations                                       ");
+        System.out.println("--------------------------------------------------------------");
+        System.out.println();
+
+        System.out.println("Solution considérée :");
+        TestDonnees.solution1().afficherSolution();
+        System.out.println("Mutation Swap/OS :");
+        Solution solMutee1 = CalculMutations.mutationSwapSurOSSimple(TestDonnees.solution1());
+        solMutee1.afficherSolution();
+        System.out.println("Mutation Changement machine :");
+        Solution solMutee2 = CalculMutations.mutationChangementSurMASimple(solMutee1);
+        solMutee2.afficherSolution();
 
     }
 }
