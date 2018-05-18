@@ -175,7 +175,7 @@ public class Tests {
         System.out.println();
 
         System.out.println("Génération de 15 solutions aléatoires...");
-        ArrayList<Solution> sols = CalculSolutions.genererNSolutionsAleatoires(pb2,15);
+        ArrayList<Solution> sols = CalculSolutions.genererNSolutionsAleatoiresTriees(pb2,15);
         int v = 1;
         for (Solution s : sols) {
             System.out.println("Solution "+v+++" :");
@@ -183,6 +183,9 @@ public class Tests {
             System.out.println("Cout : "+s.getCout());
             //s.getGantt().afficherGantt();
             System.out.println();
+        }
+        for (Solution s : sols) {
+            System.out.println("Cout : "+s.getCout());
         }
 
     }

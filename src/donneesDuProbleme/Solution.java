@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 
-public class Solution {
+public class Solution implements Comparable<Solution>{
 
     // Le problème dont ceci est la solution
     private Probleme probleme;
@@ -154,5 +154,12 @@ public class Solution {
 
     public Probleme getProbleme() {
         return probleme;
+    }
+
+    @Override
+    public int compareTo(Solution s2) {
+        int resultat = 0;
+        if (this.getCout()<s2.getCout()) resultat = -1;
+        return resultat;
     }
 }

@@ -53,7 +53,7 @@ public class CalculSolutions {
 
     }
 
-    public static ArrayList<Solution> genererNSolutionsAleatoires(Probleme p, Integer nbSolsAGenerer) {
+    public static ArrayList<Solution> genererNSolutionsAleatoiresTriees(Probleme p, Integer nbSolsAGenerer) {
         ArrayList<Solution> resultat = new ArrayList<>();
 
         for (int u=0; u<nbSolsAGenerer; u++) {
@@ -92,7 +92,7 @@ public class CalculSolutions {
             Solution sol = new Solution(p, ma, os);
             resultat.add(sol);
         }
-
+        resultat.sort(Solution::compareTo);
         return resultat;
     }
 }
