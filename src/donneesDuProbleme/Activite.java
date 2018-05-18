@@ -3,6 +3,7 @@ package donneesDuProbleme;
 import exceptions.MachineNotFoundException;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Activite {
 
@@ -48,6 +49,15 @@ public class Activite {
             }
         }
         return resultat;
+    }
+
+    public Tuple getTupleAleatoire() {
+        Random rng = new Random();
+        rng.setSeed(System.nanoTime());
+        Integer random = Math.abs(rng.nextInt());
+        Integer indice = random%(durees.size());
+        //System.out.println("Random : "+random+", Indice : "+indice);
+        return durees.get(indice);
     }
 
 }

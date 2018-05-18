@@ -7,6 +7,8 @@ import donneesDuProbleme.Parser;
 import donneesDuProbleme.Probleme;
 import donneesDuProbleme.Solution;
 
+import java.util.ArrayList;
+
 public class Tests {
     public static void runTests(){
 
@@ -32,6 +34,7 @@ public class Tests {
         Probleme pb1 = TestDonnees.exemple1();
         pb1.afficherProbleme();
 
+
         // TEMPORAIREMENT COMMENTE PARCE QUE PLUS LISIBLE POUR DEBUGER
 
         System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------");
@@ -41,6 +44,7 @@ public class Tests {
         Probleme pb2 = Parser.parse("./TextData/Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk01.fjs");
         pb2.afficherProbleme();
 
+        /*
         System.out.println("----------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("Test de la création d'un problème à l'aide du parser sur le jeu de données \"/TextData/Monaldo/Fjsp/Job_Data/Barnes/Text/mt10c1.fjs\" : ");
         System.out.println("----------------------------------------------------------------------------------------------------------------------------------------");
@@ -54,6 +58,7 @@ public class Tests {
         System.out.println();
         Probleme pb4 = Parser.parse("./TextData/Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk08.fjs");
         pb4.afficherProbleme();
+        */
 
 
 
@@ -76,9 +81,9 @@ public class Tests {
         System.out.println("Coût calculé pour MA = ( ( 1 2 1 ) ( 2 1 3 ) ( 3 2 ) ), OS = ( 1 2 3 1 2 3 1 2 ) : "+sol2.calculerCout(false)+" unités de temps.");
 
         System.out.println();
-        System.out.println("-------------------------------------------------------------");
-        System.out.println("Test de la génération et de l'affichagedu diagramme de Gantt ");
-        System.out.println("-------------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("Test de la génération et de l'affichage du diagramme de Gantt ");
+        System.out.println("--------------------------------------------------------------");
         System.out.println();
         System.out.println("Pour la solution MA = ( ( 1 2 1 ) ( 2 1 3 ) ( 3 2 ) ), OS = ( 1 1 1 2 2 2 3 3 )");
         sol1.getGantt().afficherGantt();
@@ -97,12 +102,14 @@ public class Tests {
         solGloutonne.afficherSolution();
         solGloutonne.getGantt().afficherGantt();
 
+        /*
         System.out.println();
         System.out.println("...et pour un problème un peu plus gros !");
         System.out.println();
         Solution solGloutonne2 = CalculSolutions.heuristiqueGloutonne(pb4);
         solGloutonne2.afficherSolution();
         solGloutonne2.getGantt().afficherGantt();
+        */
 
         System.out.println();
         System.out.println("--------------------------------------------------------------");
@@ -117,6 +124,10 @@ public class Tests {
         System.out.println("Permutation des indices 2 et 4 de OS :");
         System.out.println();
         solVoisine1.afficherSolution();
+
+        System.out.println();
+        System.out.println("####################### TESTS SUR L'ALGORITHME DE HILL CLIMBING #######################");
+        System.out.println();
 
         System.out.println();
         System.out.println("--------------------------------------------------------------");
@@ -152,6 +163,27 @@ public class Tests {
         System.out.println("Cout : "+sol.getCout());
         sol.getGantt().afficherGantt();
         */
+
+        System.out.println();
+        System.out.println("####################### TESTS SUR L'ALGORITHME GENETIQUE #######################");
+        System.out.println();
+
+        System.out.println();
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("Test de la génération aléatoire de solutions multiples        ");
+        System.out.println("--------------------------------------------------------------");
+        System.out.println();
+
+        System.out.println("Génération de 15 solutions aléatoires...");
+        ArrayList<Solution> sols = CalculSolutions.genererNSolutionsAleatoires(pb2,15);
+        int v = 1;
+        for (Solution s : sols) {
+            System.out.println("Solution "+v+++" :");
+            s.afficherSolution();
+            System.out.println("Cout : "+s.getCout());
+            //s.getGantt().afficherGantt();
+            System.out.println();
+        }
 
     }
 }

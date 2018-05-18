@@ -9,16 +9,18 @@ public class AlgoRechercheLocale {
 
     private Probleme probleme;
 
+    private int nbIterations = 0;
+
     public AlgoRechercheLocale(Probleme pb ) {
         this.probleme = pb;
     }
 
     public Solution rechercheLocaleParPermutationsSimples(Solution solutionInitiale) {
-
+        nbIterations++;
         Solution inter = solutionInitiale;
         Integer coutInter;
         int taille = solutionInitiale.getOperationSequence().size();
-        System.out.println("Taille du OS : "+taille);
+        //System.out.println("Taille du OS : "+taille);
         boolean over = false;
 
         for (int ind1 = 0; ((ind1 < taille) && !over); ind1++) {
@@ -28,8 +30,8 @@ public class AlgoRechercheLocale {
                 //inter.getGantt().afficherGantt();
 
                 if (coutInter < solutionInitiale.getCout()) {
-                    System.out.println("Nouveau meilleur coût trouvé : " + coutInter);
-                    inter.afficherSolution();
+                    System.out.println("[Iteration "+nbIterations+"] Nouveau meilleur coût trouvé : " + coutInter);
+                    //inter.afficherSolution();
                     over = true;
                 }
             }
@@ -41,6 +43,8 @@ public class AlgoRechercheLocale {
             solutionFinale = rechercheLocaleParPermutationsSimples(inter);
         } else {
             solutionFinale = solutionInitiale;
+            System.out.println("[Iteration "+nbIterations+"] Solution finale trouvée : "+solutionFinale.getCout()+" au bout de "+nbIterations+" itérations.");
+            nbIterations=0;
         }
 
         return solutionFinale;
