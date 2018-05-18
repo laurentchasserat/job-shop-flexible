@@ -28,6 +28,8 @@ public class CalculMutations {
         }
         if (verbose) System.out.println("Indice2 : "+indice2);
 
+        //Améliorer pour ne pas swapper 2 nbs identiques (bornes sup/inf sur indice2)
+
         Integer temp = newOS.get(indice1);
         newOS.set(indice1, newOS.get(indice2));
         newOS.set(indice2, temp);

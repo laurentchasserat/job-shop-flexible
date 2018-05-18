@@ -1,9 +1,6 @@
 package tests;
 
-import algos.AlgoRechercheLocale;
-import algos.CalculMutations;
-import algos.CalculSolutions;
-import algos.GenererVoisinnages;
+import algos.*;
 import donneesDuProbleme.Parser;
 import donneesDuProbleme.Probleme;
 import donneesDuProbleme.Solution;
@@ -202,6 +199,18 @@ public class Tests {
         System.out.println("Mutation Changement machine :");
         Solution solMutee2 = CalculMutations.mutationChangementSurMASimple(solMutee1);
         solMutee2.afficherSolution();
+
+        System.out.println();
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("Tests algorithme génétique Tournoi + Mutations                ");
+        System.out.println("--------------------------------------------------------------");
+        System.out.println();
+
+        AlgoGenetique algo2 = new AlgoGenetique(pb2);
+        Solution solGenetique = algo2.algoGenetiqueTournoiMutations(sols);
+        System.out.println("Solution obtenue par l'algo génétique : "+solGenetique.getCout());
+
+
 
     }
 }

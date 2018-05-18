@@ -9,10 +9,11 @@ public class AlgoRechercheLocale {
 
     private Probleme probleme;
 
-    private int nbIterations = 0;
+    private int nbIterations;
 
     public AlgoRechercheLocale(Probleme pb ) {
         this.probleme = pb;
+        this.nbIterations = 0;
     }
 
     public Solution rechercheLocaleParPermutationsSimples(Solution solutionInitiale) {
