@@ -143,7 +143,7 @@ public class Tests {
         System.out.println("Cout : "+sol.getCout());
         sol.getGantt().afficherGantt();
         */
-        AlgoRechercheLocale algo = new AlgoRechercheLocale(pb2);
+        AlgoRechercheLocale algo = new AlgoRechercheLocale();
         Solution sol = algo.rechercheLocaleParPermutationsSimples(CalculSolutions.heuristiqueGloutonne(pb2));
         System.out.println("Solution initiale : ");
         CalculSolutions.heuristiqueGloutonne(pb2);
@@ -206,9 +206,16 @@ public class Tests {
         System.out.println("--------------------------------------------------------------");
         System.out.println();
 
-        AlgoGenetique algo2 = new AlgoGenetique(pb2);
-        Solution solGenetique = algo2.algoGenetiqueTournoiMutations(sols);
-        System.out.println("Solution obtenue par l'algo génétique : "+solGenetique.getCout());
+        System.out.println("Génération de 100 solutions aléatoires...");
+        ArrayList<Solution> sols2 = CalculSolutions.genererNSolutionsAleatoiresTriees(pb2,100);
+        AlgoGenetique algo2 = new AlgoGenetique();
+        System.out.println("Lancement d'un algo sur 100 générations");
+        ArrayList<Solution> generationSolGenetique = algo2.algoGenetiqueTournoiMutations(sols2, 100);
+        System.out.println("Solution obtenue par l'algo génétique : "+generationSolGenetique.get(0).getCout());
+        System.out.println("Hill-climbing sur celle-ci");
+        Solution apresHC = algo.rechercheLocaleParPermutationsSimples(generationSolGenetique.get(0));
+        System.out.println("Solution finale obtenue : "+apresHC.getCout());
+
 
 
 

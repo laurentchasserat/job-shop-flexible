@@ -1,6 +1,5 @@
 package algos;
 
-import donneesDuProbleme.Probleme;
 import donneesDuProbleme.Solution;
 
 import java.util.ArrayList;
@@ -8,18 +7,17 @@ import java.util.Random;
 
 public class AlgoGenetique {
 
-    private Probleme probleme;
-
     private int nbIterations;
     private int poolSize;
 
-    public AlgoGenetique(Probleme pb ) {
-        this.probleme = pb;
+    public AlgoGenetique() {
         this.nbIterations = 0;
         this.poolSize = 1;
     }
 
-    public Solution algoGenetiqueTournoiMutations(ArrayList<Solution> poolInitial) {
+
+    //Renvoie un ArrayList trié de solutions après un certain nombre de générations
+    public ArrayList<Solution> algoGenetiqueTournoiMutations(ArrayList<Solution> poolInitial, Integer nbGenerations) {
         ArrayList<Solution> resultat = poolInitial; //poolInitial est sensé arriver trié
         poolSize = poolInitial.size();
 
@@ -49,9 +47,41 @@ public class AlgoGenetique {
         tout.addAll(enfants);
 
         //Sélectionner à chaque fois 2, choisir le meilleur tant qu'on en a pas 100
+        ArrayList<Solution> nouvelleGénération = new ArrayList<>();
+        Integer indice1;
+        Integer indice2;
+        while (nouvelleGénération.size()!=poolSize) {
 
+            //Récupération de deux indices au hasard
+            random = Math.abs(rng.nextInt());
+            indice1 = random%(tout.size());
+            indice2 = indice1;
+            while (indice2==indice1) {
+                random = Math.abs(rng.nextInt());
+                indice2 = random%(tout.size());
+            }
 
-        resultat.sort(Solution::compareTo);
-        return resultat.get(0);
+            //On récupère le meilleur et on le met dans nouvelleGénération
+            if (tout.get(indice1).getCout()<tout.get(indice2).getCout()) {
+                nouvelleGénération.add(tout.get(indice1));
+                tout.remove(indice1);
+            } else {
+                nouvelleGénération.add(tout.get(indice2));
+                tout.remove(indice2);
+            }
+
+        }
+
+        nbIterations++;
+
+        nouvelleGénération.sort(Solution::compareTo);
+
+        System.out.println("[Génération "+nbIterations+"] La meilleure solution connue à ce jour a un coût de: "
+                +nouvelleGénération.get(0).getCout());
+
+        if (nbIterations<nbGenerations) resultat = algoGenetiqueTournoiMutations(nouvelleGénération, nbGenerations);
+        else resultat = nouvelleGénération;
+
+        return resultat;
     }
 }

@@ -1,18 +1,14 @@
 package algos;
 
-import donneesDuProbleme.Probleme;
 import donneesDuProbleme.Solution;
 
 import static algos.GenererVoisinnages.OSPermutation;
 
 public class AlgoRechercheLocale {
 
-    private Probleme probleme;
-
     private int nbIterations;
 
-    public AlgoRechercheLocale(Probleme pb ) {
-        this.probleme = pb;
+    public AlgoRechercheLocale() {
         this.nbIterations = 0;
     }
 
