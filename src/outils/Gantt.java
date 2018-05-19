@@ -3,6 +3,8 @@ package outils;
 import donneesDuProbleme.Probleme;
 import donneesDuProbleme.Solution;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
@@ -106,6 +108,76 @@ public class Gantt {
         System.out.print("             "); for (int n=0; n<=tempsTotal; n++) System.out.format("%4d", n); System.out.println();
         System.out.println();
         System.out.println("Temps total : "+tempsTotal);
+    }
+
+    public void afficherGanttDansFichier(FileWriter ffw) throws IOException {
+
+        String output;
+
+        ffw.write("\n");
+        ffw.write("Légende :\n");
+        ArrayList<Character> jobSymbols = new ArrayList<>();
+        for (int i = 0; i<nbJobs; i++) {
+            jobSymbols.add((char)(i+49));
+            ffw.write("Job "+(i+1)+" : "+((char)(i+49))+"\n");
+        }
+        ffw.write("\n");
+
+        int machine = 0;
+        ffw.write("-----------------"); for (int n=0; n<tempsTotal; n++) ffw.write("----"); ffw.write("\n");
+
+        for (ArrayList<DatesDebutFinPlusJob> j : gantt) {
+
+
+            output = String.format("| Machine %3d : | ", machine+1);
+            ffw.write(output);
+
+            boolean initialized = false;
+            DatesDebutFinPlusJob dateprec = new DatesDebutFinPlusJob(0,0,0);
+
+            int compteur = 0;
+            for (DatesDebutFinPlusJob dates : j) {
+
+                for (int l = 0; l<(dates.getDebut()-dateprec.getFin()); l++){
+                    ffw.write("  | ");
+                    compteur++;
+                }
+
+                for (int l = 0; l<(dates.getFin()-dates.getDebut()); l++){
+                    initialized = true;
+                    ffw.write(jobSymbols.get(dates.getJob())+" | ");
+                    compteur++;
+                }
+
+
+
+                dateprec = dates;
+
+
+            }
+            while (compteur<tempsTotal) {
+                ffw.write("  | ");
+                compteur++;
+            }
+            machine++;
+            ffw.write("\n");
+            ffw.write("-----------------"); for (int n=0; n<tempsTotal; n++) ffw.write("----"); ffw.write("\n");
+
+        }
+        ffw.write("\n");
+        ffw.write("| Temps    : ");
+        for (int n=0; n<=tempsTotal; n++) {
+            output = String.format("---|", n);
+            ffw.write(output);
+        }
+        ffw.write("-->\n");
+        ffw.write("             ");
+        for (int n=0; n<=tempsTotal; n++) {
+            output = String.format("%4d", n);
+            ffw.write(output);
+        }
+        ffw.write("\n\n");
+        ffw.write("Temps total : "+tempsTotal+"\n");
     }
 
     public Integer getTempsTotal() {

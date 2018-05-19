@@ -1,0 +1,128 @@
+--------------------------------------------------------------------------------------
+Rapport de tests de nos différents algorithmes autour du problème du Job Shop Flexible
+sur différents jeux de données.
+--------------------------------------------------------------------------------------
+
+Tests sur le jeu de données de l'exemple du TP 
+Nb. jobs = 3, Nb. machines = 3.
+
+Stratégie 1 : heuristique gloutonne puis Hill Climbing simple
+Coût de la solution trouvée : 12 [temps : 119 ms]
+
+Stratégie 2 : génération de 10 solutions aléatoires puis Hill Climbing simple
+sur chacune d'entre elles. On garde la meilleure solution trouvée.
+
+On effectue cette stratégie 3 fois pour évaluer la part d'aléatoire dans les solutions trouvées :
+
+[Essai 1] Coût de la meilleure solution trouvée : 9 [temps : 44 ms]
+[Essai 2] Coût de la meilleure solution trouvée : 10 [temps : 11 ms]
+[Essai 3] Coût de la meilleure solution trouvée : 9 [temps : 11 ms]
+
+Meilleure : 9
+
+Stratégie 3 : algorithme génétique à deux mutations et sélection par tournoi
+On génère une génération de 50 solutions aléatoires. Les 25 meilleures vont engendrer
+des enfants en mutant (permutations sur OS et changements sur MA, ce qui donne un pool
+de 75 solutions. On effectue un tournoi pour en retenir 50 et on recommence sur 50
+Générations.
+
+On effectue cette stratégie 3 fois pour évaluer la part d'aléatoire dans les solutions trouvées :
+
+[Essai 1] Coût de la meilleure solution trouvée : 9 [temps : 1401 ms]
+[Essai 2] Coût de la meilleure solution trouvée : 9 [temps : 877 ms]
+[Essai 3] Coût de la meilleure solution trouvée : 9 [temps : 441 ms]
+
+Meilleure : 9
+
+Diagramme de Gantt de la meilleure solution trouvée parmi toutes ces stratégies :
+
+Légende :
+Job 1 : 1
+Job 2 : 2
+Job 3 : 3
+
+-----------------------------------------------------
+| Machine   1 : | 1 | 1 | 1 |   | 2 | 2 | 1 | 1 | 1 | 
+-----------------------------------------------------
+| Machine   2 : | 2 | 2 | 2 | 2 | 1 | 1 |   |   |   | 
+-----------------------------------------------------
+| Machine   3 : | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 2 | 2 | 
+-----------------------------------------------------
+
+| Temps    : ---|---|---|---|---|---|---|---|---|---|-->
+                0   1   2   3   4   5   6   7   8   9
+
+Temps total : 9
+
+---------------------------------------
+
+Tests sur le jeu de données "Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk01.fjs"
+Nb. jobs = 10, Nb. machines = 6.
+
+Stratégie 1 : heuristique gloutonne puis Hill Climbing simple
+Coût de la solution trouvée : 74 [temps : 255 ms]
+
+Stratégie 2 : génération de 10 solutions aléatoires puis Hill Climbing simple
+sur chacune d'entre elles. On garde la meilleure solution trouvée.
+
+On effectue cette stratégie 3 fois pour évaluer la part d'aléatoire dans les solutions trouvées :
+
+[Essai 1] Coût de la meilleure solution trouvée : 64 [temps : 346 ms]
+[Essai 2] Coût de la meilleure solution trouvée : 64 [temps : 431 ms]
+[Essai 3] Coût de la meilleure solution trouvée : 62 [temps : 365 ms]
+
+Meilleure : 62
+
+Stratégie 3 : algorithme génétique à deux mutations et sélection par tournoi
+On génère une génération de 50 solutions aléatoires. Les 25 meilleures vont engendrer
+des enfants en mutant (permutations sur OS et changements sur MA, ce qui donne un pool
+de 75 solutions. On effectue un tournoi pour en retenir 50 et on recommence sur 50
+Générations.
+
+On effectue cette stratégie 3 fois pour évaluer la part d'aléatoire dans les solutions trouvées :
+
+[Essai 1] Coût de la meilleure solution trouvée : 62 [temps : 679 ms]
+[Essai 2] Coût de la meilleure solution trouvée : 68 [temps : 657 ms]
+[Essai 3] Coût de la meilleure solution trouvée : 61 [temps : 662 ms]
+
+Meilleure : 61
+
+Diagramme de Gantt de la meilleure solution trouvée parmi toutes ces stratégies :
+
+Légende :
+Job 1 : 1
+Job 2 : 2
+Job 3 : 3
+Job 4 : 4
+Job 5 : 5
+Job 6 : 6
+Job 7 : 7
+Job 8 : 8
+Job 9 : 9
+Job 10 : :
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   1 : | 4 |   |   |   |   |   |   |   |   |   |   |   |   |   | 3 | 2 | 2 | 1 | 1 | 1 | 1 | 1 |   |   | 9 | 9 | : | : | : | 6 | 6 | 5 | 5 | 5 | 5 | 5 | 2 |   |   |   |   | 3 |   |   |   |   |   |   |   | 6 |   |   |   |   |   |   |   |   |   |   |   | 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   2 : | 2 | 2 | 2 | 2 | 2 | 2 | 3 | 3 | 3 | 3 | 3 | 3 | 4 | 4 | 4 | 4 | 4 | 4 | 5 | 5 | 5 | 5 | 5 | 5 | 1 | 5 | 5 | 5 | 5 | 5 | 5 | 6 | 6 | 6 | 6 | 6 | 6 | 8 | 8 | 8 | 8 | 8 | 8 | 6 | 6 | 6 | 6 | 6 | 6 | 8 | 8 | 8 | 8 | 8 | 8 | 9 | 9 | 9 | 9 | 9 | 9 | 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   3 : | 8 | 8 | 8 | 8 |   |   | 2 | 8 | 8 | 8 | 8 | 5 | 5 | 5 | 5 | 5 | 6 | 6 | 6 | 6 | 4 |   |   |   |   |   | 9 | 9 | 9 | 9 |   |   | 1 | 7 | 7 | 7 | 7 | 3 | 3 | 3 | 3 | 4 | 4 | 4 | 4 | 4 | 7 |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   4 : |   |   |   |   |   |   |   |   |   | 7 | 7 |   |   |   |   | : | : | : | : | : | : | 9 | 9 | 9 | 2 | 2 | 2 | 2 | 2 | 2 |   |   |   |   |   |   | 5 | 5 | 5 | 5 | 5 | 5 | 1 | 1 | 1 |   |   |   |   |   | 6 | 6 |   |   |   |   |   |   |   |   |   | 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   5 : |   |   |   |   |   |   |   |   | : | : | : | 9 | 9 | 9 | 9 | 9 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 7 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   6 : | : | : | : | : | : | : | : | : | 7 | 9 |   |   | 3 | 3 | : | 8 | 8 | 8 | 8 | 8 |   |   |   |   |   | 1 | 1 | 1 | 1 | 1 | 1 | 1 |   |   |   |   |   |   |   |   |   |   | 5 | 5 | 5 | 5 | 5 | 5 | 4 | 4 |   |   |   |   |   |   |   |   |   |   |   | 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+| Temps    : ---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|-->
+                0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61
+
+Temps total : 61
+
+---------------------------------------
+
+Tests sur le jeu de données "Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk08.fjs"
+
+---------------------------------------
+

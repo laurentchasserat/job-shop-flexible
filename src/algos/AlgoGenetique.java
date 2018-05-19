@@ -79,8 +79,13 @@ public class AlgoGenetique {
         System.out.println("[Génération "+nbIterations+"] La meilleure solution connue à ce jour a un coût de: "
                 +nouvelleGénération.get(0).getCout());
 
-        if (nbIterations<nbGenerations) resultat = algoGenetiqueTournoiMutations(nouvelleGénération, nbGenerations);
-        else resultat = nouvelleGénération;
+        if (nbIterations<nbGenerations) {
+            resultat = algoGenetiqueTournoiMutations(nouvelleGénération, nbGenerations);
+        }
+        else {
+            resultat = nouvelleGénération;
+            nbIterations = 0;
+        }
 
         return resultat;
     }
