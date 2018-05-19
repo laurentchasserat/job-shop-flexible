@@ -26,31 +26,37 @@ public class GenererRapportDeTests {
 
             //----------------------------------------------------------------------------------------------------
 
-            ffw.write("Tests sur le jeu de données de l'exemple du TP \n");
+            ffw.write("----------------------------------------------\n");
+            ffw.write("Tests sur le jeu de données de l'exemple du TP\n");
+            ffw.write("----------------------------------------------\n");
             Probleme pb1 = TestDonnees.exemple1();
 
             testerUnProbleme(pb1, ffw);
 
-            ffw.write("\n---------------------------------------\n\n");
+            ffw.write("\n\n");
 
             //----------------------------------------------------------------------------------------------------
 
+            ffw.write("----------------------------------------------------------------------------------\n");
             ffw.write("Tests sur le jeu de données \"Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk01.fjs\"\n");
+            ffw.write("----------------------------------------------------------------------------------\n");
             Probleme pb2 = Parser.parse("./TextData/Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk01.fjs");
 
             testerUnProbleme(pb2, ffw);
 
-            ffw.write("\n---------------------------------------\n\n");
+            ffw.write("\n\n");
 
             //----------------------------------------------------------------------------------------------------
 
+            ffw.write("----------------------------------------------------------------------------------\n");
             ffw.write("Tests sur le jeu de données \"Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk08.fjs\"\n");
+            ffw.write("----------------------------------------------------------------------------------\n");
             Probleme pb3 = Parser.parse("./TextData/Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk08.fjs");
 
             // Très long !
             // testerUnProbleme(pb3, ffw);
 
-            ffw.write("\n---------------------------------------\n\n");
+            ffw.write("\n\n");
 
             //----------------------------------------------------------------------------------------------------
 
@@ -121,8 +127,12 @@ public class GenererRapportDeTests {
                 solsAmeliorees2 = ag.algoGenetiqueTournoiMutations(sols2, 50);
             }
             temps = System.currentTimeMillis()-chrono;
-            theBest.add(solsAmeliorees2.get(0));
+            //Idée : réaliser un hill climbing sur la dernière el plus
             ffw.write("[Essai "+(i+1)+"] Coût de la meilleure solution trouvée : "+solsAmeliorees2.get(0).getCout()+" [temps : "+temps+" ms]\n");
+            Solution improvedMax = hc.rechercheLocaleParPermutationsSimples(solsAmeliorees2.get(0));
+            temps = System.currentTimeMillis()-chrono;
+            theBest.add(improvedMax);
+            ffw.write("[Essai "+(i+1)+"] En réalisant un Hill climbing supplémentaire dessus : "+improvedMax.getCout()+" [temps : "+temps+" ms]\n");
         }
         theBest.sort(Solution::compareTo);
         theBestOfAll.add(theBest.get(0));
