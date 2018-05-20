@@ -9,18 +9,22 @@ import donneesDuProbleme.Solution;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class GenererRapportDeTests {
     public static void genererRapport() {
         try {
 
+
             File ff=new File("./rapport.txt");
             ff.createNewFile();
             FileWriter ffw=new FileWriter(ff);
+            Date date = new Date();
 
             ffw.write("--------------------------------------------------------------------------------------\n");
             ffw.write("Rapport de tests de nos différents algorithmes autour du problème du Job Shop Flexible\n");
             ffw.write("sur différents jeux de données.\n");
+            ffw.write("Date de génération : "+date.toString()+"\n");
             ffw.write("--------------------------------------------------------------------------------------\n\n");
 
 
@@ -78,7 +82,7 @@ public class GenererRapportDeTests {
 
         ffw.write("Nb. jobs = "+pb1.getNbJobs()+", Nb. machines = "+pb1.getNbMachines()+".\n");
 
-        ffw.write("\nStratégie 1 : heuristique gloutonne puis Hill Climbing simple\n");
+        ffw.write("\nStratégie 1 : Heuristique gloutonne puis Hill Climbing simple.\n\n");
         System.out.println("Test de l'algo de recherche locale");
         AlgoRechercheLocale hc = new AlgoRechercheLocale();
         chrono = System.currentTimeMillis();
@@ -87,7 +91,7 @@ public class GenererRapportDeTests {
         theBestOfAll.add(sol1);
         ffw.write("Coût de la solution trouvée : "+sol1.getCout()+" [temps : "+temps+" ms]\n");
 
-        ffw.write("\nStratégie 2 : génération de 10 solutions aléatoires puis Hill Climbing simple\n");
+        ffw.write("\nStratégie 2 : Génération de 10 solutions aléatoires puis Hill Climbing simple.\n\n");
         ffw.write("sur chacune d'entre elles. On garde la meilleure solution trouvée.\n");
         ffw.write("\nOn effectue cette stratégie 3 fois pour évaluer la part d'aléatoire dans les solutions trouvées :\n\n");
         ArrayList<Solution> theBest = new ArrayList<>();
@@ -109,11 +113,11 @@ public class GenererRapportDeTests {
         theBestOfAll.add(theBest.get(0));
         ffw.write("\nMeilleure : "+theBest.get(0).getCout()+"\n");
 
-        ffw.write("\nStratégie 3 : algorithme génétique à deux mutations et sélection par tournoi\n");
+        ffw.write("\nStratégie 3 : Algorithme génétique à deux mutations et sélection par tournoi.\n\n");
         ffw.write("On génère une génération de 50 solutions aléatoires. Les 25 meilleures vont engendrer\n");
         ffw.write("des enfants en mutant (permutations sur OS et changements sur MA, ce qui donne un pool\n");
         ffw.write("de 75 solutions. On effectue un tournoi pour en retenir 50 et on recommence sur 50\n");
-        ffw.write("Générations.\n");
+        ffw.write("générations.\n");
         ffw.write("\nOn effectue cette stratégie 3 fois pour évaluer la part d'aléatoire dans les solutions trouvées :\n\n");
         ArrayList<Solution> theBest2 = new ArrayList<>();
         ArrayList<Solution> sols2 = new ArrayList<>();
