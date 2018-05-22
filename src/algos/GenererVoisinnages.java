@@ -11,7 +11,10 @@ public class GenererVoisinnages {
         Integer temp = etatInitial.getOperationSequence().get(indice1);
         newOS.set(indice1, etatInitial.getOperationSequence().get(indice2));
         newOS.set(indice2, temp);
-        return new Solution(etatInitial.getProbleme(), etatInitial.getMachineAssignment(), newOS);
+
+        Solution sol = new Solution(etatInitial.getProbleme(), etatInitial.getMachineAssignment(), newOS);
+        sol.calculerCout(false);
+        return sol;
     }
 
 }

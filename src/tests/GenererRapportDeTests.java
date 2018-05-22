@@ -52,19 +52,19 @@ public class GenererRapportDeTests {
             ffw.write("----------------------------------------------------------------------------------\n");
             Probleme pb2 = Parser.parse("./TextData/Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk01.fjs");
 
-            testerUnProbleme(pb2, ffw, 100, 10, 500, 500);
+            testerUnProbleme(pb2, ffw, 100, 10, 250, 250);
 
             ffw.write("\n\n");
 
             //----------------------------------------------------------------------------------------------------
 
             ffw.write("----------------------------------------------------------------------------------\n");
-            ffw.write("Tests sur le jeu de données \"Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk08.fjs\"\n");
+            ffw.write("Tests sur le jeu de données \"Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk10.fjs\"\n");
             ffw.write("----------------------------------------------------------------------------------\n");
-            Probleme pb3 = Parser.parse("./TextData/Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk08.fjs");
+            Probleme pb3 = Parser.parse("./TextData/Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk10.fjs");
 
             // Très long !
-            testerUnProbleme(pb3, ffw, 10, 10, 500, 500);
+            testerUnProbleme(pb3, ffw, 20, 10, 500, 500);
 
             ffw.write("\n\n");
 
@@ -136,7 +136,6 @@ public class GenererRapportDeTests {
 
 
 
-
         ffw.write("\nStratégie 3 : Algorithme génétique à deux mutations et sélection par tournoi.\n\n");
         ffw.write("On génère une génération de "+taillePopulation+" solutions aléatoires. Les "+((int)(0.5*taillePopulation))+" meilleures vont engendrer\n");
         ffw.write("des enfants en mutant (permutations sur OS et changements sur MA, ce qui donne un pool\n");
@@ -164,10 +163,10 @@ public class GenererRapportDeTests {
                 +", ecart-type : "+Probas.EcartType(theBest2)+".\n");
         ffw.write("Temps moyen : "+Probas.MoyenneLong(listeDesTemps2)+" ms.\n");
 
-
         theBestOfAll.sort(Solution::compareTo);
         ffw.write("\nDiagramme de Gantt de la meilleure solution trouvée parmi toutes ces stratégies :\n");
         theBestOfAll.get(0).getGantt().afficherGanttDansFichier(ffw);
+
 
     }
 }

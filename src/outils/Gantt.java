@@ -16,9 +16,9 @@ public class Gantt {
 
     private Integer tempsTotal;
 
-    public Gantt(Probleme pb, Solution sol, PlanningDesActivites acts, Integer t) {
+    public Gantt(Probleme pb, Solution sol, PlanningDesActivites acts) {
         this.nbJobs = pb.getNbJobs();
-        this.tempsTotal = t;
+        this.tempsTotal = sol.getCout();
         gantt = new ArrayList<>();
         for (int i=0; i<pb.getNbMachines(); i++) {
             gantt.add(new ArrayList<>());

@@ -3,8 +3,6 @@ package outils;
 import donneesDuProbleme.Activite;
 import donneesDuProbleme.Job;
 import donneesDuProbleme.Probleme;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class PlanningDesActivites {
@@ -28,7 +26,7 @@ public class PlanningDesActivites {
         planning = new ArrayList<>();
         for (Job j : p.getJobs()) {
             ArrayList<DatesDebutFin> temp = new ArrayList<>();
-            for (Activite activite : j.getActivites()) {
+            for (Activite ignored : j.getActivites()) {
                 temp.add(new DatesDebutFin(-1, -1));
             }
             planning.add(temp);

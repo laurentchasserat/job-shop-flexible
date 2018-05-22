@@ -28,7 +28,6 @@ public class Solution implements Comparable<Solution>{
         this.machineAssignment = ma;
         this.operationSequence = os;
         this.cout = Integer.MAX_VALUE;
-        this.calculerCout(false);
     }
 
     // Cette fonction renvoie le coût en unité de temps de la solution en question
@@ -102,12 +101,14 @@ public class Solution implements Comparable<Solution>{
 
         }
 
-
         int resultat = Collections.max(dispoAuPlusTotDesMachines);
+        if (verbose) System.out.println(resultat);
 
         this.cout = resultat;
 
-        this.gantt = new Gantt(this.probleme, this, planning, cout);
+        Solution tempSol = this;
+
+        this.gantt = new Gantt(this.probleme, tempSol, planning);
 
         return resultat;
     }

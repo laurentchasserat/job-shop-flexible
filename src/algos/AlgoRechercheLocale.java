@@ -41,14 +41,13 @@ public class AlgoRechercheLocale {
 
 
 
-        Solution solutionFinale = solutionInitiale;
+        Solution solutionFinale;
         if (over) {
             solutionFinale = rechercheLocaleParPermutationsSimples(inter);
         } else {
             solutionFinale = solutionInitiale;
             //System.out.println("[Iteration "+nbIterations+"] Solution finale trouvée : "+solutionFinale.getCout()+" au bout de "+nbIterations+" itérations.");
-            System.out.print(solutionFinale.getCout()+" -> FIN ("+nbIterations+" itérations).\n");
-            System.out.println("                           Best : "+solutionFinale.getCout());
+            System.out.print(solutionFinale.getCout()+" -> FIN ("+nbIterations+" itérations). Best : "+solutionFinale.getCout()+".\n");
             nbIterations=0;
         }
 

@@ -25,7 +25,7 @@ public class AlgoGenetique {
         }
 
 
-        Solution resultat = best; //poolInitial est sensé arriver trié
+        Solution resultat; //poolInitial est sensé arriver trié
         poolSize = poolInitial.size();
 
         // Génération d'enfants par mutations (les 50 meilleurs se reproduisent)
@@ -37,7 +37,7 @@ public class AlgoGenetique {
         Integer indice = random%2;
 
         for (int z = 0; z<(poolSize/2); z++) {
-            Solution temp = poolInitial.get(z);
+            Solution temp;
             if (indice == 0){
                 temp = CalculMutations.mutationChangementSurMASimple(poolInitial.get(z));
             } else {
@@ -59,26 +59,26 @@ public class AlgoGenetique {
             best = tout.get(0);
 
         //Sélectionner à chaque fois 2, choisir le meilleur tant qu'on en a pas 100
-        ArrayList<Solution> nouvelleGénération = new ArrayList<>();
+        ArrayList<Solution> nouvelleGeneration = new ArrayList<>();
         Integer indice1;
         Integer indice2;
-        while (nouvelleGénération.size()!=poolSize) {
+        while (nouvelleGeneration.size()!=poolSize) {
 
             //Récupération de deux indices au hasard
             random = Math.abs(rng.nextInt());
             indice1 = random%(tout.size());
             indice2 = indice1;
-            while (indice2==indice1) {
+            while (indice2.equals(indice1)) {
                 random = Math.abs(rng.nextInt());
                 indice2 = random%(tout.size());
             }
 
             //On récupère le meilleur et on le met dans nouvelleGénération
             if (tout.get(indice1).getCout()<tout.get(indice2).getCout()) {
-                nouvelleGénération.add(tout.get(indice1));
+                nouvelleGeneration.add(tout.get(indice1));
                 tout.remove(indice1);
             } else {
-                nouvelleGénération.add(tout.get(indice2));
+                nouvelleGeneration.add(tout.get(indice2));
                 tout.remove(indice2);
             }
 
@@ -86,17 +86,16 @@ public class AlgoGenetique {
 
         nbIterations++;
 
-        nouvelleGénération.sort(Solution::compareTo);
+        nouvelleGeneration.sort(Solution::compareTo);
 
-        System.out.print(nouvelleGénération.get(0).getCout()+" -> ");
+        System.out.print(nouvelleGeneration.get(0).getCout()+" -> ");
 
         if (nbIterations<nbGenerations) {
-            resultat = algoGenetiqueTournoiMutations(nouvelleGénération, nbGenerations);
+            resultat = algoGenetiqueTournoiMutations(nouvelleGeneration, nbGenerations);
         }
         else {
-            System.out.print("FIN ("+nbIterations+" générations).\n");
             resultat = best;
-            System.out.println("                 Best : "+best.getCout());
+            System.out.print("FIN ("+nbIterations+" générations). Best : "+best.getCout()+".\n");
             nbIterations = 0;
         }
 

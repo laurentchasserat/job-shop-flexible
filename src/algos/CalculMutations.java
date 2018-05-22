@@ -13,20 +13,20 @@ public class CalculMutations {
     public static Solution mutationSwapSurOSSimple(Solution initiale) {
         boolean verbose = false;
         ArrayList<Integer> newOS = initiale.getOperationSequence();
-        if (verbose) System.out.println("Size : "+newOS.size());
+        if (verbose) System.out.println("Size : " + newOS.size());
 
         Random rng = new Random();
         rng.setSeed(System.nanoTime());
         Integer random = Math.abs(rng.nextInt());
-        Integer indice1 = random%(newOS.size());
-        if (verbose) System.out.println("Indice1 : "+indice1);
+        Integer indice1 = random % (newOS.size());
+        if (verbose) System.out.println("Indice1 : " + indice1);
 
         Integer indice2 = indice1;
-        while (indice2==indice1) {
+        while (indice2 == indice1) {
             random = Math.abs(rng.nextInt());
-            indice2 = random%(newOS.size());
+            indice2 = random % (newOS.size());
         }
-        if (verbose) System.out.println("Indice2 : "+indice2);
+        if (verbose) System.out.println("Indice2 : " + indice2);
 
         //Améliorer pour ne pas swapper 2 nbs identiques (bornes sup/inf sur indice2)
 
@@ -35,7 +35,9 @@ public class CalculMutations {
         newOS.set(indice2, temp);
 
 
-        return new Solution(initiale.getProbleme(), initiale.getMachineAssignment(), newOS);
+        Solution sol = new Solution(initiale.getProbleme(), initiale.getMachineAssignment(), newOS);
+        sol.calculerCout(false);
+        return sol;
     }
 
     public static Solution mutationChangementSurMASimple(Solution initiale) {
@@ -58,7 +60,9 @@ public class CalculMutations {
         newMA.get(indice1).set(indice2, initiale.getProbleme().getJobs().get(indice1).getActivites()
                 .get(indice2).getTupleAleatoire().getMachine());
 
-        return new Solution(initiale.getProbleme(), newMA, initiale.getOperationSequence());
+        Solution sol = new Solution(initiale.getProbleme(), newMA, initiale.getOperationSequence());
+        sol.calculerCout(false);
+        return sol;
     }
 
 }

@@ -49,6 +49,8 @@ public class CalculSolutions {
 
         Solution sol = new Solution(probleme, ma, os);
 
+        sol.calculerCout(false);
+
         return sol;
 
     }
@@ -90,6 +92,7 @@ public class CalculSolutions {
             Collections.shuffle(os);
 
             Solution sol = new Solution(p, ma, os);
+            sol.calculerCout(false);
             resultat.add(sol);
         }
         resultat.sort(Solution::compareTo);

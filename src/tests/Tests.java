@@ -217,7 +217,5 @@ public class Tests {
         System.out.println("Solution finale obtenue : "+apresHC.getCout());
 
 
-
-
     }
 }
