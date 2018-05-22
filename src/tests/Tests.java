@@ -210,10 +210,10 @@ public class Tests {
         ArrayList<Solution> sols2 = CalculSolutions.genererNSolutionsAleatoiresTriees(pb2,100);
         AlgoGenetique algo2 = new AlgoGenetique();
         System.out.println("Lancement d'un algo sur 100 générations");
-        ArrayList<Solution> generationSolGenetique = algo2.algoGenetiqueTournoiMutations(sols2, 100);
-        System.out.println("Solution obtenue par l'algo génétique : "+generationSolGenetique.get(0).getCout());
+        Solution solGenetique = algo2.algoGenetiqueTournoiMutations(sols2, 100);
+        System.out.println("Solution obtenue par l'algo génétique : "+solGenetique.getCout());
         System.out.println("Hill-climbing sur celle-ci");
-        Solution apresHC = algo.rechercheLocaleParPermutationsSimples(generationSolGenetique.get(0));
+        Solution apresHC = algo.rechercheLocaleParPermutationsSimples(solGenetique);
         System.out.println("Solution finale obtenue : "+apresHC.getCout());
 
 

@@ -9,6 +9,7 @@ public class AlgoGenetique {
 
     private int nbIterations;
     private int poolSize;
+    private Solution best;
 
     public AlgoGenetique() {
         this.nbIterations = 0;
@@ -17,8 +18,14 @@ public class AlgoGenetique {
 
 
     //Renvoie un ArrayList trié de solutions après un certain nombre de générations
-    public ArrayList<Solution> algoGenetiqueTournoiMutations(ArrayList<Solution> poolInitial, Integer nbGenerations) {
-        ArrayList<Solution> resultat = poolInitial; //poolInitial est sensé arriver trié
+    public Solution algoGenetiqueTournoiMutations(ArrayList<Solution> poolInitial, Integer nbGenerations) {
+        if (this.nbIterations == 0) {
+            best = poolInitial.get(0);
+            System.out.print("[Algo génétique] ");
+        }
+
+
+        Solution resultat = best; //poolInitial est sensé arriver trié
         poolSize = poolInitial.size();
 
         // Génération d'enfants par mutations (les 50 meilleurs se reproduisent)
@@ -45,6 +52,11 @@ public class AlgoGenetique {
         ArrayList<Solution> tout = new ArrayList<>();
         tout.addAll(poolInitial);
         tout.addAll(enfants);
+        tout.sort(Solution::compareTo);
+
+        //On garde en mémoire la meilleure solution si elle est meilleure que celle qu'on connaît
+        if (best.getCout()>tout.get(0).getCout())
+            best = tout.get(0);
 
         //Sélectionner à chaque fois 2, choisir le meilleur tant qu'on en a pas 100
         ArrayList<Solution> nouvelleGénération = new ArrayList<>();
@@ -76,14 +88,15 @@ public class AlgoGenetique {
 
         nouvelleGénération.sort(Solution::compareTo);
 
-        System.out.println("[Génération "+nbIterations+"] La meilleure solution connue à ce jour a un coût de: "
-                +nouvelleGénération.get(0).getCout());
+        System.out.print(nouvelleGénération.get(0).getCout()+" -> ");
 
         if (nbIterations<nbGenerations) {
             resultat = algoGenetiqueTournoiMutations(nouvelleGénération, nbGenerations);
         }
         else {
-            resultat = nouvelleGénération;
+            System.out.print("FIN ("+nbIterations+" générations).\n");
+            resultat = best;
+            System.out.println("Best : "+best.getCout());
             nbIterations = 0;
         }
 

@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------------
 Rapport de tests de nos différents algorithmes autour du problème du Job Shop Flexible
 sur différents jeux de données.
-Date de génération : Tue May 22 11:20:30 CEST 2018
+Date de génération : Tue May 22 10:18:08 CEST 2018
 --------------------------------------------------------------------------------------
 
 ----------------------------------------------
@@ -11,7 +11,7 @@ Nb. jobs = 3, Nb. machines = 3.
 
 Stratégie 1 : Heuristique gloutonne puis Hill Climbing simple.
 
-Coût de la solution trouvée : 12 [temps : 56 ms]
+Coût de la solution trouvée : 12 [temps : 100 ms]
 
 Stratégie 2 : Génération de 5 solutions aléatoires puis Hill Climbing simple.
 
@@ -19,26 +19,29 @@ sur chacune d'entre elles. On garde la meilleure solution trouvée.
 
 On effectue cette stratégie 3 fois pour évaluer la part d'aléatoire dans les solutions trouvées :
 
-[Essai 1] Coût de la meilleure solution trouvée : 9 [temps : 26 ms]
-[Essai 2] Coût de la meilleure solution trouvée : 11 [temps : 14 ms]
-[Essai 3] Coût de la meilleure solution trouvée : 10 [temps : 8 ms]
+[Essai 1] Coût de la meilleure solution trouvée : 11 [temps : 32 ms]
+[Essai 2] Coût de la meilleure solution trouvée : 9 [temps : 7 ms]
+[Essai 3] Coût de la meilleure solution trouvée : 10 [temps : 19 ms]
 
-Meilleure : 9, moyenne : 10.0, ecart-type : 0.8164965809277289.
+Meilleure : 9
 
 Stratégie 3 : Algorithme génétique à deux mutations et sélection par tournoi.
 
-On génère une génération de 10 solutions aléatoires. Les 25 meilleures vont engendrer
+On génère une génération de 5 solutions aléatoires. Les 25 meilleures vont engendrer
 des enfants en mutant (permutations sur OS et changements sur MA, ce qui donne un pool
 de 75 solutions. On effectue un tournoi pour en retenir 50 et on recommence sur 10
 générations.
 
 On effectue cette stratégie 3 fois pour évaluer la part d'aléatoire dans les solutions trouvées :
 
-[Essai 1] Coût de la meilleure solution trouvée : 10 [temps : 15 ms]
-[Essai 2] Coût de la meilleure solution trouvée : 10 [temps : 3 ms]
-[Essai 3] Coût de la meilleure solution trouvée : 10 [temps : 3 ms]
+[Essai 1] Coût de la meilleure solution trouvée : 10 [temps : 30 ms]
+[Essai 1] En réalisant un Hill climbing supplémentaire dessus : 10 [temps : 32 ms]
+[Essai 2] Coût de la meilleure solution trouvée : 11 [temps : 16 ms]
+[Essai 2] En réalisant un Hill climbing supplémentaire dessus : 10 [temps : 17 ms]
+[Essai 3] Coût de la meilleure solution trouvée : 12 [temps : 11 ms]
+[Essai 3] En réalisant un Hill climbing supplémentaire dessus : 12 [temps : 12 ms]
 
-Meilleure : 10, moyenne : 10.0, ecart-type : 0.0.
+Meilleure : 9
 
 Diagramme de Gantt de la meilleure solution trouvée parmi toutes ces stratégies :
 
@@ -68,26 +71,26 @@ Nb. jobs = 10, Nb. machines = 6.
 
 Stratégie 1 : Heuristique gloutonne puis Hill Climbing simple.
 
-Coût de la solution trouvée : 74 [temps : 638 ms]
+Coût de la solution trouvée : 74 [temps : 564 ms]
 
-Stratégie 2 : Génération de 10 solutions aléatoires puis Hill Climbing simple.
+Stratégie 2 : Génération de 50 solutions aléatoires puis Hill Climbing simple.
 
 sur chacune d'entre elles. On garde la meilleure solution trouvée.
 
 On effectue cette stratégie 10 fois pour évaluer la part d'aléatoire dans les solutions trouvées :
 
-[Essai 1] Coût de la meilleure solution trouvée : 60 [temps : 1120 ms]
-[Essai 2] Coût de la meilleure solution trouvée : 62 [temps : 398 ms]
-[Essai 3] Coût de la meilleure solution trouvée : 61 [temps : 362 ms]
-[Essai 4] Coût de la meilleure solution trouvée : 60 [temps : 392 ms]
-[Essai 5] Coût de la meilleure solution trouvée : 62 [temps : 357 ms]
-[Essai 6] Coût de la meilleure solution trouvée : 60 [temps : 374 ms]
-[Essai 7] Coût de la meilleure solution trouvée : 64 [temps : 387 ms]
-[Essai 8] Coût de la meilleure solution trouvée : 62 [temps : 390 ms]
-[Essai 9] Coût de la meilleure solution trouvée : 55 [temps : 472 ms]
-[Essai 10] Coût de la meilleure solution trouvée : 69 [temps : 395 ms]
+[Essai 1] Coût de la meilleure solution trouvée : 63 [temps : 2786 ms]
+[Essai 2] Coût de la meilleure solution trouvée : 66 [temps : 1854 ms]
+[Essai 3] Coût de la meilleure solution trouvée : 56 [temps : 1969 ms]
+[Essai 4] Coût de la meilleure solution trouvée : 62 [temps : 1790 ms]
+[Essai 5] Coût de la meilleure solution trouvée : 55 [temps : 1794 ms]
+[Essai 6] Coût de la meilleure solution trouvée : 62 [temps : 1786 ms]
+[Essai 7] Coût de la meilleure solution trouvée : 61 [temps : 1875 ms]
+[Essai 8] Coût de la meilleure solution trouvée : 63 [temps : 1875 ms]
+[Essai 9] Coût de la meilleure solution trouvée : 61 [temps : 1769 ms]
+[Essai 10] Coût de la meilleure solution trouvée : 57 [temps : 1871 ms]
 
-Meilleure : 55, moyenne : 61.5, ecart-type : 3.3541019662496847.
+Meilleure : 55
 
 Stratégie 3 : Algorithme génétique à deux mutations et sélection par tournoi.
 
@@ -98,18 +101,28 @@ générations.
 
 On effectue cette stratégie 10 fois pour évaluer la part d'aléatoire dans les solutions trouvées :
 
-[Essai 1] Coût de la meilleure solution trouvée : 61 [temps : 49 ms]
-[Essai 2] Coût de la meilleure solution trouvée : 66 [temps : 33 ms]
-[Essai 3] Coût de la meilleure solution trouvée : 65 [temps : 23 ms]
-[Essai 4] Coût de la meilleure solution trouvée : 62 [temps : 20 ms]
-[Essai 5] Coût de la meilleure solution trouvée : 63 [temps : 20 ms]
-[Essai 6] Coût de la meilleure solution trouvée : 58 [temps : 18 ms]
-[Essai 7] Coût de la meilleure solution trouvée : 67 [temps : 20 ms]
-[Essai 8] Coût de la meilleure solution trouvée : 56 [temps : 20 ms]
-[Essai 9] Coût de la meilleure solution trouvée : 58 [temps : 23 ms]
-[Essai 10] Coût de la meilleure solution trouvée : 68 [temps : 23 ms]
+[Essai 1] Coût de la meilleure solution trouvée : 63 [temps : 925 ms]
+[Essai 1] En réalisant un Hill climbing supplémentaire dessus : 63 [temps : 956 ms]
+[Essai 2] Coût de la meilleure solution trouvée : 61 [temps : 830 ms]
+[Essai 2] En réalisant un Hill climbing supplémentaire dessus : 61 [temps : 863 ms]
+[Essai 3] Coût de la meilleure solution trouvée : 63 [temps : 832 ms]
+[Essai 3] En réalisant un Hill climbing supplémentaire dessus : 63 [temps : 867 ms]
+[Essai 4] Coût de la meilleure solution trouvée : 65 [temps : 830 ms]
+[Essai 4] En réalisant un Hill climbing supplémentaire dessus : 65 [temps : 862 ms]
+[Essai 5] Coût de la meilleure solution trouvée : 69 [temps : 850 ms]
+[Essai 5] En réalisant un Hill climbing supplémentaire dessus : 69 [temps : 881 ms]
+[Essai 6] Coût de la meilleure solution trouvée : 61 [temps : 858 ms]
+[Essai 6] En réalisant un Hill climbing supplémentaire dessus : 61 [temps : 890 ms]
+[Essai 7] Coût de la meilleure solution trouvée : 66 [temps : 843 ms]
+[Essai 7] En réalisant un Hill climbing supplémentaire dessus : 66 [temps : 876 ms]
+[Essai 8] Coût de la meilleure solution trouvée : 70 [temps : 825 ms]
+[Essai 8] En réalisant un Hill climbing supplémentaire dessus : 70 [temps : 859 ms]
+[Essai 9] Coût de la meilleure solution trouvée : 59 [temps : 818 ms]
+[Essai 9] En réalisant un Hill climbing supplémentaire dessus : 59 [temps : 853 ms]
+[Essai 10] Coût de la meilleure solution trouvée : 65 [temps : 821 ms]
+[Essai 10] En réalisant un Hill climbing supplémentaire dessus : 65 [temps : 853 ms]
 
-Meilleure : 56, moyenne : 62.4, ecart-type : 3.929376540877707.
+Meilleure : 55
 
 Diagramme de Gantt de la meilleure solution trouvée parmi toutes ces stratégies :
 
@@ -126,17 +139,17 @@ Job 9 : 9
 Job 10 : :
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine   1 : |   |   | 9 | 1 | 1 | 1 | 1 | 1 | 6 | 6 | 4 | 5 |   |   | 9 | 9 | 2 | 2 |   |   |   |   | 8 |   |   |   |   |   | 1 | 5 | 5 | 5 | 5 | 5 |   |   |   | 2 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 
+| Machine   1 : |   |   |   |   |   |   |   | 2 | 2 | 7 | 7 | 7 | 1 | 1 | 1 | 1 | 1 | 9 | 9 |   |   |   |   |   | 8 | 6 | 6 | 1 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 6 |   |   |   |   |   |   | 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine   2 : | 3 | 3 | 3 | 3 | 3 | 3 | 2 | 2 | 2 | 2 | 2 | 2 | 1 | 5 | 5 | 5 | 5 | 5 | 5 | 4 | 4 | 4 | 4 | 4 | 4 | 6 | 6 | 6 | 6 | 6 | 6 | 2 | 2 | 2 | 2 | 2 | 2 | 9 | 9 | 9 | 9 | 9 | 9 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 
+| Machine   2 : | 2 | 2 | 2 | 2 | 2 | 2 | 4 | 4 | 4 | 4 | 4 | 4 | 3 | 3 | 3 | 3 | 3 | 3 | 5 | 5 | 5 | 5 | 5 | 5 | 9 | 9 | 9 | 9 | 9 | 9 | 4 | 4 | 4 | 4 | 4 | 4 | 8 | 8 | 8 | 8 | 8 | 8 | 6 | 6 | 6 | 6 | 6 | 6 | 4 | 2 | 2 | 2 | 2 | 2 | 2 | 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine   3 : | 8 | 8 | 8 | 8 | 6 | 6 | 6 | 6 | 9 | 9 | 9 | 9 | 9 | 9 | 2 | : | : | : | : | : | : | : | : | : | 1 | 1 | 1 | 1 | 4 |   | 3 | 3 | 3 | 3 | 4 | 4 | 4 | 4 | 4 | 7 | 7 | 7 | 7 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 7 |   |   |   |   | 
+| Machine   3 : | : | : | : | : |   |   | 2 |   |   |   | : | : | : | : | : | 6 | 6 | 6 | 6 | 7 | 7 | 7 | 7 |   | 5 | 5 | 5 | 5 | 1 |   |   |   |   |   |   |   | 4 | 7 | 5 | 5 | 5 | 5 |   |   |   |   |   |   |   | 4 | 4 | 4 | 4 |   |   | 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine   4 : |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | : | : | : | : | : | : | 7 | 7 |   |   |   | 6 | 6 | 5 | 5 | 5 | 5 | 5 | 5 | 9 | 9 | 9 | 9 | 9 | 9 | : | : |   |   |   | 
+| Machine   4 : |   |   |   |   |   |   |   |   | 9 | 9 | 9 | 2 | 2 | 2 | 2 | 2 | 2 |   | : | : | : | : | : | : |   |   |   |   |   | 1 | 1 | 1 | 5 | 5 | 5 | 5 | 5 | 5 | 9 | 9 | 9 | 9 | 9 | 9 | : | : | 8 | 8 | 8 | 8 | 8 | 8 | 6 | 6 |   | 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine   5 : | 5 | 5 | 5 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 3 | 3 | 3 | 3 | 3 |   |   |   |   | 7 |   |   |   |   |   |   |   |   |   |   |   | 
+| Machine   5 : | 5 | 5 | 5 | 9 | 9 | 9 | 9 | 9 |   |   |   |   |   |   |   |   |   | 1 | 1 | 1 |   |   |   | 7 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 3 | 3 | 3 | 3 | 3 |   |   |   |   |   | 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine   6 : | 7 | 9 | : | : |   |   |   |   |   |   | 6 | 6 | 6 | 6 | 6 | 6 | 8 | 8 | 8 | 8 | 8 | 8 | 3 | 3 | : | 3 | 3 | 3 | 3 | 3 |   | 6 | 6 | 6 | 6 | 6 |   |   |   | 4 | 4 |   |   |   | 5 | 5 | 5 | 5 | 5 | 5 |   |   |   |   |   | 
+| Machine   6 : | 9 | 7 |   |   | : | : | : | : | : | : | 5 | 5 | 5 | 5 | 5 | 8 | 8 | : | 8 | 8 | 8 | 8 | 8 | 8 | 1 | 1 | 3 | 3 | 6 | 6 | 6 | 6 | 6 | 6 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |   |   |   |   |   |   |   |   |   |   | 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 | Temps    : ---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|-->

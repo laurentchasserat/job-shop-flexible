@@ -27,6 +27,7 @@ public class Solution implements Comparable<Solution>{
         this.probleme = pb;
         this.machineAssignment = ma;
         this.operationSequence = os;
+        this.cout = Integer.MAX_VALUE;
         this.calculerCout(false);
     }
 
