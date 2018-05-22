@@ -96,7 +96,7 @@ public class AlgoGenetique {
         else {
             System.out.print("FIN ("+nbIterations+" générations).\n");
             resultat = best;
-            System.out.println("Best : "+best.getCout());
+            System.out.println("                 Best : "+best.getCout());
             nbIterations = 0;
         }
 

@@ -1,0 +1,332 @@
+--------------------------------------------------------------------------------------
+Rapport de tests de nos différents algorithmes autour du problème du Job Shop Flexible
+sur différents jeux de données.
+Date de génération : Tue May 22 11:24:55 CEST 2018
+--------------------------------------------------------------------------------------
+
+----------------------------------------------
+Tests sur le jeu de données de l'exemple du TP
+----------------------------------------------
+Nb. jobs = 3, Nb. machines = 3.
+
+Stratégie 1 : Heuristique gloutonne puis Hill Climbing simple.
+
+Coût de la solution trouvée : 12 [temps : 88 ms]
+
+Stratégie 2 : Génération de 5 solutions aléatoires puis Hill Climbing simple.
+
+sur chacune d'entre elles. On garde la meilleure solution trouvée.
+
+On effectue cette stratégie 3 fois pour évaluer la part d'aléatoire dans les solutions trouvées :
+
+[Essai 1] Coût de la meilleure solution trouvée : 9 [temps : 56 ms]
+[Essai 2] Coût de la meilleure solution trouvée : 11 [temps : 13 ms]
+[Essai 3] Coût de la meilleure solution trouvée : 9 [temps : 8 ms]
+
+Meilleure : 9, moyenne : 9.666666666666666, ecart-type : 0.9428090415820692.
+
+Stratégie 3 : Algorithme génétique à deux mutations et sélection par tournoi.
+
+On génère une génération de 10 solutions aléatoires. Les 25 meilleures vont engendrer
+des enfants en mutant (permutations sur OS et changements sur MA, ce qui donne un pool
+de 75 solutions. On effectue un tournoi pour en retenir 50 et on recommence sur 10
+générations.
+
+On effectue cette stratégie 3 fois pour évaluer la part d'aléatoire dans les solutions trouvées :
+
+[Essai 1] Coût de la meilleure solution trouvée : 10 [temps : 17 ms]
+[Essai 2] Coût de la meilleure solution trouvée : 10 [temps : 8 ms]
+[Essai 3] Coût de la meilleure solution trouvée : 9 [temps : 5 ms]
+
+Meilleure : 9, moyenne : 9.666666666666666, ecart-type : 0.47140452079105344.
+
+Diagramme de Gantt de la meilleure solution trouvée parmi toutes ces stratégies :
+
+Légende :
+Job 1 : 1
+Job 2 : 2
+Job 3 : 3
+
+-----------------------------------------------------
+| Machine   1 : | 1 | 1 | 1 |   | 2 | 2 | 1 | 1 | 1 | 
+-----------------------------------------------------
+| Machine   2 : | 2 | 2 | 2 | 2 | 1 | 1 | 3 | 3 | 3 | 
+-----------------------------------------------------
+| Machine   3 : | 3 | 3 |   |   |   |   | 2 | 2 |   | 
+-----------------------------------------------------
+
+| Temps    : ---|---|---|---|---|---|---|---|---|---|-->
+                0   1   2   3   4   5   6   7   8   9
+
+Temps total : 9
+
+
+----------------------------------------------------------------------------------
+Tests sur le jeu de données "Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk01.fjs"
+----------------------------------------------------------------------------------
+Nb. jobs = 10, Nb. machines = 6.
+
+Stratégie 1 : Heuristique gloutonne puis Hill Climbing simple.
+
+Coût de la solution trouvée : 74 [temps : 592 ms]
+
+Stratégie 2 : Génération de 10 solutions aléatoires puis Hill Climbing simple.
+
+sur chacune d'entre elles. On garde la meilleure solution trouvée.
+
+On effectue cette stratégie 100 fois pour évaluer la part d'aléatoire dans les solutions trouvées :
+
+[Essai 1] Coût de la meilleure solution trouvée : 63 [temps : 1035 ms]
+[Essai 2] Coût de la meilleure solution trouvée : 69 [temps : 405 ms]
+[Essai 3] Coût de la meilleure solution trouvée : 55 [temps : 371 ms]
+[Essai 4] Coût de la meilleure solution trouvée : 73 [temps : 407 ms]
+[Essai 5] Coût de la meilleure solution trouvée : 61 [temps : 385 ms]
+[Essai 6] Coût de la meilleure solution trouvée : 73 [temps : 380 ms]
+[Essai 7] Coût de la meilleure solution trouvée : 60 [temps : 408 ms]
+[Essai 8] Coût de la meilleure solution trouvée : 60 [temps : 467 ms]
+[Essai 9] Coût de la meilleure solution trouvée : 74 [temps : 379 ms]
+[Essai 10] Coût de la meilleure solution trouvée : 69 [temps : 377 ms]
+[Essai 11] Coût de la meilleure solution trouvée : 70 [temps : 390 ms]
+[Essai 12] Coût de la meilleure solution trouvée : 65 [temps : 448 ms]
+[Essai 13] Coût de la meilleure solution trouvée : 69 [temps : 412 ms]
+[Essai 14] Coût de la meilleure solution trouvée : 63 [temps : 383 ms]
+[Essai 15] Coût de la meilleure solution trouvée : 56 [temps : 414 ms]
+[Essai 16] Coût de la meilleure solution trouvée : 73 [temps : 418 ms]
+[Essai 17] Coût de la meilleure solution trouvée : 64 [temps : 362 ms]
+[Essai 18] Coût de la meilleure solution trouvée : 67 [temps : 410 ms]
+[Essai 19] Coût de la meilleure solution trouvée : 62 [temps : 379 ms]
+[Essai 20] Coût de la meilleure solution trouvée : 68 [temps : 370 ms]
+[Essai 21] Coût de la meilleure solution trouvée : 62 [temps : 402 ms]
+[Essai 22] Coût de la meilleure solution trouvée : 56 [temps : 368 ms]
+[Essai 23] Coût de la meilleure solution trouvée : 74 [temps : 374 ms]
+[Essai 24] Coût de la meilleure solution trouvée : 72 [temps : 362 ms]
+[Essai 25] Coût de la meilleure solution trouvée : 69 [temps : 378 ms]
+[Essai 26] Coût de la meilleure solution trouvée : 72 [temps : 366 ms]
+[Essai 27] Coût de la meilleure solution trouvée : 67 [temps : 380 ms]
+[Essai 28] Coût de la meilleure solution trouvée : 60 [temps : 427 ms]
+[Essai 29] Coût de la meilleure solution trouvée : 61 [temps : 402 ms]
+[Essai 30] Coût de la meilleure solution trouvée : 74 [temps : 411 ms]
+[Essai 31] Coût de la meilleure solution trouvée : 70 [temps : 416 ms]
+[Essai 32] Coût de la meilleure solution trouvée : 62 [temps : 405 ms]
+[Essai 33] Coût de la meilleure solution trouvée : 62 [temps : 422 ms]
+[Essai 34] Coût de la meilleure solution trouvée : 69 [temps : 395 ms]
+[Essai 35] Coût de la meilleure solution trouvée : 60 [temps : 403 ms]
+[Essai 36] Coût de la meilleure solution trouvée : 62 [temps : 390 ms]
+[Essai 37] Coût de la meilleure solution trouvée : 68 [temps : 436 ms]
+[Essai 38] Coût de la meilleure solution trouvée : 64 [temps : 426 ms]
+[Essai 39] Coût de la meilleure solution trouvée : 61 [temps : 433 ms]
+[Essai 40] Coût de la meilleure solution trouvée : 73 [temps : 394 ms]
+[Essai 41] Coût de la meilleure solution trouvée : 66 [temps : 391 ms]
+[Essai 42] Coût de la meilleure solution trouvée : 74 [temps : 386 ms]
+[Essai 43] Coût de la meilleure solution trouvée : 63 [temps : 423 ms]
+[Essai 44] Coût de la meilleure solution trouvée : 59 [temps : 449 ms]
+[Essai 45] Coût de la meilleure solution trouvée : 72 [temps : 377 ms]
+[Essai 46] Coût de la meilleure solution trouvée : 68 [temps : 367 ms]
+[Essai 47] Coût de la meilleure solution trouvée : 67 [temps : 383 ms]
+[Essai 48] Coût de la meilleure solution trouvée : 62 [temps : 421 ms]
+[Essai 49] Coût de la meilleure solution trouvée : 73 [temps : 416 ms]
+[Essai 50] Coût de la meilleure solution trouvée : 73 [temps : 400 ms]
+[Essai 51] Coût de la meilleure solution trouvée : 64 [temps : 411 ms]
+[Essai 52] Coût de la meilleure solution trouvée : 68 [temps : 406 ms]
+[Essai 53] Coût de la meilleure solution trouvée : 62 [temps : 407 ms]
+[Essai 54] Coût de la meilleure solution trouvée : 75 [temps : 358 ms]
+[Essai 55] Coût de la meilleure solution trouvée : 71 [temps : 371 ms]
+[Essai 56] Coût de la meilleure solution trouvée : 57 [temps : 416 ms]
+[Essai 57] Coût de la meilleure solution trouvée : 67 [temps : 401 ms]
+[Essai 58] Coût de la meilleure solution trouvée : 60 [temps : 413 ms]
+[Essai 59] Coût de la meilleure solution trouvée : 61 [temps : 376 ms]
+[Essai 60] Coût de la meilleure solution trouvée : 61 [temps : 424 ms]
+[Essai 61] Coût de la meilleure solution trouvée : 58 [temps : 363 ms]
+[Essai 62] Coût de la meilleure solution trouvée : 62 [temps : 380 ms]
+[Essai 63] Coût de la meilleure solution trouvée : 67 [temps : 373 ms]
+[Essai 64] Coût de la meilleure solution trouvée : 67 [temps : 382 ms]
+[Essai 65] Coût de la meilleure solution trouvée : 63 [temps : 415 ms]
+[Essai 66] Coût de la meilleure solution trouvée : 69 [temps : 390 ms]
+[Essai 67] Coût de la meilleure solution trouvée : 64 [temps : 375 ms]
+[Essai 68] Coût de la meilleure solution trouvée : 72 [temps : 358 ms]
+[Essai 69] Coût de la meilleure solution trouvée : 61 [temps : 444 ms]
+[Essai 70] Coût de la meilleure solution trouvée : 64 [temps : 429 ms]
+[Essai 71] Coût de la meilleure solution trouvée : 60 [temps : 357 ms]
+[Essai 72] Coût de la meilleure solution trouvée : 62 [temps : 477 ms]
+[Essai 73] Coût de la meilleure solution trouvée : 68 [temps : 430 ms]
+[Essai 74] Coût de la meilleure solution trouvée : 60 [temps : 451 ms]
+[Essai 75] Coût de la meilleure solution trouvée : 54 [temps : 438 ms]
+[Essai 76] Coût de la meilleure solution trouvée : 67 [temps : 445 ms]
+[Essai 77] Coût de la meilleure solution trouvée : 56 [temps : 476 ms]
+[Essai 78] Coût de la meilleure solution trouvée : 56 [temps : 430 ms]
+[Essai 79] Coût de la meilleure solution trouvée : 53 [temps : 522 ms]
+[Essai 80] Coût de la meilleure solution trouvée : 60 [temps : 426 ms]
+[Essai 81] Coût de la meilleure solution trouvée : 67 [temps : 534 ms]
+[Essai 82] Coût de la meilleure solution trouvée : 69 [temps : 508 ms]
+[Essai 83] Coût de la meilleure solution trouvée : 67 [temps : 428 ms]
+[Essai 84] Coût de la meilleure solution trouvée : 73 [temps : 468 ms]
+[Essai 85] Coût de la meilleure solution trouvée : 62 [temps : 478 ms]
+[Essai 86] Coût de la meilleure solution trouvée : 58 [temps : 454 ms]
+[Essai 87] Coût de la meilleure solution trouvée : 68 [temps : 360 ms]
+[Essai 88] Coût de la meilleure solution trouvée : 65 [temps : 399 ms]
+[Essai 89] Coût de la meilleure solution trouvée : 67 [temps : 546 ms]
+[Essai 90] Coût de la meilleure solution trouvée : 56 [temps : 623 ms]
+[Essai 91] Coût de la meilleure solution trouvée : 74 [temps : 691 ms]
+[Essai 92] Coût de la meilleure solution trouvée : 67 [temps : 585 ms]
+[Essai 93] Coût de la meilleure solution trouvée : 74 [temps : 511 ms]
+[Essai 94] Coût de la meilleure solution trouvée : 55 [temps : 477 ms]
+[Essai 95] Coût de la meilleure solution trouvée : 66 [temps : 451 ms]
+[Essai 96] Coût de la meilleure solution trouvée : 68 [temps : 600 ms]
+[Essai 97] Coût de la meilleure solution trouvée : 62 [temps : 539 ms]
+[Essai 98] Coût de la meilleure solution trouvée : 73 [temps : 476 ms]
+[Essai 99] Coût de la meilleure solution trouvée : 73 [temps : 552 ms]
+[Essai 100] Coût de la meilleure solution trouvée : 66 [temps : 529 ms]
+
+Meilleure : 55, moyenne : 65.28, ecart-type : 5.605497301756524.
+
+Stratégie 3 : Algorithme génétique à deux mutations et sélection par tournoi.
+
+On génère une génération de 50 solutions aléatoires. Les 25 meilleures vont engendrer
+des enfants en mutant (permutations sur OS et changements sur MA, ce qui donne un pool
+de 75 solutions. On effectue un tournoi pour en retenir 50 et on recommence sur 50
+générations.
+
+On effectue cette stratégie 100 fois pour évaluer la part d'aléatoire dans les solutions trouvées :
+
+[Essai 1] Coût de la meilleure solution trouvée : 63 [temps : 59 ms]
+[Essai 2] Coût de la meilleure solution trouvée : 62 [temps : 62 ms]
+[Essai 3] Coût de la meilleure solution trouvée : 68 [temps : 44 ms]
+[Essai 4] Coût de la meilleure solution trouvée : 60 [temps : 22 ms]
+[Essai 5] Coût de la meilleure solution trouvée : 63 [temps : 35 ms]
+[Essai 6] Coût de la meilleure solution trouvée : 63 [temps : 29 ms]
+[Essai 7] Coût de la meilleure solution trouvée : 68 [temps : 24 ms]
+[Essai 8] Coût de la meilleure solution trouvée : 66 [temps : 27 ms]
+[Essai 9] Coût de la meilleure solution trouvée : 65 [temps : 25 ms]
+[Essai 10] Coût de la meilleure solution trouvée : 65 [temps : 25 ms]
+[Essai 11] Coût de la meilleure solution trouvée : 62 [temps : 29 ms]
+[Essai 12] Coût de la meilleure solution trouvée : 60 [temps : 28 ms]
+[Essai 13] Coût de la meilleure solution trouvée : 59 [temps : 25 ms]
+[Essai 14] Coût de la meilleure solution trouvée : 68 [temps : 22 ms]
+[Essai 15] Coût de la meilleure solution trouvée : 67 [temps : 23 ms]
+[Essai 16] Coût de la meilleure solution trouvée : 64 [temps : 24 ms]
+[Essai 17] Coût de la meilleure solution trouvée : 68 [temps : 23 ms]
+[Essai 18] Coût de la meilleure solution trouvée : 65 [temps : 21 ms]
+[Essai 19] Coût de la meilleure solution trouvée : 63 [temps : 21 ms]
+[Essai 20] Coût de la meilleure solution trouvée : 63 [temps : 21 ms]
+[Essai 21] Coût de la meilleure solution trouvée : 62 [temps : 21 ms]
+[Essai 22] Coût de la meilleure solution trouvée : 61 [temps : 25 ms]
+[Essai 23] Coût de la meilleure solution trouvée : 64 [temps : 23 ms]
+[Essai 24] Coût de la meilleure solution trouvée : 67 [temps : 31 ms]
+[Essai 25] Coût de la meilleure solution trouvée : 74 [temps : 25 ms]
+[Essai 26] Coût de la meilleure solution trouvée : 66 [temps : 28 ms]
+[Essai 27] Coût de la meilleure solution trouvée : 66 [temps : 22 ms]
+[Essai 28] Coût de la meilleure solution trouvée : 61 [temps : 24 ms]
+[Essai 29] Coût de la meilleure solution trouvée : 66 [temps : 20 ms]
+[Essai 30] Coût de la meilleure solution trouvée : 68 [temps : 23 ms]
+[Essai 31] Coût de la meilleure solution trouvée : 60 [temps : 22 ms]
+[Essai 32] Coût de la meilleure solution trouvée : 64 [temps : 23 ms]
+[Essai 33] Coût de la meilleure solution trouvée : 69 [temps : 22 ms]
+[Essai 34] Coût de la meilleure solution trouvée : 68 [temps : 23 ms]
+[Essai 35] Coût de la meilleure solution trouvée : 61 [temps : 21 ms]
+[Essai 36] Coût de la meilleure solution trouvée : 63 [temps : 22 ms]
+[Essai 37] Coût de la meilleure solution trouvée : 69 [temps : 22 ms]
+[Essai 38] Coût de la meilleure solution trouvée : 63 [temps : 21 ms]
+[Essai 39] Coût de la meilleure solution trouvée : 64 [temps : 22 ms]
+[Essai 40] Coût de la meilleure solution trouvée : 60 [temps : 22 ms]
+[Essai 41] Coût de la meilleure solution trouvée : 65 [temps : 22 ms]
+[Essai 42] Coût de la meilleure solution trouvée : 65 [temps : 24 ms]
+[Essai 43] Coût de la meilleure solution trouvée : 65 [temps : 22 ms]
+[Essai 44] Coût de la meilleure solution trouvée : 63 [temps : 21 ms]
+[Essai 45] Coût de la meilleure solution trouvée : 60 [temps : 21 ms]
+[Essai 46] Coût de la meilleure solution trouvée : 60 [temps : 21 ms]
+[Essai 47] Coût de la meilleure solution trouvée : 57 [temps : 21 ms]
+[Essai 48] Coût de la meilleure solution trouvée : 62 [temps : 25 ms]
+[Essai 49] Coût de la meilleure solution trouvée : 60 [temps : 39 ms]
+[Essai 50] Coût de la meilleure solution trouvée : 67 [temps : 40 ms]
+[Essai 51] Coût de la meilleure solution trouvée : 62 [temps : 31 ms]
+[Essai 52] Coût de la meilleure solution trouvée : 66 [temps : 25 ms]
+[Essai 53] Coût de la meilleure solution trouvée : 61 [temps : 27 ms]
+[Essai 54] Coût de la meilleure solution trouvée : 61 [temps : 35 ms]
+[Essai 55] Coût de la meilleure solution trouvée : 65 [temps : 23 ms]
+[Essai 56] Coût de la meilleure solution trouvée : 65 [temps : 32 ms]
+[Essai 57] Coût de la meilleure solution trouvée : 63 [temps : 26 ms]
+[Essai 58] Coût de la meilleure solution trouvée : 61 [temps : 25 ms]
+[Essai 59] Coût de la meilleure solution trouvée : 61 [temps : 26 ms]
+[Essai 60] Coût de la meilleure solution trouvée : 62 [temps : 23 ms]
+[Essai 61] Coût de la meilleure solution trouvée : 61 [temps : 25 ms]
+[Essai 62] Coût de la meilleure solution trouvée : 66 [temps : 27 ms]
+[Essai 63] Coût de la meilleure solution trouvée : 67 [temps : 23 ms]
+[Essai 64] Coût de la meilleure solution trouvée : 67 [temps : 30 ms]
+[Essai 65] Coût de la meilleure solution trouvée : 65 [temps : 32 ms]
+[Essai 66] Coût de la meilleure solution trouvée : 69 [temps : 28 ms]
+[Essai 67] Coût de la meilleure solution trouvée : 69 [temps : 27 ms]
+[Essai 68] Coût de la meilleure solution trouvée : 65 [temps : 21 ms]
+[Essai 69] Coût de la meilleure solution trouvée : 62 [temps : 22 ms]
+[Essai 70] Coût de la meilleure solution trouvée : 62 [temps : 24 ms]
+[Essai 71] Coût de la meilleure solution trouvée : 64 [temps : 23 ms]
+[Essai 72] Coût de la meilleure solution trouvée : 65 [temps : 21 ms]
+[Essai 73] Coût de la meilleure solution trouvée : 64 [temps : 26 ms]
+[Essai 74] Coût de la meilleure solution trouvée : 66 [temps : 21 ms]
+[Essai 75] Coût de la meilleure solution trouvée : 67 [temps : 22 ms]
+[Essai 76] Coût de la meilleure solution trouvée : 69 [temps : 27 ms]
+[Essai 77] Coût de la meilleure solution trouvée : 60 [temps : 20 ms]
+[Essai 78] Coût de la meilleure solution trouvée : 61 [temps : 22 ms]
+[Essai 79] Coût de la meilleure solution trouvée : 60 [temps : 28 ms]
+[Essai 80] Coût de la meilleure solution trouvée : 67 [temps : 21 ms]
+[Essai 81] Coût de la meilleure solution trouvée : 64 [temps : 22 ms]
+[Essai 82] Coût de la meilleure solution trouvée : 60 [temps : 26 ms]
+[Essai 83] Coût de la meilleure solution trouvée : 61 [temps : 21 ms]
+[Essai 84] Coût de la meilleure solution trouvée : 61 [temps : 21 ms]
+[Essai 85] Coût de la meilleure solution trouvée : 60 [temps : 27 ms]
+[Essai 86] Coût de la meilleure solution trouvée : 63 [temps : 27 ms]
+[Essai 87] Coût de la meilleure solution trouvée : 63 [temps : 36 ms]
+[Essai 88] Coût de la meilleure solution trouvée : 71 [temps : 37 ms]
+[Essai 89] Coût de la meilleure solution trouvée : 70 [temps : 31 ms]
+[Essai 90] Coût de la meilleure solution trouvée : 67 [temps : 35 ms]
+[Essai 91] Coût de la meilleure solution trouvée : 66 [temps : 31 ms]
+[Essai 92] Coût de la meilleure solution trouvée : 65 [temps : 29 ms]
+[Essai 93] Coût de la meilleure solution trouvée : 66 [temps : 23 ms]
+[Essai 94] Coût de la meilleure solution trouvée : 58 [temps : 22 ms]
+[Essai 95] Coût de la meilleure solution trouvée : 61 [temps : 23 ms]
+[Essai 96] Coût de la meilleure solution trouvée : 58 [temps : 22 ms]
+[Essai 97] Coût de la meilleure solution trouvée : 62 [temps : 21 ms]
+[Essai 98] Coût de la meilleure solution trouvée : 62 [temps : 22 ms]
+[Essai 99] Coût de la meilleure solution trouvée : 64 [temps : 20 ms]
+[Essai 100] Coût de la meilleure solution trouvée : 63 [temps : 21 ms]
+
+Meilleure : 59, moyenne : 63.9, ecart-type : 3.173326330524512.
+
+Diagramme de Gantt de la meilleure solution trouvée parmi toutes ces stratégies :
+
+Légende :
+Job 1 : 1
+Job 2 : 2
+Job 3 : 3
+Job 4 : 4
+Job 5 : 5
+Job 6 : 6
+Job 7 : 7
+Job 8 : 8
+Job 9 : 9
+Job 10 : :
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   1 : |   |   |   | 5 |   |   |   | 2 | 2 | 9 | 1 | 1 | 1 | 1 | 1 | 4 | 3 |   | 5 | 5 | 5 | 5 | 5 | 7 | 7 | 7 | 7 | 7 | 7 | 9 | 9 | : | : | : | 6 | 6 | 2 |   |   |   |   |   | 3 |   |   |   |   |   |   |   |   |   |   |   |   | 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   2 : | 2 | 2 | 2 | 2 | 2 | 2 | 3 | 3 | 3 | 3 | 3 | 3 | 5 | 5 | 5 | 5 | 5 | 5 | 4 | 4 | 4 | 4 | 4 | 4 | 8 | 8 | 8 | 8 | 8 | 8 | 2 | 2 | 2 | 2 | 2 | 2 | 3 | 3 | 3 | 3 | 3 | 3 | 6 | 6 | 6 | 6 | 6 | 6 | 9 | 9 | 9 | 9 | 9 | 9 |   | 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   3 : | : | : | : | : |   |   | 2 | : | : | : | : |   |   |   | 7 | 7 | 7 | 7 | 1 | 1 | 1 | 1 |   |   |   |   |   | 1 |   | 7 | 4 | 1 | 1 | 1 | 1 | 1 | 1 | 6 | 6 | 6 | 6 | 4 | 4 | 4 | 4 |   |   |   |   |   |   |   |   |   |   | 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   4 : |   |   |   |   |   |   |   |   |   |   |   |   | 7 | 7 | 9 | 9 | 9 | : | : | : | : | : | : | 5 | 5 | 5 | 5 | 5 | 5 |   | 8 | 8 | 8 | 8 | 8 | 8 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 6 | 6 | 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   5 : | 5 | 5 | 5 |   |   |   |   |   |   |   |   | : | : | : |   | 1 | 1 | 1 |   |   |   |   |   |   |   |   |   |   |   |   |   | 4 | 4 | 4 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   6 : | 8 | 8 | 9 | 8 | 8 | 8 | 8 | 8 | 8 | 6 | 6 | 7 | 3 | 3 | : | 8 | 8 | 8 | 8 | 8 |   |   | 1 | 1 | 1 | 1 | 1 |   |   |   |   | 9 | 9 | 9 | 9 | 9 | 9 | 5 | 5 | 5 | 5 | 5 | 5 |   |   |   |   |   | 6 | 6 | 6 | 6 | 6 |   |   | 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+| Temps    : ---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|-->
+                0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55
+
+Temps total : 55
+
+
+----------------------------------------------------------------------------------
+Tests sur le jeu de données "Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk08.fjs"
+----------------------------------------------------------------------------------
+
+

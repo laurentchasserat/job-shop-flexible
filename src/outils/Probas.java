@@ -24,6 +24,16 @@ public class Probas {
         return result ;
     }
 
+    public static Long MoyenneLong(ArrayList<Long> ar) {
+        Long sum = 0L;
+        for (Long s : ar) {
+            sum += s;
+        }
+        Long result = sum/ar.size();
+        return result ;
+    }
+
+
     public static Double EcartType(ArrayList<Solution> ar) {
         ArrayList<Double> arSquared = new ArrayList<>();
         for (Solution s : ar) {

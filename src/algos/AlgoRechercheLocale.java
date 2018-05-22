@@ -48,7 +48,7 @@ public class AlgoRechercheLocale {
             solutionFinale = solutionInitiale;
             //System.out.println("[Iteration "+nbIterations+"] Solution finale trouvée : "+solutionFinale.getCout()+" au bout de "+nbIterations+" itérations.");
             System.out.print(solutionFinale.getCout()+" -> FIN ("+nbIterations+" itérations).\n");
-            System.out.println("Best : "+solutionFinale.getCout());
+            System.out.println("                           Best : "+solutionFinale.getCout());
             nbIterations=0;
         }
 

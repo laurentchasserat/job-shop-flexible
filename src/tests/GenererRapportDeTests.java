@@ -16,6 +16,11 @@ public class GenererRapportDeTests {
     public static void genererRapport() {
         try {
 
+            long chrono;
+            long temps;
+
+            chrono = System.currentTimeMillis();
+
 
             File ff=new File("./rapport.txt");
             ff.createNewFile();
@@ -47,7 +52,7 @@ public class GenererRapportDeTests {
             ffw.write("----------------------------------------------------------------------------------\n");
             Probleme pb2 = Parser.parse("./TextData/Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk01.fjs");
 
-            testerUnProbleme(pb2, ffw, 10, 10, 50, 50);
+            testerUnProbleme(pb2, ffw, 100, 10, 500, 500);
 
             ffw.write("\n\n");
 
@@ -59,12 +64,14 @@ public class GenererRapportDeTests {
             Probleme pb3 = Parser.parse("./TextData/Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk08.fjs");
 
             // Très long !
-            //testerUnProbleme(pb3, ffw);
+            testerUnProbleme(pb3, ffw, 10, 10, 500, 500);
 
             ffw.write("\n\n");
 
             //----------------------------------------------------------------------------------------------------
 
+            temps = System.currentTimeMillis()-chrono;
+            ffw.write("Temps total d'exécution des tests : "+temps+" ms.\n");
             ffw.close(); // fermer le fichier à la fin des traitements
 
         } catch (FileNotFoundException e) {
@@ -92,6 +99,7 @@ public class GenererRapportDeTests {
         chrono = System.currentTimeMillis();
         Solution sol1 = hc.rechercheLocaleParPermutationsSimples(CalculSolutions.heuristiqueGloutonne(pb1));
         temps = System.currentTimeMillis()-chrono;
+
         theBestOfAll.add(sol1);
         ffw.write("Coût de la solution trouvée : "+sol1.getCout()+" [temps : "+temps+" ms]\n");
 
@@ -101,6 +109,9 @@ public class GenererRapportDeTests {
         ffw.write("\nStratégie 2 : Génération de "+nbSolutionsGenereesAleatoirementStrat2+" solutions aléatoires puis Hill Climbing simple.\n\n");
         ffw.write("sur chacune d'entre elles. On garde la meilleure solution trouvée.\n");
         ffw.write("\nOn effectue cette stratégie "+nbDEssaisParStrategie+" fois pour évaluer la part d'aléatoire dans les solutions trouvées :\n\n");
+
+        ArrayList<Long> listeDesTemps = new ArrayList<>();
+
         ArrayList<Solution> theBest = new ArrayList<>();
         ArrayList<Solution> sols;
         for (int i=0; i<nbDEssaisParStrategie; i++) {
@@ -113,6 +124,7 @@ public class GenererRapportDeTests {
             }
             solsAmeliorees.sort(Solution::compareTo);
             temps = System.currentTimeMillis()-chrono;
+            listeDesTemps.add(temps);
             theBest.add(solsAmeliorees.get(0));
             ffw.write("[Essai "+(i+1)+"] Coût de la meilleure solution trouvée : "+solsAmeliorees.get(0).getCout()+" [temps : "+temps+" ms]\n");
         }
@@ -120,17 +132,19 @@ public class GenererRapportDeTests {
         theBestOfAll.add(theBest.get(0));
         ffw.write("\nMeilleure : "+theBest.get(0).getCout()+", moyenne : "+Probas.MoyenneSols(theBest)
                 +", ecart-type : "+Probas.EcartType(theBest)+".\n");
+        ffw.write("Temps moyen : "+Probas.MoyenneLong(listeDesTemps)+" ms.\n");
 
 
 
 
         ffw.write("\nStratégie 3 : Algorithme génétique à deux mutations et sélection par tournoi.\n\n");
-        ffw.write("On génère une génération de "+taillePopulation+" solutions aléatoires. Les 25 meilleures vont engendrer\n");
+        ffw.write("On génère une génération de "+taillePopulation+" solutions aléatoires. Les "+((int)(0.5*taillePopulation))+" meilleures vont engendrer\n");
         ffw.write("des enfants en mutant (permutations sur OS et changements sur MA, ce qui donne un pool\n");
-        ffw.write("de 75 solutions. On effectue un tournoi pour en retenir 50 et on recommence sur "+nbGenerations+"\n");
+        ffw.write("de "+((int)(1.5*taillePopulation))+" solutions. On effectue un tournoi pour en retenir "+taillePopulation+" et on recommence sur "+nbGenerations+"\n");
         ffw.write("générations.\n");
         ffw.write("\nOn effectue cette stratégie "+nbDEssaisParStrategie+" fois pour évaluer la part d'aléatoire dans les solutions trouvées :\n\n");
         ArrayList<Solution> theBest2 = new ArrayList<>();
+        ArrayList<Long> listeDesTemps2 = new ArrayList<>();
         ArrayList<Solution> sols2;
         AlgoGenetique ag = new AlgoGenetique();
         for (int i=0; i<nbDEssaisParStrategie; i++) {
@@ -139,7 +153,8 @@ public class GenererRapportDeTests {
             sols2 = CalculSolutions.genererNSolutionsAleatoiresTriees(pb1,taillePopulation);
             Solution solGenetique = ag.algoGenetiqueTournoiMutations(sols2, nbGenerations);
             temps = System.currentTimeMillis()-chrono;
-            //Idée : réaliser un hill climbing sur la dernière el plus
+            listeDesTemps2.add(temps);
+            //Idée : réaliser un hill climbing sur la dernière el plus -> Inutile après tests !
             ffw.write("[Essai "+(i+1)+"] Coût de la meilleure solution trouvée : "+solGenetique.getCout()+" [temps : "+temps+" ms]\n");
             theBest2.add(solGenetique);
         }
@@ -147,6 +162,9 @@ public class GenererRapportDeTests {
         theBestOfAll.add(theBest2.get(0));
         ffw.write("\nMeilleure : "+theBest2.get(0).getCout()+", moyenne : "+Probas.MoyenneSols(theBest2)
                 +", ecart-type : "+Probas.EcartType(theBest2)+".\n");
+        ffw.write("Temps moyen : "+Probas.MoyenneLong(listeDesTemps2)+" ms.\n");
+
+
         theBestOfAll.sort(Solution::compareTo);
         ffw.write("\nDiagramme de Gantt de la meilleure solution trouvée parmi toutes ces stratégies :\n");
         theBestOfAll.get(0).getGantt().afficherGanttDansFichier(ffw);

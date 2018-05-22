@@ -24,7 +24,7 @@ On effectue cette stratégie 3 fois pour évaluer la part d'aléatoire dans les 
 [Essai 3] Coût de la meilleure solution trouvée : 10 [temps : 8 ms]
 
 Meilleure : 9, moyenne : 9.666666666666666, ecart-type : 0.47140452079105344.
-Temps moyen : 16.
+Temps moyen : 16 ms.
 
 Stratégie 3 : Algorithme génétique à deux mutations et sélection par tournoi.
 
@@ -40,7 +40,7 @@ On effectue cette stratégie 3 fois pour évaluer la part d'aléatoire dans les 
 [Essai 3] Coût de la meilleure solution trouvée : 11 [temps : 3 ms]
 
 Meilleure : 10, moyenne : 10.333333333333334, ecart-type : 0.4714045207910233.
-Temps moyen : 6.
+Temps moyen : 6 ms.
 
 Diagramme de Gantt de la meilleure solution trouvée parmi toutes ces stratégies :
 
@@ -180,7 +180,7 @@ On effectue cette stratégie 100 fois pour évaluer la part d'aléatoire dans le
 [Essai 100] Coût de la meilleure solution trouvée : 61 [temps : 389 ms]
 
 Meilleure : 54, moyenne : 65.54, ecart-type : 5.341198367407753.
-Temps moyen : 390.
+Temps moyen : 390 ms.
 
 Stratégie 3 : Algorithme génétique à deux mutations et sélection par tournoi.
 
@@ -379,7 +379,7 @@ On effectue cette stratégie 10 fois pour évaluer la part d'aléatoire dans les
 [Essai 10] Coût de la meilleure solution trouvée : 631 [temps : 9535 ms]
 
 Meilleure : 606, moyenne : 626.4, ecart-type : 8.856635930197228.
-Temps moyen : 9206.
+Temps moyen : 9206 ms.
 
 Diagramme de Gantt de la meilleure solution trouvée parmi toutes ces stratégies :
 
