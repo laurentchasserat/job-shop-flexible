@@ -64,7 +64,31 @@ public class GenererRapportDeTests {
             Probleme pb3 = Parser.parse("./TextData/Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk02.fjs");
 
             // Très long !
-            testerUnProbleme(pb3, ffw, 20, 10, 500, 500);
+            testerUnProbleme(pb3, ffw, 100, 10, 250, 250);
+
+            ffw.write("\n\n");
+
+            //----------------------------------------------------------------------------------------------------
+
+            ffw.write("----------------------------------------------------------------------------------\n");
+            ffw.write("Tests sur le jeu de données \"Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk03.fjs\"\n");
+            ffw.write("----------------------------------------------------------------------------------\n");
+            Probleme pb4 = Parser.parse("./TextData/Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk03.fjs");
+
+            // Très long !
+            testerUnProbleme(pb4, ffw, 100, 10, 250, 250);
+
+            ffw.write("\n\n");
+
+            //----------------------------------------------------------------------------------------------------
+
+            ffw.write("----------------------------------------------------------------------------------\n");
+            ffw.write("Tests sur le jeu de données \"Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk04.fjs\"\n");
+            ffw.write("----------------------------------------------------------------------------------\n");
+            Probleme pb5 = Parser.parse("./TextData/Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk04.fjs");
+
+            // Très long !
+            testerUnProbleme(pb5, ffw, 100, 10, 250, 250);
 
             ffw.write("\n\n");
 
