@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------------
 Rapport de tests de nos différents algorithmes autour du problème du Job Shop Flexible
 sur différents jeux de données.
-Date de génération : Tue May 22 15:40:15 CEST 2018
+Date de génération : Sat Jun 02 19:17:04 CEST 2018
 --------------------------------------------------------------------------------------
 
 ----------------------------------------------
@@ -11,7 +11,7 @@ Nb. jobs = 3, Nb. machines = 3.
 
 Stratégie 1 : Heuristique gloutonne puis Hill Climbing simple.
 
-Coût de la solution trouvée : 12 [temps : 134 ms]
+Coût de la solution trouvée : 12 [temps : 0 ms]
 
 Stratégie 2 : Génération de 5 solutions aléatoires puis Hill Climbing simple.
 
@@ -19,12 +19,12 @@ sur chacune d'entre elles. On garde la meilleure solution trouvée.
 
 On effectue cette stratégie 3 fois pour évaluer la part d'aléatoire dans les solutions trouvées :
 
-[Essai 1] Coût de la meilleure solution trouvée : 11 [temps : 27 ms]
-[Essai 2] Coût de la meilleure solution trouvée : 10 [temps : 10 ms]
-[Essai 3] Coût de la meilleure solution trouvée : 11 [temps : 7 ms]
+[Essai 1] Coût de la meilleure solution trouvée : 9 [temps : 2 ms]
+[Essai 2] Coût de la meilleure solution trouvée : 11 [temps : 1 ms]
+[Essai 3] Coût de la meilleure solution trouvée : 9 [temps : 1 ms]
 
-Meilleure : 10, moyenne : 10.666666666666666, ecart-type : 0.4714045207910384.
-Temps moyen : 14 ms.
+Meilleure : 9, moyenne : 9.666666666666666, ecart-type : 0.9428090415820692.
+Temps moyen : 1 ms.
 
 Stratégie 3 : Algorithme génétique à deux mutations et sélection par tournoi.
 
@@ -35,12 +35,12 @@ générations.
 
 On effectue cette stratégie 3 fois pour évaluer la part d'aléatoire dans les solutions trouvées :
 
-[Essai 1] Coût de la meilleure solution trouvée : 9 [temps : 30 ms]
-[Essai 2] Coût de la meilleure solution trouvée : 12 [temps : 6 ms]
-[Essai 3] Coût de la meilleure solution trouvée : 9 [temps : 8 ms]
+[Essai 1] Coût de la meilleure solution trouvée : 9 [temps : 0 ms]
+[Essai 2] Coût de la meilleure solution trouvée : 10 [temps : 0 ms]
+[Essai 3] Coût de la meilleure solution trouvée : 9 [temps : 1 ms]
 
-Meilleure : 9, moyenne : 10.0, ecart-type : 1.4142135623730951.
-Temps moyen : 14 ms.
+Meilleure : 9, moyenne : 9.333333333333334, ecart-type : 0.47140452079100825.
+Temps moyen : 0 ms.
 
 Diagramme de Gantt de la meilleure solution trouvée parmi toutes ces stratégies :
 
@@ -70,7 +70,7 @@ Nb. jobs = 10, Nb. machines = 6.
 
 Stratégie 1 : Heuristique gloutonne puis Hill Climbing simple.
 
-Coût de la solution trouvée : 74 [temps : 740 ms]
+Coût de la solution trouvée : 74 [temps : 125 ms]
 
 Stratégie 2 : Génération de 10 solutions aléatoires puis Hill Climbing simple.
 
@@ -78,109 +78,109 @@ sur chacune d'entre elles. On garde la meilleure solution trouvée.
 
 On effectue cette stratégie 100 fois pour évaluer la part d'aléatoire dans les solutions trouvées :
 
-[Essai 1] Coût de la meilleure solution trouvée : 62 [temps : 1210 ms]
-[Essai 2] Coût de la meilleure solution trouvée : 61 [temps : 484 ms]
-[Essai 3] Coût de la meilleure solution trouvée : 59 [temps : 448 ms]
-[Essai 4] Coût de la meilleure solution trouvée : 57 [temps : 436 ms]
-[Essai 5] Coût de la meilleure solution trouvée : 67 [temps : 576 ms]
-[Essai 6] Coût de la meilleure solution trouvée : 68 [temps : 511 ms]
-[Essai 7] Coût de la meilleure solution trouvée : 73 [temps : 532 ms]
-[Essai 8] Coût de la meilleure solution trouvée : 74 [temps : 503 ms]
-[Essai 9] Coût de la meilleure solution trouvée : 61 [temps : 469 ms]
-[Essai 10] Coût de la meilleure solution trouvée : 79 [temps : 538 ms]
-[Essai 11] Coût de la meilleure solution trouvée : 72 [temps : 505 ms]
-[Essai 12] Coût de la meilleure solution trouvée : 73 [temps : 500 ms]
-[Essai 13] Coût de la meilleure solution trouvée : 61 [temps : 427 ms]
-[Essai 14] Coût de la meilleure solution trouvée : 73 [temps : 489 ms]
-[Essai 15] Coût de la meilleure solution trouvée : 73 [temps : 434 ms]
-[Essai 16] Coût de la meilleure solution trouvée : 64 [temps : 535 ms]
-[Essai 17] Coût de la meilleure solution trouvée : 74 [temps : 435 ms]
-[Essai 18] Coût de la meilleure solution trouvée : 73 [temps : 440 ms]
-[Essai 19] Coût de la meilleure solution trouvée : 68 [temps : 489 ms]
-[Essai 20] Coût de la meilleure solution trouvée : 75 [temps : 432 ms]
-[Essai 21] Coût de la meilleure solution trouvée : 61 [temps : 491 ms]
-[Essai 22] Coût de la meilleure solution trouvée : 55 [temps : 486 ms]
-[Essai 23] Coût de la meilleure solution trouvée : 61 [temps : 611 ms]
-[Essai 24] Coût de la meilleure solution trouvée : 63 [temps : 430 ms]
-[Essai 25] Coût de la meilleure solution trouvée : 64 [temps : 514 ms]
-[Essai 26] Coût de la meilleure solution trouvée : 61 [temps : 463 ms]
-[Essai 27] Coût de la meilleure solution trouvée : 72 [temps : 495 ms]
-[Essai 28] Coût de la meilleure solution trouvée : 61 [temps : 499 ms]
-[Essai 29] Coût de la meilleure solution trouvée : 62 [temps : 464 ms]
-[Essai 30] Coût de la meilleure solution trouvée : 56 [temps : 435 ms]
-[Essai 31] Coût de la meilleure solution trouvée : 68 [temps : 494 ms]
-[Essai 32] Coût de la meilleure solution trouvée : 62 [temps : 414 ms]
-[Essai 33] Coût de la meilleure solution trouvée : 70 [temps : 509 ms]
-[Essai 34] Coût de la meilleure solution trouvée : 61 [temps : 483 ms]
-[Essai 35] Coût de la meilleure solution trouvée : 72 [temps : 410 ms]
-[Essai 36] Coût de la meilleure solution trouvée : 64 [temps : 492 ms]
-[Essai 37] Coût de la meilleure solution trouvée : 73 [temps : 448 ms]
-[Essai 38] Coût de la meilleure solution trouvée : 72 [temps : 466 ms]
-[Essai 39] Coût de la meilleure solution trouvée : 63 [temps : 480 ms]
-[Essai 40] Coût de la meilleure solution trouvée : 62 [temps : 479 ms]
-[Essai 41] Coût de la meilleure solution trouvée : 66 [temps : 452 ms]
-[Essai 42] Coût de la meilleure solution trouvée : 67 [temps : 463 ms]
-[Essai 43] Coût de la meilleure solution trouvée : 57 [temps : 536 ms]
-[Essai 44] Coût de la meilleure solution trouvée : 72 [temps : 427 ms]
-[Essai 45] Coût de la meilleure solution trouvée : 65 [temps : 535 ms]
-[Essai 46] Coût de la meilleure solution trouvée : 69 [temps : 504 ms]
-[Essai 47] Coût de la meilleure solution trouvée : 62 [temps : 438 ms]
-[Essai 48] Coût de la meilleure solution trouvée : 62 [temps : 494 ms]
-[Essai 49] Coût de la meilleure solution trouvée : 60 [temps : 599 ms]
-[Essai 50] Coût de la meilleure solution trouvée : 68 [temps : 551 ms]
-[Essai 51] Coût de la meilleure solution trouvée : 73 [temps : 499 ms]
-[Essai 52] Coût de la meilleure solution trouvée : 57 [temps : 463 ms]
-[Essai 53] Coût de la meilleure solution trouvée : 62 [temps : 438 ms]
-[Essai 54] Coût de la meilleure solution trouvée : 64 [temps : 473 ms]
-[Essai 55] Coût de la meilleure solution trouvée : 73 [temps : 436 ms]
-[Essai 56] Coût de la meilleure solution trouvée : 60 [temps : 445 ms]
-[Essai 57] Coût de la meilleure solution trouvée : 68 [temps : 440 ms]
-[Essai 58] Coût de la meilleure solution trouvée : 62 [temps : 462 ms]
-[Essai 59] Coût de la meilleure solution trouvée : 61 [temps : 428 ms]
-[Essai 60] Coût de la meilleure solution trouvée : 67 [temps : 504 ms]
-[Essai 61] Coût de la meilleure solution trouvée : 66 [temps : 453 ms]
-[Essai 62] Coût de la meilleure solution trouvée : 62 [temps : 539 ms]
-[Essai 63] Coût de la meilleure solution trouvée : 57 [temps : 437 ms]
-[Essai 64] Coût de la meilleure solution trouvée : 73 [temps : 488 ms]
-[Essai 65] Coût de la meilleure solution trouvée : 63 [temps : 406 ms]
-[Essai 66] Coût de la meilleure solution trouvée : 59 [temps : 560 ms]
-[Essai 67] Coût de la meilleure solution trouvée : 66 [temps : 461 ms]
-[Essai 68] Coût de la meilleure solution trouvée : 63 [temps : 464 ms]
-[Essai 69] Coût de la meilleure solution trouvée : 66 [temps : 475 ms]
-[Essai 70] Coût de la meilleure solution trouvée : 72 [temps : 447 ms]
-[Essai 71] Coût de la meilleure solution trouvée : 68 [temps : 548 ms]
-[Essai 72] Coût de la meilleure solution trouvée : 67 [temps : 441 ms]
-[Essai 73] Coût de la meilleure solution trouvée : 63 [temps : 485 ms]
-[Essai 74] Coût de la meilleure solution trouvée : 68 [temps : 449 ms]
-[Essai 75] Coût de la meilleure solution trouvée : 62 [temps : 438 ms]
-[Essai 76] Coût de la meilleure solution trouvée : 58 [temps : 514 ms]
-[Essai 77] Coût de la meilleure solution trouvée : 61 [temps : 497 ms]
-[Essai 78] Coût de la meilleure solution trouvée : 67 [temps : 453 ms]
-[Essai 79] Coût de la meilleure solution trouvée : 67 [temps : 469 ms]
-[Essai 80] Coût de la meilleure solution trouvée : 64 [temps : 467 ms]
-[Essai 81] Coût de la meilleure solution trouvée : 79 [temps : 451 ms]
-[Essai 82] Coût de la meilleure solution trouvée : 61 [temps : 437 ms]
-[Essai 83] Coût de la meilleure solution trouvée : 57 [temps : 530 ms]
-[Essai 84] Coût de la meilleure solution trouvée : 73 [temps : 439 ms]
-[Essai 85] Coût de la meilleure solution trouvée : 67 [temps : 480 ms]
-[Essai 86] Coût de la meilleure solution trouvée : 58 [temps : 557 ms]
-[Essai 87] Coût de la meilleure solution trouvée : 66 [temps : 469 ms]
-[Essai 88] Coût de la meilleure solution trouvée : 68 [temps : 534 ms]
-[Essai 89] Coût de la meilleure solution trouvée : 62 [temps : 501 ms]
-[Essai 90] Coût de la meilleure solution trouvée : 68 [temps : 459 ms]
-[Essai 91] Coût de la meilleure solution trouvée : 65 [temps : 526 ms]
-[Essai 92] Coût de la meilleure solution trouvée : 79 [temps : 438 ms]
-[Essai 93] Coût de la meilleure solution trouvée : 67 [temps : 468 ms]
-[Essai 94] Coût de la meilleure solution trouvée : 61 [temps : 439 ms]
-[Essai 95] Coût de la meilleure solution trouvée : 70 [temps : 528 ms]
-[Essai 96] Coût de la meilleure solution trouvée : 63 [temps : 434 ms]
-[Essai 97] Coût de la meilleure solution trouvée : 71 [temps : 429 ms]
-[Essai 98] Coût de la meilleure solution trouvée : 75 [temps : 428 ms]
-[Essai 99] Coût de la meilleure solution trouvée : 65 [temps : 583 ms]
-[Essai 100] Coût de la meilleure solution trouvée : 55 [temps : 462 ms]
+[Essai 1] Coût de la meilleure solution trouvée : 56 [temps : 544 ms]
+[Essai 2] Coût de la meilleure solution trouvée : 61 [temps : 468 ms]
+[Essai 3] Coût de la meilleure solution trouvée : 62 [temps : 489 ms]
+[Essai 4] Coût de la meilleure solution trouvée : 62 [temps : 514 ms]
+[Essai 5] Coût de la meilleure solution trouvée : 70 [temps : 735 ms]
+[Essai 6] Coût de la meilleure solution trouvée : 68 [temps : 496 ms]
+[Essai 7] Coût de la meilleure solution trouvée : 65 [temps : 483 ms]
+[Essai 8] Coût de la meilleure solution trouvée : 67 [temps : 475 ms]
+[Essai 9] Coût de la meilleure solution trouvée : 68 [temps : 542 ms]
+[Essai 10] Coût de la meilleure solution trouvée : 68 [temps : 486 ms]
+[Essai 11] Coût de la meilleure solution trouvée : 59 [temps : 465 ms]
+[Essai 12] Coût de la meilleure solution trouvée : 66 [temps : 549 ms]
+[Essai 13] Coût de la meilleure solution trouvée : 64 [temps : 473 ms]
+[Essai 14] Coût de la meilleure solution trouvée : 68 [temps : 509 ms]
+[Essai 15] Coût de la meilleure solution trouvée : 62 [temps : 481 ms]
+[Essai 16] Coût de la meilleure solution trouvée : 67 [temps : 486 ms]
+[Essai 17] Coût de la meilleure solution trouvée : 62 [temps : 527 ms]
+[Essai 18] Coût de la meilleure solution trouvée : 75 [temps : 518 ms]
+[Essai 19] Coût de la meilleure solution trouvée : 69 [temps : 517 ms]
+[Essai 20] Coût de la meilleure solution trouvée : 66 [temps : 462 ms]
+[Essai 21] Coût de la meilleure solution trouvée : 67 [temps : 532 ms]
+[Essai 22] Coût de la meilleure solution trouvée : 62 [temps : 556 ms]
+[Essai 23] Coût de la meilleure solution trouvée : 56 [temps : 512 ms]
+[Essai 24] Coût de la meilleure solution trouvée : 61 [temps : 574 ms]
+[Essai 25] Coût de la meilleure solution trouvée : 73 [temps : 469 ms]
+[Essai 26] Coût de la meilleure solution trouvée : 68 [temps : 527 ms]
+[Essai 27] Coût de la meilleure solution trouvée : 62 [temps : 488 ms]
+[Essai 28] Coût de la meilleure solution trouvée : 66 [temps : 552 ms]
+[Essai 29] Coût de la meilleure solution trouvée : 61 [temps : 562 ms]
+[Essai 30] Coût de la meilleure solution trouvée : 73 [temps : 547 ms]
+[Essai 31] Coût de la meilleure solution trouvée : 66 [temps : 516 ms]
+[Essai 32] Coût de la meilleure solution trouvée : 61 [temps : 483 ms]
+[Essai 33] Coût de la meilleure solution trouvée : 67 [temps : 558 ms]
+[Essai 34] Coût de la meilleure solution trouvée : 67 [temps : 601 ms]
+[Essai 35] Coût de la meilleure solution trouvée : 72 [temps : 499 ms]
+[Essai 36] Coût de la meilleure solution trouvée : 72 [temps : 537 ms]
+[Essai 37] Coût de la meilleure solution trouvée : 55 [temps : 482 ms]
+[Essai 38] Coût de la meilleure solution trouvée : 72 [temps : 485 ms]
+[Essai 39] Coût de la meilleure solution trouvée : 78 [temps : 480 ms]
+[Essai 40] Coût de la meilleure solution trouvée : 66 [temps : 474 ms]
+[Essai 41] Coût de la meilleure solution trouvée : 57 [temps : 517 ms]
+[Essai 42] Coût de la meilleure solution trouvée : 72 [temps : 512 ms]
+[Essai 43] Coût de la meilleure solution trouvée : 62 [temps : 575 ms]
+[Essai 44] Coût de la meilleure solution trouvée : 62 [temps : 580 ms]
+[Essai 45] Coût de la meilleure solution trouvée : 67 [temps : 497 ms]
+[Essai 46] Coût de la meilleure solution trouvée : 55 [temps : 556 ms]
+[Essai 47] Coût de la meilleure solution trouvée : 63 [temps : 537 ms]
+[Essai 48] Coût de la meilleure solution trouvée : 70 [temps : 518 ms]
+[Essai 49] Coût de la meilleure solution trouvée : 72 [temps : 572 ms]
+[Essai 50] Coût de la meilleure solution trouvée : 66 [temps : 470 ms]
+[Essai 51] Coût de la meilleure solution trouvée : 60 [temps : 530 ms]
+[Essai 52] Coût de la meilleure solution trouvée : 67 [temps : 573 ms]
+[Essai 53] Coût de la meilleure solution trouvée : 61 [temps : 509 ms]
+[Essai 54] Coût de la meilleure solution trouvée : 57 [temps : 523 ms]
+[Essai 55] Coût de la meilleure solution trouvée : 62 [temps : 477 ms]
+[Essai 56] Coût de la meilleure solution trouvée : 60 [temps : 520 ms]
+[Essai 57] Coût de la meilleure solution trouvée : 64 [temps : 523 ms]
+[Essai 58] Coût de la meilleure solution trouvée : 59 [temps : 542 ms]
+[Essai 59] Coût de la meilleure solution trouvée : 62 [temps : 593 ms]
+[Essai 60] Coût de la meilleure solution trouvée : 66 [temps : 572 ms]
+[Essai 61] Coût de la meilleure solution trouvée : 64 [temps : 660 ms]
+[Essai 62] Coût de la meilleure solution trouvée : 69 [temps : 665 ms]
+[Essai 63] Coût de la meilleure solution trouvée : 60 [temps : 597 ms]
+[Essai 64] Coût de la meilleure solution trouvée : 55 [temps : 674 ms]
+[Essai 65] Coût de la meilleure solution trouvée : 61 [temps : 605 ms]
+[Essai 66] Coût de la meilleure solution trouvée : 63 [temps : 603 ms]
+[Essai 67] Coût de la meilleure solution trouvée : 64 [temps : 576 ms]
+[Essai 68] Coût de la meilleure solution trouvée : 62 [temps : 600 ms]
+[Essai 69] Coût de la meilleure solution trouvée : 73 [temps : 651 ms]
+[Essai 70] Coût de la meilleure solution trouvée : 67 [temps : 559 ms]
+[Essai 71] Coût de la meilleure solution trouvée : 66 [temps : 625 ms]
+[Essai 72] Coût de la meilleure solution trouvée : 60 [temps : 593 ms]
+[Essai 73] Coût de la meilleure solution trouvée : 65 [temps : 553 ms]
+[Essai 74] Coût de la meilleure solution trouvée : 60 [temps : 598 ms]
+[Essai 75] Coût de la meilleure solution trouvée : 68 [temps : 720 ms]
+[Essai 76] Coût de la meilleure solution trouvée : 80 [temps : 561 ms]
+[Essai 77] Coût de la meilleure solution trouvée : 73 [temps : 558 ms]
+[Essai 78] Coût de la meilleure solution trouvée : 73 [temps : 596 ms]
+[Essai 79] Coût de la meilleure solution trouvée : 68 [temps : 559 ms]
+[Essai 80] Coût de la meilleure solution trouvée : 73 [temps : 645 ms]
+[Essai 81] Coût de la meilleure solution trouvée : 66 [temps : 588 ms]
+[Essai 82] Coût de la meilleure solution trouvée : 61 [temps : 604 ms]
+[Essai 83] Coût de la meilleure solution trouvée : 57 [temps : 611 ms]
+[Essai 84] Coût de la meilleure solution trouvée : 62 [temps : 628 ms]
+[Essai 85] Coût de la meilleure solution trouvée : 64 [temps : 585 ms]
+[Essai 86] Coût de la meilleure solution trouvée : 66 [temps : 558 ms]
+[Essai 87] Coût de la meilleure solution trouvée : 65 [temps : 575 ms]
+[Essai 88] Coût de la meilleure solution trouvée : 66 [temps : 621 ms]
+[Essai 89] Coût de la meilleure solution trouvée : 72 [temps : 673 ms]
+[Essai 90] Coût de la meilleure solution trouvée : 56 [temps : 590 ms]
+[Essai 91] Coût de la meilleure solution trouvée : 56 [temps : 660 ms]
+[Essai 92] Coût de la meilleure solution trouvée : 74 [temps : 628 ms]
+[Essai 93] Coût de la meilleure solution trouvée : 63 [temps : 577 ms]
+[Essai 94] Coût de la meilleure solution trouvée : 62 [temps : 574 ms]
+[Essai 95] Coût de la meilleure solution trouvée : 54 [temps : 579 ms]
+[Essai 96] Coût de la meilleure solution trouvée : 68 [temps : 600 ms]
+[Essai 97] Coût de la meilleure solution trouvée : 68 [temps : 656 ms]
+[Essai 98] Coût de la meilleure solution trouvée : 67 [temps : 617 ms]
+[Essai 99] Coût de la meilleure solution trouvée : 67 [temps : 552 ms]
+[Essai 100] Coût de la meilleure solution trouvée : 63 [temps : 483 ms]
 
-Meilleure : 55, moyenne : 65.67, ecart-type : 5.656951475839297.
-Temps moyen : 486 ms.
+Meilleure : 56, moyenne : 64.95, ecart-type : 5.339241519167278.
+Temps moyen : 555 ms.
 
 Stratégie 3 : Algorithme génétique à deux mutations et sélection par tournoi.
 
@@ -191,109 +191,109 @@ générations.
 
 On effectue cette stratégie 100 fois pour évaluer la part d'aléatoire dans les solutions trouvées :
 
-[Essai 1] Coût de la meilleure solution trouvée : 52 [temps : 739 ms]
-[Essai 2] Coût de la meilleure solution trouvée : 63 [temps : 581 ms]
-[Essai 3] Coût de la meilleure solution trouvée : 54 [temps : 538 ms]
-[Essai 4] Coût de la meilleure solution trouvée : 56 [temps : 550 ms]
-[Essai 5] Coût de la meilleure solution trouvée : 57 [temps : 577 ms]
-[Essai 6] Coût de la meilleure solution trouvée : 61 [temps : 524 ms]
-[Essai 7] Coût de la meilleure solution trouvée : 61 [temps : 529 ms]
-[Essai 8] Coût de la meilleure solution trouvée : 58 [temps : 563 ms]
-[Essai 9] Coût de la meilleure solution trouvée : 60 [temps : 523 ms]
-[Essai 10] Coût de la meilleure solution trouvée : 58 [temps : 527 ms]
-[Essai 11] Coût de la meilleure solution trouvée : 59 [temps : 510 ms]
-[Essai 12] Coût de la meilleure solution trouvée : 59 [temps : 625 ms]
-[Essai 13] Coût de la meilleure solution trouvée : 59 [temps : 581 ms]
-[Essai 14] Coût de la meilleure solution trouvée : 61 [temps : 522 ms]
-[Essai 15] Coût de la meilleure solution trouvée : 55 [temps : 526 ms]
-[Essai 16] Coût de la meilleure solution trouvée : 56 [temps : 528 ms]
-[Essai 17] Coût de la meilleure solution trouvée : 57 [temps : 520 ms]
-[Essai 18] Coût de la meilleure solution trouvée : 53 [temps : 518 ms]
-[Essai 19] Coût de la meilleure solution trouvée : 56 [temps : 533 ms]
-[Essai 20] Coût de la meilleure solution trouvée : 60 [temps : 529 ms]
-[Essai 21] Coût de la meilleure solution trouvée : 59 [temps : 522 ms]
-[Essai 22] Coût de la meilleure solution trouvée : 59 [temps : 517 ms]
-[Essai 23] Coût de la meilleure solution trouvée : 60 [temps : 524 ms]
-[Essai 24] Coût de la meilleure solution trouvée : 60 [temps : 512 ms]
-[Essai 25] Coût de la meilleure solution trouvée : 57 [temps : 535 ms]
-[Essai 26] Coût de la meilleure solution trouvée : 60 [temps : 546 ms]
-[Essai 27] Coût de la meilleure solution trouvée : 57 [temps : 521 ms]
-[Essai 28] Coût de la meilleure solution trouvée : 61 [temps : 534 ms]
-[Essai 29] Coût de la meilleure solution trouvée : 58 [temps : 510 ms]
-[Essai 30] Coût de la meilleure solution trouvée : 57 [temps : 560 ms]
-[Essai 31] Coût de la meilleure solution trouvée : 57 [temps : 574 ms]
-[Essai 32] Coût de la meilleure solution trouvée : 57 [temps : 540 ms]
-[Essai 33] Coût de la meilleure solution trouvée : 61 [temps : 525 ms]
-[Essai 34] Coût de la meilleure solution trouvée : 60 [temps : 533 ms]
-[Essai 35] Coût de la meilleure solution trouvée : 58 [temps : 560 ms]
-[Essai 36] Coût de la meilleure solution trouvée : 56 [temps : 541 ms]
-[Essai 37] Coût de la meilleure solution trouvée : 61 [temps : 517 ms]
-[Essai 38] Coût de la meilleure solution trouvée : 58 [temps : 556 ms]
-[Essai 39] Coût de la meilleure solution trouvée : 58 [temps : 522 ms]
-[Essai 40] Coût de la meilleure solution trouvée : 58 [temps : 545 ms]
-[Essai 41] Coût de la meilleure solution trouvée : 58 [temps : 520 ms]
-[Essai 42] Coût de la meilleure solution trouvée : 60 [temps : 527 ms]
-[Essai 43] Coût de la meilleure solution trouvée : 52 [temps : 520 ms]
-[Essai 44] Coût de la meilleure solution trouvée : 60 [temps : 529 ms]
-[Essai 45] Coût de la meilleure solution trouvée : 60 [temps : 538 ms]
-[Essai 46] Coût de la meilleure solution trouvée : 61 [temps : 548 ms]
-[Essai 47] Coût de la meilleure solution trouvée : 60 [temps : 532 ms]
-[Essai 48] Coût de la meilleure solution trouvée : 60 [temps : 558 ms]
-[Essai 49] Coût de la meilleure solution trouvée : 57 [temps : 619 ms]
-[Essai 50] Coût de la meilleure solution trouvée : 59 [temps : 562 ms]
-[Essai 51] Coût de la meilleure solution trouvée : 61 [temps : 594 ms]
-[Essai 52] Coût de la meilleure solution trouvée : 59 [temps : 569 ms]
-[Essai 53] Coût de la meilleure solution trouvée : 61 [temps : 548 ms]
-[Essai 54] Coût de la meilleure solution trouvée : 55 [temps : 631 ms]
-[Essai 55] Coût de la meilleure solution trouvée : 62 [temps : 549 ms]
-[Essai 56] Coût de la meilleure solution trouvée : 57 [temps : 543 ms]
-[Essai 57] Coût de la meilleure solution trouvée : 60 [temps : 536 ms]
-[Essai 58] Coût de la meilleure solution trouvée : 55 [temps : 762 ms]
-[Essai 59] Coût de la meilleure solution trouvée : 60 [temps : 527 ms]
-[Essai 60] Coût de la meilleure solution trouvée : 58 [temps : 573 ms]
-[Essai 61] Coût de la meilleure solution trouvée : 59 [temps : 590 ms]
-[Essai 62] Coût de la meilleure solution trouvée : 57 [temps : 704 ms]
-[Essai 63] Coût de la meilleure solution trouvée : 59 [temps : 657 ms]
-[Essai 64] Coût de la meilleure solution trouvée : 56 [temps : 573 ms]
-[Essai 65] Coût de la meilleure solution trouvée : 61 [temps : 531 ms]
-[Essai 66] Coût de la meilleure solution trouvée : 61 [temps : 526 ms]
-[Essai 67] Coût de la meilleure solution trouvée : 58 [temps : 522 ms]
-[Essai 68] Coût de la meilleure solution trouvée : 57 [temps : 513 ms]
-[Essai 69] Coût de la meilleure solution trouvée : 57 [temps : 519 ms]
-[Essai 70] Coût de la meilleure solution trouvée : 58 [temps : 529 ms]
-[Essai 71] Coût de la meilleure solution trouvée : 57 [temps : 528 ms]
-[Essai 72] Coût de la meilleure solution trouvée : 57 [temps : 531 ms]
-[Essai 73] Coût de la meilleure solution trouvée : 61 [temps : 529 ms]
-[Essai 74] Coût de la meilleure solution trouvée : 60 [temps : 526 ms]
-[Essai 75] Coût de la meilleure solution trouvée : 56 [temps : 536 ms]
-[Essai 76] Coût de la meilleure solution trouvée : 54 [temps : 521 ms]
-[Essai 77] Coût de la meilleure solution trouvée : 62 [temps : 527 ms]
-[Essai 78] Coût de la meilleure solution trouvée : 60 [temps : 526 ms]
-[Essai 79] Coût de la meilleure solution trouvée : 62 [temps : 522 ms]
-[Essai 80] Coût de la meilleure solution trouvée : 59 [temps : 529 ms]
-[Essai 81] Coût de la meilleure solution trouvée : 58 [temps : 518 ms]
-[Essai 82] Coût de la meilleure solution trouvée : 57 [temps : 522 ms]
-[Essai 83] Coût de la meilleure solution trouvée : 58 [temps : 525 ms]
-[Essai 84] Coût de la meilleure solution trouvée : 57 [temps : 523 ms]
-[Essai 85] Coût de la meilleure solution trouvée : 62 [temps : 556 ms]
-[Essai 86] Coût de la meilleure solution trouvée : 58 [temps : 589 ms]
-[Essai 87] Coût de la meilleure solution trouvée : 57 [temps : 514 ms]
-[Essai 88] Coût de la meilleure solution trouvée : 60 [temps : 524 ms]
-[Essai 89] Coût de la meilleure solution trouvée : 59 [temps : 529 ms]
-[Essai 90] Coût de la meilleure solution trouvée : 56 [temps : 516 ms]
-[Essai 91] Coût de la meilleure solution trouvée : 56 [temps : 520 ms]
-[Essai 92] Coût de la meilleure solution trouvée : 58 [temps : 522 ms]
-[Essai 93] Coût de la meilleure solution trouvée : 54 [temps : 522 ms]
-[Essai 94] Coût de la meilleure solution trouvée : 57 [temps : 516 ms]
-[Essai 95] Coût de la meilleure solution trouvée : 60 [temps : 521 ms]
-[Essai 96] Coût de la meilleure solution trouvée : 59 [temps : 526 ms]
-[Essai 97] Coût de la meilleure solution trouvée : 60 [temps : 526 ms]
-[Essai 98] Coût de la meilleure solution trouvée : 60 [temps : 521 ms]
-[Essai 99] Coût de la meilleure solution trouvée : 60 [temps : 518 ms]
-[Essai 100] Coût de la meilleure solution trouvée : 61 [temps : 533 ms]
+[Essai 1] Coût de la meilleure solution trouvée : 61 [temps : 676 ms]
+[Essai 2] Coût de la meilleure solution trouvée : 57 [temps : 607 ms]
+[Essai 3] Coût de la meilleure solution trouvée : 60 [temps : 667 ms]
+[Essai 4] Coût de la meilleure solution trouvée : 56 [temps : 678 ms]
+[Essai 5] Coût de la meilleure solution trouvée : 60 [temps : 683 ms]
+[Essai 6] Coût de la meilleure solution trouvée : 60 [temps : 716 ms]
+[Essai 7] Coût de la meilleure solution trouvée : 58 [temps : 681 ms]
+[Essai 8] Coût de la meilleure solution trouvée : 61 [temps : 750 ms]
+[Essai 9] Coût de la meilleure solution trouvée : 58 [temps : 687 ms]
+[Essai 10] Coût de la meilleure solution trouvée : 58 [temps : 671 ms]
+[Essai 11] Coût de la meilleure solution trouvée : 57 [temps : 664 ms]
+[Essai 12] Coût de la meilleure solution trouvée : 58 [temps : 674 ms]
+[Essai 13] Coût de la meilleure solution trouvée : 59 [temps : 670 ms]
+[Essai 14] Coût de la meilleure solution trouvée : 61 [temps : 676 ms]
+[Essai 15] Coût de la meilleure solution trouvée : 58 [temps : 679 ms]
+[Essai 16] Coût de la meilleure solution trouvée : 58 [temps : 673 ms]
+[Essai 17] Coût de la meilleure solution trouvée : 56 [temps : 683 ms]
+[Essai 18] Coût de la meilleure solution trouvée : 57 [temps : 689 ms]
+[Essai 19] Coût de la meilleure solution trouvée : 58 [temps : 712 ms]
+[Essai 20] Coût de la meilleure solution trouvée : 61 [temps : 677 ms]
+[Essai 21] Coût de la meilleure solution trouvée : 51 [temps : 674 ms]
+[Essai 22] Coût de la meilleure solution trouvée : 54 [temps : 677 ms]
+[Essai 23] Coût de la meilleure solution trouvée : 61 [temps : 584 ms]
+[Essai 24] Coût de la meilleure solution trouvée : 58 [temps : 560 ms]
+[Essai 25] Coût de la meilleure solution trouvée : 61 [temps : 571 ms]
+[Essai 26] Coût de la meilleure solution trouvée : 59 [temps : 572 ms]
+[Essai 27] Coût de la meilleure solution trouvée : 58 [temps : 564 ms]
+[Essai 28] Coût de la meilleure solution trouvée : 56 [temps : 626 ms]
+[Essai 29] Coût de la meilleure solution trouvée : 55 [temps : 676 ms]
+[Essai 30] Coût de la meilleure solution trouvée : 55 [temps : 679 ms]
+[Essai 31] Coût de la meilleure solution trouvée : 60 [temps : 685 ms]
+[Essai 32] Coût de la meilleure solution trouvée : 58 [temps : 670 ms]
+[Essai 33] Coût de la meilleure solution trouvée : 62 [temps : 684 ms]
+[Essai 34] Coût de la meilleure solution trouvée : 57 [temps : 670 ms]
+[Essai 35] Coût de la meilleure solution trouvée : 61 [temps : 680 ms]
+[Essai 36] Coût de la meilleure solution trouvée : 57 [temps : 678 ms]
+[Essai 37] Coût de la meilleure solution trouvée : 56 [temps : 702 ms]
+[Essai 38] Coût de la meilleure solution trouvée : 60 [temps : 674 ms]
+[Essai 39] Coût de la meilleure solution trouvée : 53 [temps : 691 ms]
+[Essai 40] Coût de la meilleure solution trouvée : 60 [temps : 690 ms]
+[Essai 41] Coût de la meilleure solution trouvée : 56 [temps : 683 ms]
+[Essai 42] Coût de la meilleure solution trouvée : 58 [temps : 668 ms]
+[Essai 43] Coût de la meilleure solution trouvée : 60 [temps : 668 ms]
+[Essai 44] Coût de la meilleure solution trouvée : 57 [temps : 726 ms]
+[Essai 45] Coût de la meilleure solution trouvée : 59 [temps : 673 ms]
+[Essai 46] Coût de la meilleure solution trouvée : 60 [temps : 669 ms]
+[Essai 47] Coût de la meilleure solution trouvée : 55 [temps : 687 ms]
+[Essai 48] Coût de la meilleure solution trouvée : 59 [temps : 672 ms]
+[Essai 49] Coût de la meilleure solution trouvée : 57 [temps : 668 ms]
+[Essai 50] Coût de la meilleure solution trouvée : 59 [temps : 679 ms]
+[Essai 51] Coût de la meilleure solution trouvée : 61 [temps : 715 ms]
+[Essai 52] Coût de la meilleure solution trouvée : 57 [temps : 675 ms]
+[Essai 53] Coût de la meilleure solution trouvée : 58 [temps : 681 ms]
+[Essai 54] Coût de la meilleure solution trouvée : 59 [temps : 679 ms]
+[Essai 55] Coût de la meilleure solution trouvée : 56 [temps : 684 ms]
+[Essai 56] Coût de la meilleure solution trouvée : 59 [temps : 674 ms]
+[Essai 57] Coût de la meilleure solution trouvée : 56 [temps : 683 ms]
+[Essai 58] Coût de la meilleure solution trouvée : 57 [temps : 675 ms]
+[Essai 59] Coût de la meilleure solution trouvée : 57 [temps : 699 ms]
+[Essai 60] Coût de la meilleure solution trouvée : 60 [temps : 669 ms]
+[Essai 61] Coût de la meilleure solution trouvée : 61 [temps : 678 ms]
+[Essai 62] Coût de la meilleure solution trouvée : 55 [temps : 685 ms]
+[Essai 63] Coût de la meilleure solution trouvée : 57 [temps : 676 ms]
+[Essai 64] Coût de la meilleure solution trouvée : 61 [temps : 680 ms]
+[Essai 65] Coût de la meilleure solution trouvée : 53 [temps : 685 ms]
+[Essai 66] Coût de la meilleure solution trouvée : 56 [temps : 670 ms]
+[Essai 67] Coût de la meilleure solution trouvée : 58 [temps : 667 ms]
+[Essai 68] Coût de la meilleure solution trouvée : 58 [temps : 674 ms]
+[Essai 69] Coût de la meilleure solution trouvée : 61 [temps : 617 ms]
+[Essai 70] Coût de la meilleure solution trouvée : 60 [temps : 561 ms]
+[Essai 71] Coût de la meilleure solution trouvée : 58 [temps : 558 ms]
+[Essai 72] Coût de la meilleure solution trouvée : 60 [temps : 658 ms]
+[Essai 73] Coût de la meilleure solution trouvée : 60 [temps : 687 ms]
+[Essai 74] Coût de la meilleure solution trouvée : 59 [temps : 673 ms]
+[Essai 75] Coût de la meilleure solution trouvée : 58 [temps : 687 ms]
+[Essai 76] Coût de la meilleure solution trouvée : 53 [temps : 673 ms]
+[Essai 77] Coût de la meilleure solution trouvée : 60 [temps : 682 ms]
+[Essai 78] Coût de la meilleure solution trouvée : 56 [temps : 684 ms]
+[Essai 79] Coût de la meilleure solution trouvée : 59 [temps : 568 ms]
+[Essai 80] Coût de la meilleure solution trouvée : 56 [temps : 572 ms]
+[Essai 81] Coût de la meilleure solution trouvée : 58 [temps : 592 ms]
+[Essai 82] Coût de la meilleure solution trouvée : 56 [temps : 688 ms]
+[Essai 83] Coût de la meilleure solution trouvée : 57 [temps : 668 ms]
+[Essai 84] Coût de la meilleure solution trouvée : 57 [temps : 682 ms]
+[Essai 85] Coût de la meilleure solution trouvée : 60 [temps : 686 ms]
+[Essai 86] Coût de la meilleure solution trouvée : 57 [temps : 674 ms]
+[Essai 87] Coût de la meilleure solution trouvée : 61 [temps : 672 ms]
+[Essai 88] Coût de la meilleure solution trouvée : 60 [temps : 670 ms]
+[Essai 89] Coût de la meilleure solution trouvée : 60 [temps : 664 ms]
+[Essai 90] Coût de la meilleure solution trouvée : 56 [temps : 677 ms]
+[Essai 91] Coût de la meilleure solution trouvée : 56 [temps : 686 ms]
+[Essai 92] Coût de la meilleure solution trouvée : 54 [temps : 675 ms]
+[Essai 93] Coût de la meilleure solution trouvée : 61 [temps : 710 ms]
+[Essai 94] Coût de la meilleure solution trouvée : 61 [temps : 676 ms]
+[Essai 95] Coût de la meilleure solution trouvée : 58 [temps : 674 ms]
+[Essai 96] Coût de la meilleure solution trouvée : 59 [temps : 662 ms]
+[Essai 97] Coût de la meilleure solution trouvée : 57 [temps : 674 ms]
+[Essai 98] Coût de la meilleure solution trouvée : 59 [temps : 671 ms]
+[Essai 99] Coût de la meilleure solution trouvée : 58 [temps : 677 ms]
+[Essai 100] Coût de la meilleure solution trouvée : 58 [temps : 670 ms]
 
-Meilleure : 52, moyenne : 58.4, ecart-type : 2.244994432064357.
-Temps moyen : 545 ms.
+Meilleure : 51, moyenne : 58.06, ecart-type : 2.180917238227934.
+Temps moyen : 667 ms.
 
 Diagramme de Gantt de la meilleure solution trouvée parmi toutes ces stratégies :
 
@@ -309,34 +309,34 @@ Job 8 : 8
 Job 9 : 9
 Job 10 : :
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine   1 : | 1 | 1 | 1 | 1 | 1 | 9 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 6 | 6 | 2 | 2 | 3 | 9 | 9 | 8 | 5 | 5 | 5 | 5 | 5 | 6 | 6 | 6 | 6 |   |   |   |   |   |   |   |   |   |   |   |   |   | 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine   2 : | 5 | 3 | 3 | 3 | 3 | 3 | 3 | 2 | 2 | 2 | 2 | 2 | 2 |   |   | : | 4 | 4 | 4 | 4 | 4 | 4 | 5 | 5 | 5 | 5 | 5 | 5 | 6 | 6 | 6 | 6 | 6 | 6 | : | : | : | : | : | : | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine   3 : | : | : | : | : |   |   |   |   |   |   |   |   |   | 2 | 1 | 1 | 1 | 1 | 8 | 8 | 8 | 8 | 4 |   | 6 | 6 | 6 | 6 | 7 | 7 | 7 | 7 | 4 | 4 | 4 | 4 | 4 | 9 | 9 | 9 | 9 | 1 | 5 | 5 | 5 | 5 | 7 |   |   |   |   |   | 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine   4 : |   |   |   | 7 | 7 |   | 9 | 9 | 9 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 2 | 2 | 2 | 2 | 2 | 2 |   |   |   | 5 | 5 | 5 | 5 | 5 | 5 | 9 | 9 | 9 | 9 | 9 | 9 | : | : | 1 | 1 | 1 | 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine   5 : |   |   |   |   |   | 1 | 1 | 1 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 7 |   |   |   |   |   |   |   |   |   |   | 3 | 3 | 3 | 3 | 3 |   |   |   |   | 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine   6 : | 8 | 8 | 7 | 9 | 4 | 4 | 4 | 4 | 4 | : | : | : | : | : | : | 5 | 5 | 5 | 5 | 5 | 6 | 6 | 3 | 3 | : | 1 | 1 | 1 | 1 | 1 |   |   | 2 | 2 | 2 | 2 | 2 | 3 | 3 | 3 | 3 | 3 | 3 | 4 | 4 |   |   |   |   |   |   |   | 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   1 : | 4 | 1 | 1 | 1 | 1 | 1 |   |   | 6 | 6 | 2 | 2 |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 8 |   |   |   | 1 | 9 | 9 |   |   |   |   |   |   |   |   |   |   |   |   | 6 | 3 | 6 | 6 | 6 |   | 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   2 : | 2 | 2 | 2 | 2 | 2 | 2 |   |   | 5 | 5 | 5 | 5 | 5 | 5 | 4 | 4 | 4 | 4 | 4 | 4 | 3 | 3 | 3 | 3 | 3 | 3 | 1 | 8 | 8 | 8 | 8 | 8 | 8 | 2 | 2 | 2 | 2 | 2 | 2 | 6 | 6 | 6 | 6 | 6 | 6 | 9 | 9 | 9 | 9 | 9 | 9 | 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   3 : | : | : | : | : | 6 | 6 | 6 | 6 | 2 |   |   |   |   |   | 5 | 5 | 5 | 5 | 7 | 7 | 7 | 7 | 8 | 8 | 8 | 8 | 4 | 6 | 6 | 6 | 6 | 7 | 1 | 5 | 5 | 5 | 5 | 9 | 9 | 9 | 9 | 4 | 4 | 4 | 4 | 1 | 1 | 1 | 1 | 1 | 1 | 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   4 : |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 7 | 7 | 9 | 9 | 9 | : | : | : | : | : | : | 5 | 5 | 5 | 5 | 5 | 5 | : | : | 8 | 8 | 8 | 8 | 8 | 8 |   |   |   |   |   |   |   |   |   |   | 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   5 : | 5 | 5 | 5 |   |   |   |   |   |   | 9 | 9 | 9 | 9 | 9 |   | : | : | : |   |   |   |   | 7 |   |   |   |   | 4 | 4 | 4 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   6 : | 8 | 8 |   | 5 | 5 | 5 | 5 | 5 | 9 | : | : | : | : | : | : | 7 |   |   | : |   |   |   |   |   |   |   | 3 | 3 | 1 | 1 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 2 | 2 | 2 | 2 | 2 |   |   |   |   |   | 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-| Temps    : ---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|-->
-                0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52
+| Temps    : ---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|-->
+                0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51
 
-Temps total : 52
+Temps total : 51
 
 
 ----------------------------------------------------------------------------------
-Tests sur le jeu de données "Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk10.fjs"
+Tests sur le jeu de données "Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk02.fjs"
 ----------------------------------------------------------------------------------
-Nb. jobs = 20, Nb. machines = 15.
+Nb. jobs = 10, Nb. machines = 6.
 
 Stratégie 1 : Heuristique gloutonne puis Hill Climbing simple.
 
-Coût de la solution trouvée : 1019 [temps : 8210 ms]
+Coût de la solution trouvée : 54 [temps : 121 ms]
 
 Stratégie 2 : Génération de 10 solutions aléatoires puis Hill Climbing simple.
 
@@ -344,29 +344,29 @@ sur chacune d'entre elles. On garde la meilleure solution trouvée.
 
 On effectue cette stratégie 20 fois pour évaluer la part d'aléatoire dans les solutions trouvées :
 
-[Essai 1] Coût de la meilleure solution trouvée : 438 [temps : 65661 ms]
-[Essai 2] Coût de la meilleure solution trouvée : 397 [temps : 92954 ms]
-[Essai 3] Coût de la meilleure solution trouvée : 425 [temps : 74197 ms]
-[Essai 4] Coût de la meilleure solution trouvée : 427 [temps : 75746 ms]
-[Essai 5] Coût de la meilleure solution trouvée : 413 [temps : 71332 ms]
-[Essai 6] Coût de la meilleure solution trouvée : 413 [temps : 97292 ms]
-[Essai 7] Coût de la meilleure solution trouvée : 433 [temps : 59388 ms]
-[Essai 8] Coût de la meilleure solution trouvée : 393 [temps : 63434 ms]
-[Essai 9] Coût de la meilleure solution trouvée : 415 [temps : 72801 ms]
-[Essai 10] Coût de la meilleure solution trouvée : 430 [temps : 60203 ms]
-[Essai 11] Coût de la meilleure solution trouvée : 425 [temps : 67699 ms]
-[Essai 12] Coût de la meilleure solution trouvée : 420 [temps : 63193 ms]
-[Essai 13] Coût de la meilleure solution trouvée : 408 [temps : 63914 ms]
-[Essai 14] Coût de la meilleure solution trouvée : 430 [temps : 53412 ms]
-[Essai 15] Coût de la meilleure solution trouvée : 397 [temps : 71206 ms]
-[Essai 16] Coût de la meilleure solution trouvée : 436 [temps : 69044 ms]
-[Essai 17] Coût de la meilleure solution trouvée : 422 [temps : 55911 ms]
-[Essai 18] Coût de la meilleure solution trouvée : 427 [temps : 54264 ms]
-[Essai 19] Coût de la meilleure solution trouvée : 419 [temps : 51527 ms]
-[Essai 20] Coût de la meilleure solution trouvée : 448 [temps : 69174 ms]
+[Essai 1] Coût de la meilleure solution trouvée : 54 [temps : 865 ms]
+[Essai 2] Coût de la meilleure solution trouvée : 46 [temps : 907 ms]
+[Essai 3] Coût de la meilleure solution trouvée : 50 [temps : 869 ms]
+[Essai 4] Coût de la meilleure solution trouvée : 52 [temps : 709 ms]
+[Essai 5] Coût de la meilleure solution trouvée : 54 [temps : 700 ms]
+[Essai 6] Coût de la meilleure solution trouvée : 54 [temps : 781 ms]
+[Essai 7] Coût de la meilleure solution trouvée : 54 [temps : 822 ms]
+[Essai 8] Coût de la meilleure solution trouvée : 50 [temps : 934 ms]
+[Essai 9] Coût de la meilleure solution trouvée : 55 [temps : 966 ms]
+[Essai 10] Coût de la meilleure solution trouvée : 50 [temps : 793 ms]
+[Essai 11] Coût de la meilleure solution trouvée : 53 [temps : 1049 ms]
+[Essai 12] Coût de la meilleure solution trouvée : 53 [temps : 833 ms]
+[Essai 13] Coût de la meilleure solution trouvée : 50 [temps : 910 ms]
+[Essai 14] Coût de la meilleure solution trouvée : 52 [temps : 810 ms]
+[Essai 15] Coût de la meilleure solution trouvée : 53 [temps : 677 ms]
+[Essai 16] Coût de la meilleure solution trouvée : 50 [temps : 697 ms]
+[Essai 17] Coût de la meilleure solution trouvée : 50 [temps : 737 ms]
+[Essai 18] Coût de la meilleure solution trouvée : 56 [temps : 756 ms]
+[Essai 19] Coût de la meilleure solution trouvée : 49 [temps : 786 ms]
+[Essai 20] Coût de la meilleure solution trouvée : 54 [temps : 735 ms]
 
-Meilleure : 393, moyenne : 420.8, ecart-type : 14.012851244482189.
-Temps moyen : 67617 ms.
+Meilleure : 46, moyenne : 51.95, ecart-type : 2.4181604578687192.
+Temps moyen : 816 ms.
 
 Stratégie 3 : Algorithme génétique à deux mutations et sélection par tournoi.
 
@@ -377,29 +377,29 @@ générations.
 
 On effectue cette stratégie 20 fois pour évaluer la part d'aléatoire dans les solutions trouvées :
 
-[Essai 1] Coût de la meilleure solution trouvée : 444 [temps : 12111 ms]
-[Essai 2] Coût de la meilleure solution trouvée : 447 [temps : 13061 ms]
-[Essai 3] Coût de la meilleure solution trouvée : 436 [temps : 13733 ms]
-[Essai 4] Coût de la meilleure solution trouvée : 436 [temps : 12139 ms]
-[Essai 5] Coût de la meilleure solution trouvée : 460 [temps : 11625 ms]
-[Essai 6] Coût de la meilleure solution trouvée : 425 [temps : 11670 ms]
-[Essai 7] Coût de la meilleure solution trouvée : 428 [temps : 12493 ms]
-[Essai 8] Coût de la meilleure solution trouvée : 447 [temps : 12707 ms]
-[Essai 9] Coût de la meilleure solution trouvée : 429 [temps : 12657 ms]
-[Essai 10] Coût de la meilleure solution trouvée : 446 [temps : 12076 ms]
-[Essai 11] Coût de la meilleure solution trouvée : 444 [temps : 10993 ms]
-[Essai 12] Coût de la meilleure solution trouvée : 438 [temps : 10591 ms]
-[Essai 13] Coût de la meilleure solution trouvée : 431 [temps : 10337 ms]
-[Essai 14] Coût de la meilleure solution trouvée : 440 [temps : 11162 ms]
-[Essai 15] Coût de la meilleure solution trouvée : 446 [temps : 12419 ms]
-[Essai 16] Coût de la meilleure solution trouvée : 445 [temps : 11219 ms]
-[Essai 17] Coût de la meilleure solution trouvée : 441 [temps : 10775 ms]
-[Essai 18] Coût de la meilleure solution trouvée : 443 [temps : 10709 ms]
-[Essai 19] Coût de la meilleure solution trouvée : 451 [temps : 10577 ms]
-[Essai 20] Coût de la meilleure solution trouvée : 450 [temps : 11300 ms]
+[Essai 1] Coût de la meilleure solution trouvée : 50 [temps : 3042 ms]
+[Essai 2] Coût de la meilleure solution trouvée : 50 [temps : 3019 ms]
+[Essai 3] Coût de la meilleure solution trouvée : 48 [temps : 3009 ms]
+[Essai 4] Coût de la meilleure solution trouvée : 50 [temps : 3064 ms]
+[Essai 5] Coût de la meilleure solution trouvée : 49 [temps : 3005 ms]
+[Essai 6] Coût de la meilleure solution trouvée : 51 [temps : 3059 ms]
+[Essai 7] Coût de la meilleure solution trouvée : 52 [temps : 2619 ms]
+[Essai 8] Coût de la meilleure solution trouvée : 49 [temps : 2876 ms]
+[Essai 9] Coût de la meilleure solution trouvée : 50 [temps : 3005 ms]
+[Essai 10] Coût de la meilleure solution trouvée : 47 [temps : 2981 ms]
+[Essai 11] Coût de la meilleure solution trouvée : 50 [temps : 3027 ms]
+[Essai 12] Coût de la meilleure solution trouvée : 51 [temps : 3051 ms]
+[Essai 13] Coût de la meilleure solution trouvée : 50 [temps : 3011 ms]
+[Essai 14] Coût de la meilleure solution trouvée : 47 [temps : 3003 ms]
+[Essai 15] Coût de la meilleure solution trouvée : 51 [temps : 3061 ms]
+[Essai 16] Coût de la meilleure solution trouvée : 48 [temps : 3024 ms]
+[Essai 17] Coût de la meilleure solution trouvée : 48 [temps : 2993 ms]
+[Essai 18] Coût de la meilleure solution trouvée : 51 [temps : 3069 ms]
+[Essai 19] Coût de la meilleure solution trouvée : 48 [temps : 3057 ms]
+[Essai 20] Coût de la meilleure solution trouvée : 50 [temps : 3006 ms]
 
-Meilleure : 425, moyenne : 441.35, ecart-type : 8.451479160477808.
-Temps moyen : 11717 ms.
+Meilleure : 47, moyenne : 49.5, ecart-type : 1.396424004376829.
+Temps moyen : 2999 ms.
 
 Diagramme de Gantt de la meilleure solution trouvée parmi toutes ces stratégies :
 
@@ -414,53 +414,25 @@ Job 7 : 7
 Job 8 : 8
 Job 9 : 9
 Job 10 : :
-Job 11 : ;
-Job 12 : <
-Job 13 : =
-Job 14 : >
-Job 15 : ?
-Job 16 : @
-Job 17 : A
-Job 18 : B
-Job 19 : C
-Job 20 : D
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine   1 : | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | = | = | = | = | = | = | = | = | = | = | = | = | = | = | = | = | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |   |   |   |   | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | = | = | = | = | = | = | = | = | = | = | = | = | = | = | = | = | = | = | = |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | A | A | A | A | A | A | A | A | A | A | A | A | A | A | A | A | > | > | > | > | > | > | > | > | > | > | > | > | > | > | > | > |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |   |   |   | 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine   2 : |   |   |   |   |   |   |   | = | = | = | = | = |   |   |   |   |   | 1 | 1 | 1 | 1 | 1 | 7 | 7 | 7 | 7 | 7 |   |   |   |   |   | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 |   |   |   |   |   |   |   | 1 | 1 | 1 | 1 | 1 |   |   |   |   | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |   |   |   |   |   |   |   |   | 6 | 6 | 6 | 6 | 6 | 2 | 2 | 2 | 2 | 2 |   | > | > | > | > | > | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | @ | @ | @ | @ | @ |   |   |   |   |   |   |   | @ | @ | @ | @ | @ | = | = | = | = | = | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 4 | 4 | 4 | 4 | 4 | < | < | < | < | < | < | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | < | < | < | < | < | < | < | < | 5 | 5 | 5 | 5 | 5 | A | A | A | A | A | @ | @ | @ | @ | @ | < | < | < | < | < |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 6 | 6 | 6 | 6 | 6 |   |   |   | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 4 | 4 | 4 | 4 | 4 | 4 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | ; | ; | ; | ; | ; |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | ? | ? | ? | ? | ? |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | C | C | C | C | C |   |   |   |   |   |   |   |   |   |   | C | C | C | C | C |   |   |   |   |   |   |   |   |   |   | D | D | D | D | D |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | C | C | C | C | C | C | C | C | C | C | C |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | B | B | B | B | B | B | B | B | B | B | B | B | B | B | B | B | B | B | B | B | B | B | B | B | 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine   3 : |   |   |   |   |   |   |   |   |   |   |   | > | > | > | > | > | > | > | > | > | > | > | > | > | > | > | > | > | > | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |   |   |   |   |   |   |   |   |   |   |   |   | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | C | C | C | C | C | C | C | C | C | C | C | C | A | A | A | A | A | A | A | A | A | A | A | A | A | A | A | A | A | A | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | : | : | : | : | : | : | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | : | : | : | : | : | : | : | : | : | : | : | : |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | D | D | D | D | D | D | D | D | D | D | D | D | C | C | C | C | C | C | C | C | ; | ; | ; | ; | ; | ; |   | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | A | A | A | A | A | A | A | A |   |   |   |   |   |   | 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine   4 : | = | = | = | = | = | = | = | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | ; | ; | ; | ; | ; | ; | ; | ; |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | : | : | : | : | : | : | : | : | : | : | : |   |   | A | A | A | A | A | A | A | A | A | A | A | A | A |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | @ | @ | @ | @ | @ | @ | @ | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ |   |   |   |   |   |   |   |   |   |   |   |   |   |   | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ |   |   |   | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 8 | 8 | 8 | 8 | 8 | 8 | 8 |   |   |   |   |   |   |   |   |   |   |   | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 6 | 6 | 6 | 6 | 6 | 6 | 6 |   |   |   |   |   |   |   | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | D | D | D | D | D | D | D | D |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | = | = | = | = | = | = | = | = | = | = | = | = | = | C | C | C | C | C | C | C |   |   |   |   |   |   |   |   | B | B | B | B | B | B | B | B | B | B | B |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine   5 : | > | > | > | > | > | > | > | > | > | > | > | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | : | : | : | : | : | : | : | : | : | : | : | : | : | : | : | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | < | < | < | < | < | < | < | < | < | < | < | < | < | < | < | : | : | : | : | : | : | : | : | : | : | : | : | : | : | : | : | : | : | : | : | B | B | B | B | B | B | B | B | B | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | C | C | C | C | C | C | C | C | C | C | C | C | C | C | C | A | A | A | A | A | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | C | C | C | C | C | C | C | C | C | C | C | > | > | > | > | > | > | > | > | > | > | > | > | > | > | > | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | ; | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | B | B | B | B | B | B | B | B | B | B | B | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 7 | 7 | 7 | 7 | 7 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 |   |   |   |   |   |   |   |   |   | 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine   6 : |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | < | < | < | < | < | < | < | < | < | < | < | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | A | A | A | A | A | A | A | A | A | A | A | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | = | = | = | = | = | = | = | = | = | = | = |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | : | : | : | : | : | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | D | D | D | D | D | D | D | D | D | D | D | C | C | C | C | C | C | C | C | C | C | C | < | < | < | < | < | < | < | < | < | < | < | < | < | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 |   |   |   |   |   | 8 | 8 | 8 | 8 | 8 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | B | B | B | B | B |   |   |   | 9 | 9 | 9 | 9 | 9 | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine   7 : | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | A | A | A | A | A | A | A | A | A | A | A | A | A | ; | ; | ; | ; | ; | ; | ; | ; | B | B | B | B | B | B | B | B | B | B | B | B | B | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ |   | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | > | > | > | > | > | > | > | > | > | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |   |   |   |   |   |   |   |   |   |   |   |   |   | < | < | < | < | < | < | < | < | < | < | < | < | < | < | C | C | C | C | C | C | C | C | C | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | D | D | D | D | D | D | D | D | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |   |   | ? | ? | ? | ? | ? | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | A | A | A | A | A | A | A | A | A | D | D | D | D | D | D | D | D | D | D | D | D | D | D | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | > | > | > | > | > | > | > | > | > | > | > | > | > | > | > | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |   |   |   |   |   |   |   |   |   |   |   | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 1 | 1 | 1 | 1 | 1 | < | < | < | < | < | < | < | < | < | D | D | D | D | D | D | D | D | D |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine   8 : |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | C | C | C | C | C | C | C | C |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D | D |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | A | A | A | A | A | A | A | A | A | A | A | A | A | A | A | A |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 |   |   |   |   |   |   |   |   |   |   |   | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |   |   |   |   |   |   |   |   |   | < | < | < | < | < | < | < | < | < | < | < | < | < | < | < | < |   |   | > | > | > | > | > | > | > | > |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine   9 : | ? | ? | ? | ? | ? | ? | ? | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | = | = | = | = | = | = | = | = | = | = | = | = | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 |   | = | = | = | = | = | = | = | = | = | : | : | : | : | : | : | : | : | : | : | : | : | : | : | : | : | : | : | : | : | : | : | : | : | : | : | : | : | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 |   |   |   |   |   |   |   |   |   |   | < | < | < | < | < | < | < | < | < | < | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 7 |   |   |   |   |   | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | B | B | B | B | B | B | B | B | B | B | B | B | B | B | B | B | B | B | B | @ | @ | @ | @ | @ | @ | @ | @ | @ |   |   |   |   | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |   |   |   |   |   |   |   |   |   |   | C | C | C | C | C | C | C | C | C |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | = | = | = | = | = | = | = |   |   |   |   |   |   |   |   |   |   |   |   |   | : | : | : | : | : | : | : | A | A | A | A | A | A | A | A | A | A | A | A | A | A | A | A | A | A | A | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine  10 : | : | : | : | : | : |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | = | = | = | = | = | = | = | = | = | = | = | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 |   |   |   | B | B | B | B | B | B | B |   |   |   |   | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | A | A | A | A | A | A | A | A | A | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 |   |   |   |   |   |   |   | A | A | A | A | A | A | A | A | A | A | A | A | A |   |   |   |   |   |   |   |   |   | B | B | B | B | B | B | B | B | B | B | B | B | B | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 4 | 4 | 4 | 4 | 4 | ; | ; | ; | ; | ; |   |   | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |   |   |   |   |   |   |   | > | > | > | > | > |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | 1 | 1 | 1 | 1 | 1 |   |   |   | 5 | 5 | 5 | 5 | 5 | 5 | 5 | B | B | B | B | B | B | B | B | B | : | : | : | : | : | : | : | : | : | : | : | : | : | : |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | C | C | C | C | C | C | C | C | C | C | C |   |   |   |   | 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine  11 : |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine  12 : |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine  13 : |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | D | D | D | D | D | D | D | D | D | D | D |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | < | < | < | < | < | < | < | < | < | < | < | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | @ | > | > | > | > | > | > | > | > | > | > | > | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine  14 : |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Machine  15 : |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   1 : |   |   |   |   |   |   |   |   |   |   |   |   | 6 | 6 | 6 | 6 | 6 | 6 | : | : |   |   |   |   |   | 1 | : | : | : | : | 4 | 7 | 7 | 7 | 3 | 3 | 3 | 3 | 8 | 8 | 8 | 8 | 3 | 3 | 3 | 3 | 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   2 : | 8 | 8 | 8 | 8 | 9 | 9 | 9 | 9 | 9 | 9 | 8 | 8 | 8 | 4 | 4 | 4 | 4 | 4 | 4 | 5 | 5 | 5 | 6 | 6 | 6 | 6 | 6 | 6 | 1 | 1 | 1 | 1 | 1 | 1 | 5 | 5 | 5 | 5 | 3 | 3 | 3 | 3 | 2 | 2 |   |   | 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   3 : | 7 | 7 | 7 | 5 | 5 | 5 | 5 | 5 | 5 |   | 9 | 9 | 9 | 9 | 1 | 1 | 1 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 2 | 2 | 2 | 2 | 2 |   |   |   |   |   |   |   |   | 5 | 5 | 5 |   | 9 | 9 | 9 |   | 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   4 : | : | : | : | 2 | 2 |   |   |   |   |   |   |   |   | 8 | 8 | 8 | 8 | 8 | 8 |   |   |   | 5 | 5 | 5 | 8 | 8 | 8 | 8 | 8 | 8 |   |   |   | 4 | 6 | 6 | 9 | 9 | 9 | 9 | 9 | 8 | 8 |   |   | 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   5 : |   |   |   | 7 | 7 |   |   |   |   |   |   |   |   |   | 9 | 9 | 9 | 9 | 9 | 9 | 2 | 2 |   |   |   | 5 | 5 | 5 |   |   | : | : | : | : | : | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |   | 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Machine   6 : | 4 | 4 | 4 | 4 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 3 | 3 | 3 | 3 | 3 | 2 | 2 | 2 | 1 | 1 | 1 | 1 | 1 | 7 | 7 | 7 | 7 | 7 | 7 | 4 | 4 | 4 |   | : | : | : | : | 7 | 7 | 7 |   |   |   |   | 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-| Temps    : ---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|-->
-                0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319 320 321 322 323 324 325 326 327 328 329 330 331 332 333 334 335 336 337 338 339 340 341 342 343 344 345 346 347 348 349 350 351 352 353 354 355 356 357 358 359 360 361 362 363 364 365 366 367 368 369 370 371 372 373 374 375 376 377 378 379 380 381 382 383 384 385 386 387 388 389 390 391 392 393
+| Temps    : ---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|-->
+                0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46
 
-Temps total : 393
+Temps total : 46
 
 
-Temps total d'exécution des tests : 1699540 ms.
+Temps total d'exécution des tests : 198891 ms.

@@ -59,9 +59,9 @@ public class GenererRapportDeTests {
             //----------------------------------------------------------------------------------------------------
 
             ffw.write("----------------------------------------------------------------------------------\n");
-            ffw.write("Tests sur le jeu de données \"Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk10.fjs\"\n");
+            ffw.write("Tests sur le jeu de données \"Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk02.fjs\"\n");
             ffw.write("----------------------------------------------------------------------------------\n");
-            Probleme pb3 = Parser.parse("./TextData/Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk10.fjs");
+            Probleme pb3 = Parser.parse("./TextData/Monaldo/Fjsp/Job_Data/Brandimarte_Data/Text/Mk02.fjs");
 
             // Très long !
             testerUnProbleme(pb3, ffw, 20, 10, 500, 500);
